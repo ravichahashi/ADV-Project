@@ -1,6 +1,6 @@
 // const admin = require('firebase-admin');
 
-function Estimation(naem, type, result, comment) {
+function Estimation(name, type, result, comment) {
   this.estiName = name;
   this.estiType = type;
   this.estiResult = result;
@@ -38,12 +38,19 @@ function updatePost(e) {
   let doc = document.querySelector("#doc").value;
   console.log(doc);
   let esdata = new Estimation("dd", 5, 1, "ddsa");
+  let esdata2 = new Estimation("ee", 6, 2, "dfwfdsa");
   let data = new Child("ff", 12, 20, "1", "2");
-  // data = {gg: "sdsd"};
   console.log(data);
   const db = firebase.firestore();
-  // const myPost = db.collection("test00").doc("test00p");
-  // myPost.update({ title: e.target.value });
-  db.collection("Children").doc(doc).set(data);
-  db.collection("Children").doc(doc).collection("Estimation").doc(e.target.value).set(esdata);
+  const newChild = db.collection("Children").doc(doc);
+  newChild.set(data);
+  const esti = newChild.collection("Estimation")
+  esti.doc(e.target.value).set(esdata);
+  esti.doc("ddg").set(esdata2);
+  esti.get().then((datas) => {
+    datas.forEach((data) => {
+      console.log(data.id, "=>", data.data());
+    });
+  });
+  // let score = results.reduce((a, b) => a + b, 0);
 }
