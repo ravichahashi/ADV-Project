@@ -36,27 +36,27 @@ function Nursery(name, password, pagedata, address, childID) {
   return Object.assign({}, this);
 }
 
-function Pagedata(pic, header, description){
+function Pagedata(pic, header, description) {
   this.pagePic = pic;
   this.pageHead = header;
   this.pageDes = description;
-  return Object.assign({},this);
+  return Object.assign({}, this);
 }
 
-function ChatBox(userID, nursID){
+function ChatBox(userID, nursID) {
   this.userID = userID;
   this.nursID = nursID;
   return Object.assign({}, this);
 }
 
-function Chat(text, time, senderID){
+function Chat(text, time, senderID) {
   this.chatText = text;
   this.chatTime = time;
   this.senderID = senderID;
   return Object.assign({}, this);
 }
 
-function Request(status, fieldname, userID, nursID, childID){
+function Request(status, fieldname, userID, nursID, childID) {
   this.reqStatus = status;
   this.reqFname = fieldname;
   this.userID = userID;
@@ -65,7 +65,7 @@ function Request(status, fieldname, userID, nursID, childID){
   return Object.assign({}, this);
 }
 
-function QuestionGM(age, video, description, tool){
+function QuestionGM(age, video, description, tool) {
   this.questGM_age = age;
   this.questGM_video = video;
   this.questGM_des = description;
@@ -73,7 +73,7 @@ function QuestionGM(age, video, description, tool){
   return Object.assign({}, this);
 }
 
-function QuestionFM(age, video, description, tool){
+function QuestionFM(age, video, description, tool) {
   this.questFM_age = age;
   this.questFM_video = video;
   this.questFM_des = description;
@@ -81,7 +81,7 @@ function QuestionFM(age, video, description, tool){
   return Object.assign({}, this);
 }
 
-function QuestionRL(age, video, description, tool){
+function QuestionRL(age, video, description, tool) {
   this.questRL_age = age;
   this.questRL_video = video;
   this.questRL_des = description;
@@ -89,7 +89,7 @@ function QuestionRL(age, video, description, tool){
   return Object.assign({}, this);
 }
 
-function QuestionEL(age, video, description, tool){
+function QuestionEL(age, video, description, tool) {
   this.questEL_age = age;
   this.questEL_video = video;
   this.questEL_des = description;
@@ -97,7 +97,7 @@ function QuestionEL(age, video, description, tool){
   return Object.assign({}, this);
 }
 
-function QuestionPS(age, video, description, tool){
+function QuestionPS(age, video, description, tool) {
   this.questPS_age = age;
   this.questPS_video = video;
   this.questPS_des = description;
@@ -105,7 +105,7 @@ function QuestionPS(age, video, description, tool){
   return Object.assign({}, this);
 }
 
-function NurseryUser(name, password, priority, email, phone, nursID){
+function NurseryUser(name, password, priority, email, phone, nursID) {
   this.nUserName = name;
   this.nUserPass = password;
   this.nUserPrio = priority;
