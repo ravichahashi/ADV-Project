@@ -1,8 +1,3 @@
-// const admin = require('firebase-admin');
-const fuserList = document.querySelector(".userList");
-const userForm = document.querySelector(".userForm");
-userForm.addEventListener("submit", addUser);
-
 function User(name, email, password, citizenID, phone, childID, nursID) {
   this.name = name;
   this.email = email;
@@ -116,17 +111,6 @@ function NurseryUser(name, password, priority, email, phone, nursID){
   this.nUserPrio = priority;
   this.nUserEmail = email;
   this.nUserPhone = phone;
-  this.nursID = nursID;
-  return Object.assign({}, this);
-}
-
-function User(name, email, password, citizenID, phone, childID, nursID) {
-  this.name = name;
-  this.email = email;
-  this.password = password;
-  this.citizenID = citizenID;
-  this.phone = phone;
-  this.childID = childID;
   this.nursID = nursID;
   return Object.assign({}, this);
 }
