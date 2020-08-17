@@ -16,20 +16,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-function addUser(e) {
-  e.preventDefault();
-  const db = firebase.firestore();
-  const name = userForm.querySelector(".name").value;
-  const email = userForm.querySelector(".email").value;
-  const password = userForm.querySelector(".password").value;
-  const citizenID = userForm.querySelector(".citizenID").value;
-  const phone = userForm.querySelector(".phone").value;
-  const userData = new User(name, email, password, citizenID, phone, [], []);
-  console.log(userData);
-
-  const newUser = db.collection("User").doc();
-  newUser.set(userData);
-}
+functikkl
+kMaxLengthk
+kMaxLengthkkkk
+;
+SVGAnimatedLengthListk
+k
+l
+lk
+k
+k
+l
 
 function addChild(e) {}
 
