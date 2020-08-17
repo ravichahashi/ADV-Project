@@ -8,8 +8,6 @@ function Estimation(name, type, result, comment) {
   this.type = type;
   this.result = result;
   this.comment = comment;
-  console.log("ddd");
-  console.log("ddd");
   return Object.assign({}, this);
 }
 
