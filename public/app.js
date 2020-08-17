@@ -7,7 +7,7 @@ function Estimation(name, type, result, comment) {
   this.name = name;
   this.type = type;
   this.result = result;
-  this.comment = comment;
+  this.comment = result;
   return Object.assign({}, this);
 }
 
