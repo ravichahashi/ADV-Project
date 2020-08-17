@@ -1,5 +1,6 @@
 // const admin = require('firebase-admin');
-let userForm = document.querySelector(".userForm");
+const fuserList = document.querySelector(".userList");
+const userForm = document.querySelector(".userForm");
 userForm.addEventListener("submit", addUser);
 
 function Estimation(name, type, result, comment) {
@@ -34,13 +35,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const app = firebase.app();
   const db = firebase.firestore();
   const userList = db.collection("User");
-  fuserList = document.querySelector(".userList");
-  fuserList = ``
   userList.onSnapshot((users) => {
+    fuserList.innerHTML = ``
     users.forEach((user) => {
       const data = user.data();
-      console.log(data)
-      // fuserList.innerHTML += `<p>${data.name}</p>`;
+      fuserList.innerHTML += `<p>${data.name}</p>`;
     });
   });
 });
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 function addUser(e) {
   e.preventDefault();
   const db = firebase.firestore();
-
   const name = userForm.querySelector(".name").value;
   const email = userForm.querySelector(".email").value;
   const password = userForm.querySelector(".password").value;
