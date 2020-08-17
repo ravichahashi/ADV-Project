@@ -3,23 +3,7 @@ const fuserList = document.querySelector(".userList");
 const userForm = document.querySelector(".userForm");
 userForm.addEventListener("submit", addUser);
 
-function Child(name, age, score, nursID, userID) {
-  this.childName = name;
-  this.childAge = age;
-  this.childScore = score;
-  this.nursID = nursID;
-  this.userID = userID;
-  return Object.assign({}, this);
-}
 
-function Estimation(name, age, result, comment, nursID) {
-  this.estiName = name;
-  this.estiAge = age;
-  this.estiResult = result;
-  this.estiComment = comment;
-  this.nursID = nursID;
-  return Object.assign({}, this);
-}
 
 function Nursery(name, password, pagedata, address, childID) {
   this.nursName = name;
