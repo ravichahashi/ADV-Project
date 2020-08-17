@@ -3,34 +3,6 @@ const fuserList = document.querySelector(".userList");
 const userForm = document.querySelector(".userForm");
 userForm.addEventListener("submit", addUser);
 
-function Estimation(name, type, result, comment) {
-  this.name = name;
-  this.type = type;
-  this.result = result;
-  this.comment = comment;
-  return Object.assign({}, this);
-}
-
-function Child(name, age, score, nursID, userID) {
-  this.name = name;
-  this.age = age;
-  this.score = score;
-  this.nursID = nursID;
-  this.userID = userID;
-  return Object.assign({}, this);
-}
-
-function User(name, email, password, citizenID, phone, childID, nursID) {
-  this.name = name;
-  this.email = email;
-  this.password = password;
-  this.citizenID = citizenID;
-  this.phone = phone;
-  this.childID = childID;
-  this.nursID = nursID;
-  return Object.assign({}, this);
-}
-
 document.addEventListener("DOMContentLoaded", (event) => {
   const app = firebase.app();
   const db = firebase.firestore();
