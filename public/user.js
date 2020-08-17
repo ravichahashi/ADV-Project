@@ -31,6 +31,8 @@ function addUser(e) {
   newUser.set(userData);
 }
 
+function addChild(e) {}
+
 // function updatePost(e) {
 //   let doc = document.querySelector("#doc").value;
 //   console.log(doc);
