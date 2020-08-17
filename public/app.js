@@ -8,6 +8,7 @@ function Estimation(name, type, result, comment) {
   this.type = type;
   this.result = result;
   this.comment = comment;
+  console.log("ddd");
   return Object.assign({}, this);
 }
 
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const db = firebase.firestore();
   const userList = db.collection("User");
   userList.onSnapshot((users) => {
-    fuserList.innerHTML = ``
+    fuserList.innerHTML = ``;
     users.forEach((user) => {
       const data = user.data();
       fuserList.innerHTML += `<p>${data.name}</p>`;
