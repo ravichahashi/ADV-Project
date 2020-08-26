@@ -6,20 +6,6 @@ export default class Sign_up extends Component {
   constructor(props) {
     super(props);
     this.state = new model.User();
-    // this.state = {
-    //   fName: "",
-    //   lName: "",
-    //   email: "",
-    //   address: "",
-    //   password: "",
-    //   citizenID: "",
-    //   phone: "",
-    //   childID: [],
-    //   nursI: [],
-    // };
-
-    // console.log(this.state);
-    // console.log()
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,40 +29,6 @@ export default class Sign_up extends Component {
     newUser.set(this.state);
   }
 
-  // addUser = (e) => {
-  //   e.preventDefault();
-  //   const db = firebase.db;
-  //   console.log("active!!");
-  //   const userForm = document.querySelector(".userForm");
-  //   const name = userForm.querySelector(".fName").Value;
-  //   console.log(name);
-  // const email = userForm.querySelector(".email").value;
-  // const password = userForm.querySelector(".password").value;
-  // const citizenID = userForm.querySelector(".address").value;
-  // const phone = userForm.querySelector(".phone").value;
-  // const userData = new model.User(
-  //   name,
-  //   email,
-  //   password,
-  //   citizenID,
-  //   phone,
-  //   [],
-  //   []
-  // );
-
-  // const newUser = db.collection("User").doc();
-  // newUser.set(userData);
-  // };
-  // componentDidMount() {
-  //   document
-  //     .querySelector(".userForm")
-  //     .addEventListener("submit", this.addUser);
-  // }
-  // componentWillUnmount() {
-  //   document
-  //     .querySelector(".userForm")
-  //     .removeEventListener("submit", this.addUser);
-  // }
   render() {
     return (
       <div>
@@ -110,11 +62,7 @@ export default class Sign_up extends Component {
                             className="tab-content-inner active"
                             data-content="signup"
                           >
-                            <form
-                              name="userForm"
-                              action="#"
-                              onSubmit={this.handleSubmit}
-                            >
+                            <form action="#" onSubmit={this.handleSubmit}>
                               <div className="row form-group">
                                 <div className="col-md-6">
                                   <label htmlFor="activities">First Name</label>
