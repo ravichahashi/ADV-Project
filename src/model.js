@@ -10,16 +10,16 @@ export function User() {
   this.nursID = [];
   return Object.assign({}, this);
 }
-/*
-function Child(name, age, score, nursID, userID) {
-  this.name = name;
-  this.age = age;
-  this.score = score;
-  this.nursID = nursID;
-  this.userID = userID;
+
+function Child() {
+  this.name = "";
+  this.age = "";
+  this.score = "";
+  this.nursID = "";
+  this.userID = "";
   return Object.assign({}, this);
 }
-
+/*
 function Estimation(name, age, result, comment, nursID) {
   this.name = name;
   this.age = age;

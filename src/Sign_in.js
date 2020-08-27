@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import * as model from "./model";
 import firebase from "./firebase/index";
 
 export default class Sign_in extends Component {
@@ -32,15 +31,17 @@ export default class Sign_in extends Component {
       .get()
       .then((users) => {
         if (users.size > 0) {
-          console.log("SIGN IN");
           users.forEach((user) => {
             if (user.data().password === this.state.password) {
               alert("Sign In");
+              this.props.notifySignIn(user);
             } else {
-              alert("Password wrong");
+              alert("E-mail or Password wrong");
+              console.log("Password wrong");
             }
           });
         } else {
+          alert("E-mail or Password wrong");
           console.log("Not found email");
         }
       })
