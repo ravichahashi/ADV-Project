@@ -54,10 +54,10 @@ class login extends Component {
 
     return (
       <Grid container className={classes.form}>
-        <Grid item sm />
+        <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
-          <Typography variant="h2" className={classes.pageTitle}>
+          <Typography variant="h1" class="cursive-font" className={classes.pageTitle}>
             Sign in to Sunerry
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
@@ -97,7 +97,7 @@ class login extends Component {
               className={classes.button}
               disabled={loading}
             >
-              Login
+              <Link to="/IndexGuardian">Sign in</Link>
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}

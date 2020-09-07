@@ -67,11 +67,11 @@ class signup extends Component {
 
     return (
       <Grid container className={classes.form}>
-        <Grid item sm />
+        <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
-          <Typography variant="h3" className={classes.pageTitle}>
-            SignUp to Sunerry
+          <Typography variant="h1" class="cursive-font" className={classes.pageTitle}>
+            Sign Up to Sunerry
           </Typography>
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
@@ -170,14 +170,14 @@ class signup extends Component {
               className={classes.button}
               disabled={loading}
             >
-              Sign Up to Sunerry
+              <Link to="/login">Sign Up to Sunerry</Link>
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
             <br />
             <small>
-              Already have an account ? Sign in <Link to="/login">here</Link>
+              Already have an account ? Sign in <Link to="/login">Here</Link>
             </small>
           </form>
         </Grid>

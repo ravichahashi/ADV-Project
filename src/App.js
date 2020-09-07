@@ -18,6 +18,9 @@ import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
 import user from './pages/user';
+import IndexGuardian from './pages/IndexGuardian';
+import nurseryInfo from './pages/nurseryInfo';
+import overviewChild from './pages/overviewChild';
 
 import axios from 'axios';
 
@@ -48,9 +51,13 @@ class App extends Component {
             <Navbar />
             <div className="container">
               <Switch>
-                <Route exact path="/" component={home} />
+                <Route exact path="/" component={IndexGuardian} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
+                <AuthRoute exact path="/home" component={home} />
+                <AuthRoute exact path="/IndexGuardian" component={IndexGuardian} />
+                <AuthRoute exact path="/nurseryInfo" component={nurseryInfo} />
+                <AuthRoute exact path="/overviewChild" component={overviewChild} />
                 <Route exact path="/users/:handle" component={user} />
                 <Route
                   exact
