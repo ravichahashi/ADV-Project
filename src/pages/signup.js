@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import AppIcon from '../images/sunerry1.png';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+import AppIcon from "../images/sunerry1.png";
+import { Link } from "react-router-dom";
 
 // MUI Stuff
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 // Redux stuff
-import { connect } from 'react-redux';
-import { signupUser } from '../redux/actions/userActions';
+import { connect } from "react-redux";
+import { signupUser } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
-  ...theme
+  ...theme,
 });
 
 class signup extends Component {
   constructor() {
     super();
     this.state = {
-      fName: '',
-      lName: '',
-      email: '',
-      address: '',
-      phoneNumber: '',
-      password: '',
-      confirmPassword: '',
-      errors: {}
+      fName: "",
+      lName: "",
+      email: "",
+      address: "",
+      phoneNumber: "",
+      password: "",
+      confirmPassword: "",
+      errors: {},
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -40,7 +40,7 @@ class signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({
-      loading: true
+      loading: true,
     });
     const newUserData = {
       fName: this.state.fName,
@@ -55,13 +55,13 @@ class signup extends Component {
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
   render() {
     const {
       classes,
-      UI: { loading }
+      UI: { loading },
     } = this.props;
     const { errors } = this.state;
 
@@ -70,7 +70,11 @@ class signup extends Component {
         <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
-          <Typography variant="h1" class="cursive-font" className={classes.pageTitle}>
+          <Typography
+            variant="h1"
+            class="cursive-font"
+            className={classes.pageTitle}
+          >
             Sign Up to Sunerry
           </Typography>
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
@@ -191,15 +195,14 @@ signup.propTypes = {
   classes: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   UI: PropTypes.object.isRequired,
-  signupUser: PropTypes.func.isRequired
+  signupUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  UI: state.UI
+  UI: state.UI,
 });
 
-export default connect(
-  mapStateToProps,
-  { signupUser }
-)(withStyles(styles)(signup));
+export default connect(mapStateToProps, { signupUser })(
+  withStyles(styles)(signup)
+);
