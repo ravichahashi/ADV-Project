@@ -21,6 +21,7 @@ import user from "./pages/user";
 import IndexGuardian from "./pages/IndexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
+import estimation from "./pages/estimation";
 
 import axios from "axios";
 
