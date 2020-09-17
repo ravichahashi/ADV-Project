@@ -21,6 +21,7 @@ import user from "./pages/user";
 import IndexGuardian from "./pages/IndexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
+import index from "./pages/IndexGuardian";
 
 import axios from "axios";
 
@@ -48,10 +49,11 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            <Navbar />
-            <div className="container">
+            {/* <Navbar /> */}
+            {/* <div className="container"> */}
               <Switch>
                 <Route exact path="/" component={IndexGuardian} />
+                <AuthRoute exact path="/index" component={index} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
                 <Route exact path="/home" component={home} />
@@ -73,7 +75,7 @@ class App extends Component {
                   component={user}
                 />
               </Switch>
-            </div>
+            {/* </div> */}
           </Router>
         </Provider>
       </MuiThemeProvider>
