@@ -1,8 +1,8 @@
-import React, {useEfftect, useEfftect} from "react";
+import React, {useEfftect, useState} from "react";
 
 const Estimation = () => {
     return(
-        <h1>Hello</h1>
+        <a>Hello</a>
     )
 };
 
