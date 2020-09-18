@@ -30,7 +30,7 @@ a:focus {
 
 p {
   padding: 0;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
 }
 
 h1,
@@ -130,7 +130,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: #fff;
+  background: #ffd872;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
@@ -641,17 +641,17 @@ h6 {
 
 #why-us {
   padding: 60px 0;
-  background: #ffc46a;
+  background: #feddcb;
 }
 
 #why-us .section-header h3,
 #why-us .section-header p {
-  color: #fff;
+  color: rgb(46, 43, 43);
 }
 
 #why-us .card {
-  background: #00458f;
-  border-color: #00458f;
+  background: #fad4ae;
+  border-color: #fdd76c;
   border-radius: 10px;
   margin: 0 15px;
   padding: 15px 0;
@@ -662,28 +662,29 @@ h6 {
 }
 
 #why-us .card:hover {
-  background: #003b7a;
+  background: #ffcba2;
   border-color: #003b7a;
 }
 
 #why-us .card i {
   font-size: 48px;
   padding-top: 15px;
-  color: #bfddfe;
+  color: #fc906f
 }
 
 #why-us .card h5 {
   font-size: 22px;
   font-weight: 600;
+  color: rgb(80, 80, 80);
 }
 
 #why-us .card p {
   font-size: 15px;
-  color: #d8eafe;
+  color: rgb(80, 80, 80);
 }
 
 #why-us .card .readmore {
-  color: #fff;
+  color: rgb(104, 104, 104);
   font-weight: 600;
   display: inline-block;
   transition: 0.3s ease-in-out;
