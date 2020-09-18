@@ -50,7 +50,7 @@ class App extends Component {
         <Provider store={store}>
           <Router>
             {/* <Navbar /> */}
-            {/* <div className="container"> */}
+            {/* <div> */}
               <Switch>
                 <Route exact path="/" component={IndexGuardian} />
                 <AuthRoute exact path="/index" component={index} />
