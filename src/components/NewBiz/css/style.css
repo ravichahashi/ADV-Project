@@ -482,7 +482,7 @@ h6 {
 --------------------------------*/
 
 #about {
-  background: rgba(238, 112, 81, 0.932);
+  background: #feddcb;
   padding: 60px 0;
 }
 
@@ -509,7 +509,7 @@ h6 {
 }
 
 #about .about-container .icon-box {
-  background: rgb(236, 154, 154);
+  background: #feddcb;
   background-size: cover;
   padding: 0 0 30px 0;
 }
@@ -595,7 +595,7 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
-  background: #fff;
+  background: rgb(241, 156, 135);
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -629,7 +629,7 @@ h6 {
 }
 
 #services .box:hover .title a {
-  color: #007bff;
+  color: #f3f5f7;
 }
 
 #services .description {
