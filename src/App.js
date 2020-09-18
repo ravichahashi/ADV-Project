@@ -22,7 +22,8 @@ import IndexGuardian from "./pages/IndexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
 import index from "./pages/IndexGuardian";
-import addchild from "./pages/addchild"
+
+import estimation from "./pages/estimation";
 
 import axios from "axios";
 
@@ -57,6 +58,7 @@ class App extends Component {
                 <AuthRoute exact path="/index" component={index} />
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
+                <AuthRoute exact path="/estimation" component={estimation} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
                   exact
@@ -69,7 +71,6 @@ class App extends Component {
                   path="/overviewChild"
                   component={overviewChild}
                 />
-                 <AuthRoute exact path="/addchild" component={addchild} />
                 <Route exact path="/users/:handle" component={user} />
                 <Route
                   exact
