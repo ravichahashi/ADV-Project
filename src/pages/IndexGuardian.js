@@ -3,10 +3,6 @@ import React, { useEffect, useState } from "react";
 // Redux stuff
 import { connect } from 'react-redux';
 
-//Favicons
-import icon from "../components/NewBiz/img/favicon.png";
-import "../components/NewBiz/img/apple-touch-icon.png"
-
 // CSS
 import "../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
 import "../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
@@ -29,7 +25,7 @@ const Index = () => {
         <img src="./sunerry1.png" alt className="img-fluid" />
       </div>
       <div className="intro-info">
-        <h2>We provide<br /><span>solutions</span><br />for your business!</h2>
+        <h2>We provide<br /><span>solutions</span><br />for your Nursery!</h2>
       </div>
     </div>
   </section>{/* #intro */}
@@ -135,11 +131,6 @@ Why Us Section
   </main>
   
   <a href="#" className="back-to-top"><i className="fa fa-chevron-up" /></a>
-  {/* Uncomment below i you want to use a preloader */}
-  {/* <div id="preloader"></div> */}
-  {/* JavaScript Libraries */}
-  {/* Contact Form JavaScript File */}
-  {/* Template Main Javascript File */}
 </div>
 
     );

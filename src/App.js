@@ -49,8 +49,8 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            {/* <Navbar /> */}
-            {/* <div> */}
+            <Navbar />
+            <div>
               <Switch>
                 <Route exact path="/" component={IndexGuardian} />
                 <AuthRoute exact path="/index" component={index} />
@@ -75,7 +75,7 @@ class App extends Component {
                   component={user}
                 />
               </Switch>
-            {/* </div> */}
+            </div>
           </Router>
         </Provider>
       </MuiThemeProvider>
