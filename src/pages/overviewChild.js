@@ -91,8 +91,7 @@ Services Section
           </div>
           <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
             <div className="box">
-            <div className="icon"><i className="ion-ios-analytics-outline" style={{color: '#ff689b'}} /></div>
-              
+              <a href="/addchild">Add Child</a>
             </div>
           </div>
         </div>
@@ -100,7 +99,6 @@ Services Section
     </section>{/* #services */}
   </main>
   
-  <a href="#" className="back-to-top"><i className="fa fa-chevron-up" /></a>
 </div>
 
     );

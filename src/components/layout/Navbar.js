@@ -31,11 +31,11 @@ const Nevbar = () => {
     <header id="header" className="fixed-top">
       {/* <div className="container"> */}
         <div className="logo float-left">
-          <a href="#intro" className="scrollto"><img src="" alt className="img-fluid" /></a>
+          <a href="#intro" className="scrollto"><img src="./sunerry1.png" alt className="img-fluid" /></a>
         </div>
       <nav className="main-nav float-right d-none d-lg-block">
         <ul>
-          <li className="active"><a href="#intro">Home</a></li>
+          <li className="active"><a href="/">Home</a></li>
           <li className="drop-down"><a href>Nursery</a>
           <ul>
             <li><a href="#">Map</a></li>
