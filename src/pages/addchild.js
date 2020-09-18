@@ -12,7 +12,7 @@ import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
 import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../components/NewBiz/css/style.css"
 
-const addchild = () => {
+const Index = () => {
     const [email , setemail] = useState("");
     return(
 <div>
@@ -77,4 +77,4 @@ const addchild = () => {
     );
 };
 
-export default addchild;
+export default Index;
