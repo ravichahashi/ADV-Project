@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: #007bff;
+  color: #371a66;
   transition: 0.5s;
 }
 
@@ -595,7 +595,18 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
-  background: rgb(241, 218, 212);
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#services .box-n {
+  padding: 30px;
+  position: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -629,7 +640,7 @@ h6 {
 }
 
 #services .box:hover .title a {
-  color: #120396;
+  color: #b43e25;
 }
 
 #services .description {
@@ -640,7 +651,7 @@ h6 {
 }
 
 #why-us {
-  padding: 60px 0;
+  padding: 30px 0;
   background: #feddcb;
 }
 
@@ -713,6 +724,159 @@ h6 {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #cce5ff;
+}
+
+/* Why-us Box
+--------------------------------*/
+#why-uss {
+  padding: 10px 0 10px 0;
+  background: #feddcb;
+}
+
+#why-uss .box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#why-uss .box-n {
+  padding: 30px;
+  position: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#why-uss .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+#why-uss .icon {
+  position: absolute;
+  left: -10px;
+  top: calc(50% - 32px);
+}
+
+#why-uss .icon i {
+  font-size: 64px;
+  line-height: 1;
+  transition: 0.5s;
+}
+
+#why-uss .title {
+  margin-left: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#why-uss .title a {
+  color: #111;
+}
+
+#why-uss .box:hover .title a {
+  color: #b43e25;
+}
+
+#why-uss .description {
+  font-size: 14px;
+  margin-left: 40px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+/* Your-fam
+--------------------------------*/
+#your-fam {
+  padding: 30px 0;
+  background: #fecbf5;
+}
+
+#your-fam .section-header h3,
+#why-us .section-header p {
+  color: rgb(46, 43, 43);
+}
+
+#your-fam .card {
+  background: #fdbebe;
+  border-color: #e094a5;
+  border-radius: 10px;
+  margin: 0 15px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  height: 100%;
+}
+
+#your-fam .card:hover {
+  background: #fab0f6;
+  border-color: #7a0070;
+}
+
+#your-fam .card i {
+  font-size: 48px;
+  padding-top: 15px;
+  color: #fc906f
+}
+
+#your-fam .card h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(54, 54, 54);
+}
+
+#your-fam .card p {
+  font-size: 15px;
+  color:  rgb(54, 54, 54);
+}
+
+#your-fam .card .readmore {
+  color: rgb(65, 65, 65);
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+  border-bottom: #00458f solid 2px;
+}
+
+#your-fam .card .readmore:hover {
+  border-bottom: #fff solid 2px;
+}
+
+#your-fam .counters {
+  padding-top: 40px;
+}
+
+#your-fam .counters span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  color: #fff;
+}
+
+#your-fam .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #cce5ff;
+}
+
+#your-fam .yourfam-img {
+  width: 120px;
+  border-radius: 20px;
+  border: 3px solid #fff;
+  float: center;
 }
 
 /* Portfolio Section
@@ -1168,7 +1332,7 @@ h6 {
 }
 
 #contact .form button[type="submit"] {
-  background: #007bff;
+  background: #fe9d5a;
   border: 0;
   border-radius: 20px;
   padding: 8px 30px;
@@ -1177,7 +1341,24 @@ h6 {
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #0067d5;
+  background: #ff8c8c;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Search Button
+--------------------------------------------------------------*/
+#search .form button[type="submit"] {
+  background: #fe9d5a;
+  border: 0;
+  border-radius: 20px;
+  padding: 3px 15px;
+  color: #fff;
+  transition: 0.3s;
+} 
+
+#search .form button[type="submit"]:hover {
+  background: #ff8c8c;
   cursor: pointer;
 }
 

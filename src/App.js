@@ -19,12 +19,13 @@ import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 import user from "./pages/user";
-import IndexGuardian from "./pages/IndexGuardian";
+import indexGuardian from "./pages/indexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
-import index from "./pages/IndexGuardian";
+// import index from "./pages/IndexGuardian";
 import addchild from "./pages/addchild";
 import estimation from "./pages/estimation";
+import landing from "./pages/landing";
 
 import axios from "axios";
 
@@ -71,16 +72,16 @@ class App extends Component {
             <LabelNavbar />
             <div>
               <Switch>
-                <Route exact path="/" component={IndexGuardian} />
-                <AuthRoute exact path="/index" component={index} />
+                <Route exact path="/" component={indexGuardian} />
+                {/* <AuthRoute exact path="/index" component={index} /> */}
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
                 <AuthRoute exact path="/estimation" component={estimation} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
                   exact
-                  path="/IndexGuardian"
-                  component={IndexGuardian}
+                  path="/indexGuardian"
+                  component={indexGuardian}
                 />
                 <AuthRoute exact path="/nurseryInfo" component={nurseryInfo} />
                 <AuthRoute
@@ -89,6 +90,7 @@ class App extends Component {
                   component={overviewChild}
                 />
                 <AuthRoute exact path="/addchild" component={addchild} />
+                <AuthRoute exact path="/landing" component={landing} />
                 <Route exact path="/users/:handle" component={user} />
                 <Route
                   exact
