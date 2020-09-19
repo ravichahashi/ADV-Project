@@ -13,7 +13,7 @@ import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../components/NewBiz/css/style.css"
 
 const Index = () => {
-    const [emil , setemail] = useState("");
+    const [Name , setName] = useState("กวิสรา ศักดิ์บูรณาเพชร");
     return(
 <div>
   {/* ==========================
@@ -42,7 +42,7 @@ Services Section
           <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-analytics-outline" style={{color: '#ff689b'}} /></div>
-              <h4 className="title"><a>รักษ์พงศ์ ทอหุล</a></h4>
+              <h4 className="title"><a>{Name}</a></h4>
               <p className="description">เพศ :</p>
               <p className="description">อายุ :</p>
               <p className="description">น้ำหนัก :</p>

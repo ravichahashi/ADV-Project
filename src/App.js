@@ -11,6 +11,7 @@ import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
 // Components
 import Navbar from "./components/layout/Navbar";
+import NavbarGuardian from "./components/layout/NavbarGuardian";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
 // Pages
@@ -45,13 +46,29 @@ if (token) {
   }
 }
 
+const LabelNavbar = NavbarGuardian;
+
+const FilterNavbar = () =>{
+  //Get path only
+  var pathname = window.location.pathname; 
+  console.log(pathname);
+  var noLogin = ["", "signIn", "signUpParent", "signUpNurseryPackage", "signUpNurseryPackageSelect"];
+  var parent = ["landing", "inbox", "childManager", "search", "editChild", "addChild", "nurseryInfo_parent", "estimation", "result_parent"];
+  var nursery = ["childrenList", "parentList", "teacher", "nurseryInfo_nursery", "request", "result_nursery", "reviewPage", "calendar"]
+  
+  if(parent){
+
+  };
+}
+
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            <Navbar />
+            {FilterNavbar()}
+            <LabelNavbar />
             <div>
               <Switch>
                 <Route exact path="/" component={IndexGuardian} />
