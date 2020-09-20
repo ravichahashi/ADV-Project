@@ -16,18 +16,34 @@ import NavbarNursery from "./components/layout/NavbarNursery";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
 
-// Pages
+////////////////////// Pages //////////////////////
+// No User
+import indexGuardian from "./pages/NoUser/indexGuardian";
+import login from "./pages/NoUser/login";
+import signup from "./pages/NoUser/signup";
+import signUpNurseryPackage from "./pages/NoUser/signUpNurseryPackage";
+import signupNursery from "./pages/NoUser/signUpNursery";
+// Parent
+import landing from "./pages/Parent/landing";
+import inbox from "./pages/Parent/inbox";
+import childManager from "./pages/Parent/childmanager";
+import search from "./pages/Parent/search";
+import editChild from "./pages/Parent/editChild"; 
+
+// Nusery
+
+
 import home from "./pages/home";
-import login from "./pages/login";
-import signup from "./pages/signup";
+
+
 import user from "./pages/user";
-import indexGuardian from "./pages/indexGuardian";
+
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
-// import index from "./pages/indexGuardian";
 import addchild from "./pages/addchild";
 import assessment from "./pages/assessment";
-import landing from "./pages/landing";
+
+////////////////////// End Import Page //////////////////////
 
 import axios from "axios";
 
@@ -49,23 +65,19 @@ if (token) {
   }
 }
 
-const LabelNavbar = NavbarGuardian;
-
+const LabelNavbar = Navbar;
 const FilterNavbar = () =>{
   //Get path only
   var pathname = window.location.pathname; 
-  console.log(pathname);
-  var noLogin = ["/", "/signIn", "/signUpParent", "/signUpNurseryPackage", "/signUpNurseryPackageSelect"];
+  // console.log(pathname);
+  var noLogin = ["/", "/signIn", "/signup", "/signUpNurseryPackage", "/signupNursery"];
   var parent = ["/landing", "/inbox", "/childManager", "/search", "/editChild", "/addChild", "/nurseryInfo_parent", "/estimation", "/result_parent"];
-  var nursery = ["/childrenList", "/parentList", "/teacher", "/nurseryInfo_nursery", "/request", "/result_nursery", "/reviewPage", "/calendar"]
+  var nursery = ["/childrenList", "/parentList", "/teacher", "/nurseryInfo_nursery", "/request", "/result_nursery", "/reviewPage", "/calendar"];
   
-  console.log(noLogin.indexOf(pathname))
+  // console.log(noLogin.indexOf(pathname));
+  console.log("This user: "+AuthRoute);
 
-
-  if(parent){
-
-  };
-}
+};
 
 class App extends Component {
   render() {
@@ -77,10 +89,22 @@ class App extends Component {
             <LabelNavbar />
             <div>
               <Switch>
+                {/* No User */}
                 <Route exact path="/" component={indexGuardian} />
-                {/* <AuthRoute exact path="/index" component={index} /> */}
-                <AuthRoute exact path="/login" component={login} />
-                <AuthRoute exact path="/signup" component={signup} />
+                <Route exact path="/login" component={login} />
+                <Route exact path="/signup" component={signup} />
+                <Route exact path="/signupnurserypackage" component={signUpNurseryPackage} />
+                <Route exact path="/signupnursery" component={signupNursery} />
+                
+                {/* Parent */}
+                <AuthRoute exact path="/landing" component={landing} />
+                <AuthRoute exact path="/inbox" component={inbox} />
+                <AuthRoute exact path="/childmanager" component={childManager} />
+                <AuthRoute exact path="/search" component={search} />
+                <AuthRoute exact path="/editchild" component={editChild} />
+
+                {/* Nusery */}
+                
                 <AuthRoute exact path="/assessment" component={assessment} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
@@ -95,7 +119,7 @@ class App extends Component {
                   component={overviewChild}
                 />
                 <AuthRoute exact path="/addchild" component={addchild} />
-                <AuthRoute exact path="/landing" component={landing} />
+                
                 <Route exact path="/users/:handle" component={user} />
                 <Route
                   exact

@@ -45,7 +45,7 @@ const Nevbar = () => {
         </li>
         <li><a href="#team">Inbox</a></li>
         <li><a href="#team">Notifications</a></li>
-        <li className="drop-down"><a>Test Account</a>
+        <li className="drop-down"><a>Parent</a>
         <ul>
             <li><a href="#">Profile Setting</a></li>
             <li><a href="#">Manage Child</a></li>

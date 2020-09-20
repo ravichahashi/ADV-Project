@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
-import AppIcon from "../images/sunerry1.png";
+import AppIcon from "../../images/sunerry1.png";
 import { Link } from "react-router-dom";
 
 // MUI Stuff
@@ -12,7 +12,7 @@ import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // Redux stuff
 import { connect } from "react-redux";
-import { signupUser } from "../redux/actions/userActions";
+import { signupUser } from "../../redux/actions/userActions";
 
 const styles = (theme) => ({
   ...theme,
