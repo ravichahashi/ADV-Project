@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 
-const Estimation = () => {
+const Assessment = () => {
     return (
         <div>
             <div section id="services" className="section-bg">
@@ -109,4 +109,4 @@ const Estimation = () => {
     )
 };
 
-export default Estimation;
+export default Assessment;

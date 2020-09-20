@@ -43,7 +43,7 @@ Services Section
           <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
             <div className="box">
               <div className="icon"><i className="ion-ios-analytics-outline" style={{color: '#ff689b'}} /></div>
-              <h4 className="title"><a href="/estimation">ทดลองทำการประเมิน</a></h4>
+              <h4 className="title"><a href="/assessment">ทดลองทำการประเมิน</a></h4>
               <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
