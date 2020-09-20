@@ -12,8 +12,10 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 // Components
 import Navbar from "./components/layout/Navbar";
 import NavbarGuardian from "./components/layout/NavbarGuardian";
+import NavbarNursery from "./components/layout/NavbarNursery";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
+
 // Pages
 import home from "./pages/home";
 import login from "./pages/login";
@@ -22,7 +24,7 @@ import user from "./pages/user";
 import indexGuardian from "./pages/indexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
-// import index from "./pages/IndexGuardian";
+// import index from "./pages/indexGuardian";
 import addchild from "./pages/addchild";
 import assessment from "./pages/assessment";
 import landing from "./pages/landing";
