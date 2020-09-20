@@ -53,10 +53,13 @@ const FilterNavbar = () =>{
   //Get path only
   var pathname = window.location.pathname; 
   console.log(pathname);
-  var noLogin = ["", "signIn", "signUpParent", "signUpNurseryPackage", "signUpNurseryPackageSelect"];
-  var parent = ["landing", "inbox", "childManager", "search", "editChild", "addChild", "nurseryInfo_parent", "estimation", "result_parent"];
-  var nursery = ["childrenList", "parentList", "teacher", "nurseryInfo_nursery", "request", "result_nursery", "reviewPage", "calendar"]
+  var noLogin = ["/", "/signIn", "/signUpParent", "/signUpNurseryPackage", "/signUpNurseryPackageSelect"];
+  var parent = ["/landing", "/inbox", "/childManager", "/search", "/editChild", "/addChild", "/nurseryInfo_parent", "/estimation", "/result_parent"];
+  var nursery = ["/childrenList", "/parentList", "/teacher", "/nurseryInfo_nursery", "/request", "/result_nursery", "/reviewPage", "/calendar"]
   
+  console.log(noLogin.indexOf(pathname))
+
+
   if(parent){
 
   };
