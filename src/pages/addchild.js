@@ -72,7 +72,7 @@ const Index = () => {
                                             <div class="validation"></div>
                                         </div>
                                     </div>
-                                    <div class="text-right"><button type="submit" title="Send Message">Add Child</button></div>
+                                    <div class="text-right"><button type="submit" title="Send Message"><a href="/overviewChild">Add Child</a></button></div>
                                 </form>
                             </div>
                         </div>
