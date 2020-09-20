@@ -11,6 +11,7 @@ import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
 // Components
 import Navbar from "./components/layout/Navbar";
+import NavbarGuardian from "./components/layout/NavbarGuardian";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
 // Pages
@@ -18,12 +19,13 @@ import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 import user from "./pages/user";
-import IndexGuardian from "./pages/IndexGuardian";
+import indexGuardian from "./pages/indexGuardian";
 import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
-import index from "./pages/IndexGuardian";
+// import index from "./pages/IndexGuardian";
 import addchild from "./pages/addchild";
 import assessment from "./pages/assessment";
+import landing from "./pages/landing";
 
 import axios from "axios";
 
@@ -45,25 +47,41 @@ if (token) {
   }
 }
 
+const LabelNavbar = NavbarGuardian;
+
+const FilterNavbar = () =>{
+  //Get path only
+  var pathname = window.location.pathname; 
+  console.log(pathname);
+  var noLogin = ["", "signIn", "signUpParent", "signUpNurseryPackage", "signUpNurseryPackageSelect"];
+  var parent = ["landing", "inbox", "childManager", "search", "editChild", "addChild", "nurseryInfo_parent", "estimation", "result_parent"];
+  var nursery = ["childrenList", "parentList", "teacher", "nurseryInfo_nursery", "request", "result_nursery", "reviewPage", "calendar"]
+  
+  if(parent){
+
+  };
+}
+
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            <Navbar />
+            {FilterNavbar()}
+            <LabelNavbar />
             <div>
               <Switch>
-                <Route exact path="/" component={IndexGuardian} />
-                <AuthRoute exact path="/index" component={index} />
+                <Route exact path="/" component={indexGuardian} />
+                {/* <AuthRoute exact path="/index" component={index} /> */}
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
                 <AuthRoute exact path="/assessment" component={assessment} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
                   exact
-                  path="/IndexGuardian"
-                  component={IndexGuardian}
+                  path="/indexGuardian"
+                  component={indexGuardian}
                 />
                 <AuthRoute exact path="/nurseryInfo" component={nurseryInfo} />
                 <AuthRoute
@@ -72,6 +90,7 @@ class App extends Component {
                   component={overviewChild}
                 />
                 <AuthRoute exact path="/addchild" component={addchild} />
+                <AuthRoute exact path="/landing" component={landing} />
                 <Route exact path="/users/:handle" component={user} />
                 <Route
                   exact
