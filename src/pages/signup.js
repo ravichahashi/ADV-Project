@@ -79,9 +79,9 @@ class signup extends Component {
           </Typography>
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             <TextField
-              id="First Name"
-              name="First Name"
-              type="First Name"
+              id="fName"
+              name="fName"
+              type="fName"
               label="First Name"
               className={classes.textField}
               helperText={errors.fName}
