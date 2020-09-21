@@ -28,7 +28,9 @@ import landing from "./pages/Parent/landing";
 import inbox from "./pages/Parent/inbox";
 import childManager from "./pages/Parent/childmanager";
 import search from "./pages/Parent/search";
-import editChild from "./pages/Parent/editChild"; 
+import editChild from "./pages/Parent/editChild";
+import addchild from "./pages/Parent/addchild";
+import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 
 // Nusery
 
@@ -38,9 +40,8 @@ import home from "./pages/home";
 
 import user from "./pages/user";
 
-import nurseryInfo from "./pages/nurseryInfo";
 import overviewChild from "./pages/overviewChild";
-import addchild from "./pages/addchild";
+
 import assessment from "./pages/assessment";
 
 ////////////////////// End Import Page //////////////////////
@@ -102,6 +103,7 @@ class App extends Component {
                 <AuthRoute exact path="/childmanager" component={childManager} />
                 <AuthRoute exact path="/search" component={search} />
                 <AuthRoute exact path="/editchild" component={editChild} />
+                <AuthRoute exact path="/nurseryInfo" component={nurseryInfo_parent} />
 
                 {/* Nusery */}
                 
@@ -112,7 +114,7 @@ class App extends Component {
                   path="/indexGuardian"
                   component={indexGuardian}
                 />
-                <AuthRoute exact path="/nurseryInfo" component={nurseryInfo} />
+                
                 <AuthRoute
                   exact
                   path="/overviewChild"
