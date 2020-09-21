@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 
 // CSS
-import "../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
-import "../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
-import "../components/NewBiz/lib/animate/animate.min.css"
-import "../components/NewBiz/lib/ionicons/css/ionicons.min.css"
-import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
-import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
-import "../components/NewBiz/css/style.css"
+import "../../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
+import "../../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
+import "../../components/NewBiz/lib/animate/animate.min.css"
+import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css"
+import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
+import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
+import "../../components/NewBiz/css/style.css"
 
 const Index = () => {
     const [emil, setemail] = useState("");
