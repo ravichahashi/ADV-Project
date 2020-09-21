@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import AppIcon from '../images/sunerry1.png';
+import AppIcon from '../../images/sunerry1.png';
 import { Link } from 'react-router-dom';
 
 // MUI Stuff
@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 // Redux stuff
 import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/userActions';
+import { loginUser } from '../../redux/actions/userActions';
 
 const styles = (theme) => ({
   ...theme
@@ -97,7 +97,7 @@ class login extends Component {
               className={classes.button}
               disabled={loading}
             >
-              <Link to="/IndexGuardian">Sign in</Link>
+              <Link to="/landing">Sign in</Link>
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
