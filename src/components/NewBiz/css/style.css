@@ -1766,3 +1766,107 @@ h6 {
 #assessment .about-container p:last-child {
   margin-bottom: 0;
 }
+
+/* assResults */
+
+#assResults {
+  background: #feddcb;
+  padding: 20px 0;
+}
+
+#assResults .about-container .background {
+  margin: 20px 0;
+}
+
+#assResults .about-container .title {
+  color: #333;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#assResults .about-container p {
+  line-height: 10px;
+}
+
+#assResults .about-container p:last-child {
+  margin-bottom: 0;
+}
+/* section service */
+/* section contact */
+#assResults .about-container .icon-box {
+  background: #eeeae8;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+#assResults .about-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 18px;
+} 
+
+#assResults .about-container .icon-box .title a {
+  color: #283d50;
+}
+
+#assResults .about-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#assResults .about-extra {
+  padding-top: 60px;
+}
+
+#assResults .about-extra h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#assResults2 {
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#assResults2 .section-header {
+  padding-bottom: 5px;
+}
+
+#assResults2 .contact-about h3 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #007bff;
+}
+
+#assResults2 .contact-about p {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+  color: #888;
+}
+
+#assResults2 .info {
+  color: #283d50;
+}
+
+#assResults2 .info i {
+  font-size: 32px;
+  color: #007bff;
+  float: left;
+  line-height: 1;
+}
+
+#assResults2 .info p {
+  padding: 0 0 10px 36px;
+  line-height: 28px;
+  font-size: 14px;
+}

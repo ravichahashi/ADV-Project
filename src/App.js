@@ -28,8 +28,10 @@ import overviewChild from "./pages/overviewChild";
 import addchild from "./pages/addchild";
 import assessment from "./pages/assessment";
 import landing from "./pages/landing";
+import assResults from "./pages/assResults";
 
 import axios from "axios";
+import AssResults from "./pages/assResults";
 
 const theme = createMuiTheme(themeObject);
 
@@ -82,6 +84,7 @@ class App extends Component {
                 <AuthRoute exact path="/login" component={login} />
                 <AuthRoute exact path="/signup" component={signup} />
                 <AuthRoute exact path="/assessment" component={assessment} />
+                <AuthRoute exact path="/assResults" component={AssResults} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
                   exact
