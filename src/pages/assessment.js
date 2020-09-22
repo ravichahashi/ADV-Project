@@ -5,20 +5,19 @@ const click = (e) => {
   console.log(e);
 };
 
-const ChangeType = (e) => {
-  console.log(e);
-};
-
 const Assessment = () => {
-  const [child, setchild] = useState([
+  const ChangeType = (e) => {
+    console.log(e);
+  };
+  const [child, setchild] = useState(
     {
       name: "Suriya Techalue",
       age: "2",
       nickname: "ฟลุ๊ค",
     },
-  ]);
+  );
 
-  const [assessment, setassessment] = useState([
+  const [assessment, setassessment] = useState(
     {
       ques: "คำถามข้อที่ 1",
       assType: "GM",
@@ -26,11 +25,16 @@ const Assessment = () => {
       passCond: "รายละเอียดการผ่าน",
       nopassCond: "รายละเอียดการไม่ผ่าน",
       comment: "",
-    },
-  ]);
+    }
+  );
+
+  function setComment(msg){
+    setassessment({...assessment,comment:msg})
+  }
 
   return (
     <div>
+      
       <div section id="services" className="section-bg">
         <div className="container">
           <div
@@ -48,8 +52,8 @@ const Assessment = () => {
               <h4 className="title">
                 <a>
                   {" "}
-                  ชื่อ {child[0].name} อายุ {child[0].age} ปี ชื่อเล่น{" "}
-                  {child[0].nickname}{" "}
+                  ชื่อ {child.name} อายุ {child.age} ปี ชื่อเล่น{" "}
+                  {child.nickname}{" "}
                 </a>
               </h4>
             </div>
@@ -61,11 +65,11 @@ const Assessment = () => {
         <div class="container">
           <div className="row about-extra">
             <div className="col-lg-6 wow fadeInUp">
-              <h1>{assessment[0].ques}</h1>
+              <h1>{assessment.ques}</h1>
               <img src="./suriya.png" className="img-fluid" alt />
               <p>
-                <b>{assessment[0].assType}</b> <br></br>
-                {assessment[0].detail}
+                <b>{assessment.assType}</b> <br></br>
+                {assessment.detail}
               </p>
             </div>
             <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
@@ -81,7 +85,7 @@ const Assessment = () => {
                     <h1>ผ่าน</h1>
                   </Button>
                 </div>
-                <h5 class="title">{assessment[0].passCond}</h5>
+                <h5 class="title">{assessment.passCond}</h5>
               </div>
               <div>
                 <br />
@@ -99,7 +103,7 @@ const Assessment = () => {
                     <h1>ไม่ผ่าน</h1>
                   </Button>
                 </div>
-                <h5 class="title">{assessment[0].nopassCond}</h5>
+                <h5 class="title">{assessment.nopassCond}</h5>
               </div>
             </div>
           </div>
@@ -123,6 +127,7 @@ const Assessment = () => {
                     data-msg="Please write something for us"
                     placeholder="Comment"
                     defaultValue={""}
+                    onChange={(e)=>setComment(e.target.value)}
                   />
                   <div className="validation" />
                 </div>
@@ -135,13 +140,7 @@ const Assessment = () => {
         <div class="row row-eq-height justify-content-center">
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
-              <Button
-                type="ChangeType"
-                onChick={(e) => {
-                  e.preventDefault();
-                  ChangeType(10);
-                }}
-              >
+              <Button type="ChangeType" onClick={() => ChangeType(10)}>
                 <h1>Previous</h1>
               </Button>
             </div>
@@ -149,13 +148,7 @@ const Assessment = () => {
 
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
-              <Button
-                type="ChangeType"
-                onChick={(e) => {
-                  e.preventDefault();
-                  ChangeType(11);
-                }}
-              >
+              <Button type="ChangeType" onClick={() => ChangeType(11)}>
                 <h1>Next</h1>
               </Button>
             </div>

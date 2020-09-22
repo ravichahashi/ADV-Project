@@ -33,19 +33,11 @@ import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 
 // Nusery
-
-
 import home from "./pages/home";
-
-
 import user from "./pages/user";
-
 import overviewChild from "./pages/overviewChild";
-
 import assessment from "./pages/assessment";
-
-import landing from "./pages/landing";
-import assResults from "./pages/assResults";
+// import landing from "./pages/landing";
 
 
 
