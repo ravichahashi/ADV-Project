@@ -13,7 +13,7 @@ import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../components/NewBiz/css/style.css"
 
 const Index = () => {
-    const [Name , setName] = useState("กวิสรา ศักดิ์บูรณาเพชร");
+    const [Name , setName] = useState("รักษ์พงศ์ ทอหุล");
     return(
 <div>
   {/* ==========================
