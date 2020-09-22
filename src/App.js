@@ -84,7 +84,7 @@ class App extends Component {
                 {/* Parent */}
                 <AuthRoute exact path="/landing" component={landing} />
                 <AuthRoute exact path="/inbox" component={inbox} />
-                <AuthRoute exact path="/childmanager" component={childManager} />
+                <AuthRoute exact path="/childmanager" component={overviewChild} />
                 <AuthRoute exact path="/search" component={search} />
                 <AuthRoute exact path="/editchild" component={editChild} />
                 <AuthRoute exact path="/nurseryInfo" component={nurseryInfo_parent} />
