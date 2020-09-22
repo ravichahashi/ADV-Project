@@ -11,10 +11,11 @@ import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
 // Components
 import Navbar from "./components/layout/Navbar";
-import NavbarGuardian from "./components/layout/NavbarGuardian";
-import NavbarNursery from "./components/layout/NavbarNursery";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
+
+// CSS
+import "./components/NewBiz/css/style.css"
 
 ////////////////////// Pages //////////////////////
 // No User
@@ -62,29 +63,16 @@ if (token) {
   }
 }
 
-const LabelNavbar = Navbar;
-const FilterNavbar = () =>{
-  //Get path only
-  var pathname = window.location.pathname; 
-  // console.log(pathname);
-  var noLogin = ["/", "/signIn", "/signup", "/signUpNurseryPackage", "/signupNursery"];
-  var parent = ["/landing", "/inbox", "/childManager", "/search", "/editChild", "/addChild", "/nurseryInfo_parent", "/estimation", "/result_parent"];
-  var nursery = ["/childrenList", "/parentList", "/teacher", "/nurseryInfo_nursery", "/request", "/result_nursery", "/reviewPage", "/calendar"];
-  
-  // console.log(noLogin.indexOf(pathname));
-  console.log("This user: "+AuthRoute);
-
-};
 
 class App extends Component {
+
   render() {
     return (
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            {FilterNavbar()}
-            <LabelNavbar />
-            <div>
+            <Navbar />
+            <div> {/*className ="paddingtop"*/}
               <Switch>
                 {/* No User */}
                 <Route exact path="/" component={indexGuardian} />
