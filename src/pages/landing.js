@@ -13,11 +13,11 @@ import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../components/NewBiz/css/style.css"
 
 const Index = () => {
-    const [Name , setName] = useState("เด็กชายสุริยา ทอหุล");
+  const [Name, setName] = useState("เด็กชายสุริยา เตชะบุญ");
   return (
     <div>
       <main id="main">
-          <section id="your-fam">
+        <section id="your-fam">
           <div className="container">
             <header className="section-header">
               <h3>ครอบครัวของคุณ</h3>
@@ -37,60 +37,86 @@ const Index = () => {
               </div>
             </div>
           </div>
-          </section>
-        {/* <section id="testimonials" className="section-bg">
+        </section>
+        <section id="team">
           <div className="container">
-            <header className="section-header">
-              <h3>Testimonials</h3>
-            </header>
-            <div className="row justify-content-center">
-              <div className="col-lg-8">
-                <div className="owl-carousel testimonials-carousel wow fadeInUp">
-                  <div className="testimonial-item">
-                    <img src="./suriya.png" className="testimonial-img" alt />
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo &amp; Founder</h4>
-                    <p>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    </p>
+            <div className="section-header">
+              <h3>Team</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            </div>
+            <div className="row">
+              <div className="col-lg-3 col-md-6 wow fadeInUp">
+                <div className="member">
+                  <img src="img/team-1.jpg" className="img-fluid" alt />
+                  <div className="member-info">
+                    <div className="member-info-content">
+                      <h4>Walter White</h4>
+                      <span>Chief Executive Officer</span>
+                      <div className="social">
+                        <a href><i className="fa fa-twitter" /></a>
+                        <a href><i className="fa fa-facebook" /></a>
+                        <a href><i className="fa fa-google-plus" /></a>
+                        <a href><i className="fa fa-linkedin" /></a>
+                      </div>
+                    </div>
                   </div>
-                  <div className="testimonial-item">
-                    <img src="img/testimonial-2.jpg" className="testimonial-img" alt /> 
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                    <p>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    </p>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div className="member">
+                  <img src="img/team-2.jpg" className="img-fluid" alt />
+                  <div className="member-info">
+                    <div className="member-info-content">
+                      <h4>Sarah Jhonson</h4>
+                      <span>Product Manager</span>
+                      <div className="social">
+                        <a href><i className="fa fa-twitter" /></a>
+                        <a href><i className="fa fa-facebook" /></a>
+                        <a href><i className="fa fa-google-plus" /></a>
+                        <a href><i className="fa fa-linkedin" /></a>
+                      </div>
+                    </div>
                   </div>
-                  <div className="testimonial-item">
-                    <img src="img/testimonial-3.jpg" className="testimonial-img" alt />
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
-                    <p>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                   </p>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div className="member">
+                  <img src="img/team-3.jpg" className="img-fluid" alt />
+                  <div className="member-info">
+                    <div className="member-info-content">
+                      <h4>William Anderson</h4>
+                      <span>CTO</span>
+                      <div className="social">
+                        <a href><i className="fa fa-twitter" /></a>
+                        <a href><i className="fa fa-facebook" /></a>
+                        <a href><i className="fa fa-google-plus" /></a>
+                        <a href><i className="fa fa-linkedin" /></a>
+                      </div>
+                    </div>
                   </div>
-                  <div className="testimonial-item">
-                    <img src="img/testimonial-4.jpg" className="testimonial-img" alt />
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <p>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    </p>
-                  </div>
-                  <div className="testimonial-item">
-                    <img src="img/testimonial-5.jpg" className="testimonial-img" alt />
-                    <h3>John Larson</h3>
-                    <h4>Entrepreneur</h4>
-                    <p>
-                      Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                   </p>
+                </div>
+              </div>
+              <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div className="member">
+                  <img src="img/team-4.jpg" className="img-fluid" alt />
+                  <div className="member-info">
+                    <div className="member-info-content">
+                      <h4>Amanda Jepson</h4>
+                      <span>Accountant</span>
+                      <div className="social">
+                        <a href><i className="fa fa-twitter" /></a>
+                        <a href><i className="fa fa-facebook" /></a>
+                        <a href><i className="fa fa-google-plus" /></a>
+                        <a href><i className="fa fa-linkedin" /></a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>#testimonials */}
+        </section>{/* #team */}
+
 
         <section id="why-us" className="wow fadeIn">
           <div className="container">

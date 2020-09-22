@@ -130,7 +130,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: #ffd872;
+  background: #ffc78f;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
@@ -475,7 +475,7 @@ h6 {
 --------------------------------*/
 
 .section-bg {
-  background: #fcf7e2;
+  background: #faf1d6;
 }
 
 /* About Us Section
@@ -672,7 +672,7 @@ h6 {
 
 #why-us {
   padding: 30px 0;
-  background: #feddcb;
+  background: #fadee1;
 }
 
 #why-us .section-header h3,
@@ -681,8 +681,8 @@ h6 {
 }
 
 #why-us .card {
-  background: #fad4ae;
-  border-color: #fdd76c;
+  background: #fff;
+  border-color: #b6e3e9;
   border-radius: 10px;
   margin: 0 15px;
   padding: 15px 0;
@@ -750,7 +750,7 @@ h6 {
 --------------------------------*/
 #why-uss {
   padding: 10px 0 10px 0;
-  background: #feddcb;
+  background: #fadee1;
 }
 
 #why-uss .box {
@@ -818,7 +818,7 @@ h6 {
 --------------------------------*/
 #your-fam {
   padding: 30px 0;
-  background: #fad8db;
+  background: #faf1d6;
 }
 
 #your-fam .section-header h3,
@@ -827,7 +827,7 @@ h6 {
 }
 
 #your-fam .card {
-  background: #fdbebe;
+  background: #fdafab;
   border-color: #e094a5;
   border-radius: 10px;
   margin: 0 15px;
