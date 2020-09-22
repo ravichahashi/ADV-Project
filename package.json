@@ -13,6 +13,7 @@
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
+    "react-svg-radar-chart": "^1.2.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
@@ -31,5 +32,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://us-central1-sunerry-6cc5e.cloudfunctions.net/api"
+  "proxy": "https://us-central1-sunerry-6cc5e.cloudfunctions.net/api",
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
 }

@@ -33,20 +33,16 @@ import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 
 // Nusery
-
-
 import home from "./pages/home";
-
-
 import user from "./pages/user";
-
 import overviewChild from "./pages/overviewChild";
-
 import assessment from "./pages/assessment";
+// import landing from "./pages/landing";
 
-////////////////////// End Import Page //////////////////////
+
 
 import axios from "axios";
+import AssResults from "./pages/assResults";
 
 const theme = createMuiTheme(themeObject);
 
@@ -108,6 +104,7 @@ class App extends Component {
                 {/* Nusery */}
                 
                 <AuthRoute exact path="/assessment" component={assessment} />
+                <AuthRoute exact path="/assResults" component={AssResults} />
                 <Route exact path="/home" component={home} />
                 <AuthRoute
                   exact
