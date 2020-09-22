@@ -27,7 +27,7 @@ const Index = () => {
               <div className="col-lg-4 mb-4">
                 <div className="card wow bounceInUp">
                   {/* <i className="fa fa-diamond" /> */}
-                  <img src="./suriya.png" />
+                  {/* <img src="./suriya.png" /> */}
                   <div className="card-body">
                     <h5 className="card-title"><a href="">{Name}</a></h5>
                     <p className="card-text">4 ขวบ</p>

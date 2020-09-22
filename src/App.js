@@ -27,7 +27,7 @@ import signupNursery from "./pages/NoUser/signUpNursery";
 // Parent
 import landing from "./pages/Parent/landing";
 import inbox from "./pages/Parent/inbox";
-import childManager from "./pages/Parent/childmanager";
+import overviewChild from "./pages/overviewChild";
 import search from "./pages/Parent/search";
 import editChild from "./pages/Parent/editChild";
 import addchild from "./pages/Parent/addchild";
@@ -36,7 +36,7 @@ import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 // Nusery
 import home from "./pages/home";
 import user from "./pages/user";
-import overviewChild from "./pages/overviewChild";
+
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
 

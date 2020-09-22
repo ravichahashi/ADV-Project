@@ -10,7 +10,7 @@ import "../NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../NewBiz/css/style.css"
 
 var noLogin = ["/", "/login", "/signup", "/signUpNurseryPackage", "/signupNursery"];
-var parent = ["/landing", "/inbox", "/childmanager", "/overviewChild", "/search", "/editChild", "/addChild", "/nurseryInfo", "/assessment", "/assResults"];
+var parent = ["/landing", "/inbox", "/childmanager", "/overviewChild", "/search", "/editchild", "/addchild", "/nurseryInfo", "/assessment", "/assResults"];
 var nursery = ["/childrenList", "/parentList", "/teacher", "/nurseryInfo_nursery", "/request", "/result_nursery", "/reviewPage", "/calendar"];
 
 const Nevbar = () => {
