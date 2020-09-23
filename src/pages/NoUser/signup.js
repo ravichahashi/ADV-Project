@@ -14,6 +14,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { signupUser } from "../../redux/actions/userActions";
 
+
 const styles = (theme) => ({
   ...theme,
 });
@@ -66,7 +67,7 @@ class signup extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
+      <Grid container className={classes.form} style={{ padding: 80 }}>
         <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
