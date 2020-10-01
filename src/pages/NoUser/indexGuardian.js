@@ -13,7 +13,13 @@ import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../../components/NewBiz/css/style.css"
 
 const Index = () => {
-  const [emil, setemail] = useState("");
+  const [nursery, setNursery] = useState([
+    {
+      nurseryName: "",
+      city: "เชียงใหม่",
+      district: "เมือง"
+    }
+  ]);
   return (
     <div>
       <main id="main">
@@ -25,20 +31,20 @@ Services Section
             <div className="col-md-10 col-lg-ุ5">
               <div className="box">
                 <div className="row">
-                  <h4 className="title">Nursery ใกล้บ้าน</h4>
+                  <h4 className="title">Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
                   <h4 className="title">จังหวัด<a>&nbsp;</a></h4>
                   <option></option>
                   <form>
                     <select name="position">
-                      <option></option><option value="System Engineer ">System Engineer </option><option value="Accounting">Accounting</option>
-                    </select>
+                  <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;
                   </form>
                   <h4 className="title">อำเภอ&nbsp;</h4>
                   <option></option>
                   <form>
                     <select name="position">
-                      <option></option><option value="System Engineer ">System Engineer </option><option value="Accounting">Accounting</option>
-                    </select>
+                      <option></option><option value="district">{nursery[0].district}</option><option value="Accounting">Accounting</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </form>
                   <section><option></option></section>
                   <section id="search">
@@ -53,12 +59,13 @@ Services Section
             </div>
           </div>
         </section>{/* #services */}
-        <section id="services" className="section-bg">
+        <section id="op" className="section-bg">
           <div className="container">
             <header className="section-header">
               <h3>อยากรู้พัฒนาการของลูกคุณหรือเปล่า?</h3>
               <h3>ลองประเมินด้วยตนเองดูสิ</h3>
             </header>
+            <section id="op"></section>
             <div className="row">
               <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
@@ -258,6 +265,7 @@ Services Section
       </main>
 
     </div>
+
 
   );
 };

@@ -22,7 +22,7 @@ const Nevbar = () => {
         {/* <div className="container"> */}
           <div className="logo float-left">
             <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <a href="/landing" className="scrollto"><img src="./sunerry1.png" alt className="img-fluid" /></a>
+            <a href="/landing" className="scrollto"><img src="./sunerry2.png" alt className="img-fluid" /></a>
           </div>
         <nav className="main-nav float-right d-none d-lg-block">
           <ul>
@@ -124,7 +124,7 @@ const Nevbar = () => {
             {/* <div className="container"> */}
               <div className="logo float-left">
                 <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="/" className="scrollto"><img src="./sunerry1.png" alt className="img-fluid" /></a>
+                <a href="/" className="scrollto"><img src="./sunerry2.png" alt className="img-fluid" /></a>
               </div>
             <nav className="main-nav float-right d-none d-lg-block">
               <ul>
