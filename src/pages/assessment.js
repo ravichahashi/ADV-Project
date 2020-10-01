@@ -1,40 +1,44 @@
 import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
+import { getQuestions } from "../redux/actions/dataActions";
+import { connect } from "react-redux";
 
 const click = (e) => {
   console.log(e);
 };
 
-const Assessment = () => {
+const Assessment = (props) => {
+  const { getQuestions } = props;
+  useEffect(() => {
+    getQuestions();
+  }, [getQuestions]);
+  const { questions, loading } = props.data;
+  questions.map((question) => console.log(question));
+
   const ChangeType = (e) => {
     console.log(e);
   };
-  const [child, setchild] = useState(
-    {
-      name: "Suriya Techalue",
-      age: "2",
-      nickname: "ฟลุ๊ค",
-    },
-  );
+  const [child, setchild] = useState({
+    name: "Suriya Techalue",
+    age: "2",
+    nickname: "ฟลุ๊ค",
+  });
 
-  const [assessment, setassessment] = useState(
-    {
-      ques: "คำถามข้อที่ 1",
-      assType: "GM",
-      detail: "รายละเอียดการทดสอบ",
-      passCond: "รายละเอียดการผ่าน",
-      nopassCond: "รายละเอียดการไม่ผ่าน",
-      comment: "",
-    }
-  );
+  const [assessment, setassessment] = useState({
+    ques: "คำถามข้อที่ 1",
+    assType: "GM",
+    detail: "รายละเอียดการทดสอบ",
+    passCond: "รายละเอียดการผ่าน",
+    nopassCond: "รายละเอียดการไม่ผ่าน",
+    comment: "",
+  });
 
-  function setComment(msg){
-    setassessment({...assessment,comment:msg})
+  function setComment(msg) {
+    setassessment({ ...assessment, comment: msg });
   }
 
   return (
     <div>
-      
       <div section id="services" className="section-bg">
         <div className="container">
           <div
@@ -127,7 +131,7 @@ const Assessment = () => {
                     data-msg="Please write something for us"
                     placeholder="Comment"
                     defaultValue={""}
-                    onChange={(e)=>setComment(e.target.value)}
+                    onChange={(e) => setComment(e.target.value)}
                   />
                   <div className="validation" />
                 </div>
@@ -159,4 +163,12 @@ const Assessment = () => {
   );
 };
 
-export default Assessment;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+const mapDispatchToProps = {
+  getQuestions: getQuestions,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Assessment);
