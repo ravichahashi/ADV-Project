@@ -19,12 +19,12 @@ const Index = () => {
       <main id="main">
           <section id="your-fam">
           <div className="container">
-            <header className="section-header">
-              <h3>ครอบครัวของคุณ</h3>
+              <header className="section-header">
+              <h3><a href="/childmanager">ครอบครัวของคุณ</a></h3>
               <p></p>
-            </header>
+              </header>
             <div className="row row-eq-height justify-content-center">
-              <div className="col-lg-4 mb-4">
+              <div className="col-lg-3.5 mb-4">
                 <div className="card wow bounceInUp">
                   {/* <i className="fa fa-diamond" /> */}
                   <div className="img-size"><img src="./suriya.png" /></div>

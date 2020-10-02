@@ -23,15 +23,16 @@ const Index = () => {
                             <h3>Add Child</h3>
                         </header>
                         <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-md-10 info">
+                            <div class="form" align="center">
+                                <div className="img-size">
                                     <img src="./suriya.png" />
                                 </div>
+                                <section id="op"></section>
                                 <div class="col-lg-10">
-                                <div class="form">
-                                    <div class="text-center"><button type="submit" title="Send Message">Upload</button></div>
+                                    <div class="form">
+                                        <div class="text-center"><button type="submit" title="Send Message">Upload</button></div>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <br></br>
                             <div class="form">
@@ -72,7 +73,12 @@ const Index = () => {
                                             <div class="validation"></div>
                                         </div>
                                     </div>
-                                    <div class="text-right"><button type="submit" title="Send Message"><a href="/overviewChild">Add Child</a></button></div>
+                                    <div className="row" class="text-right">
+                                    <p>
+                                        <button type="submit" title="Send Message"><a href="/overviewChild">Cancel</a></button>&nbsp;&nbsp;&nbsp;
+                                        <button type="submit" title="Send Message"><a href="/overviewChild">Add Child</a></button>
+                                    </p>
+                                    </div>
                                 </form>
                             </div>
                         </div>
