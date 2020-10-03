@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import { getQuestions } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
+// import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
+import * as ReactDom from 'react-dom';
 
 const click = (e) => {
   console.log(e);
@@ -78,16 +80,24 @@ const Assessment = (props) => {
             </div>
             <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
               <div className="box">
-                <div
-                  class="card wow bounceInUp"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    click(1);
-                  }}
-                >
-                  <Button type="pass">
-                    <h1>ผ่าน</h1>
-                  </Button>
+                <div class="card wow bounceInUp">
+                  <h1>
+                    ผ่าน :
+                    <input
+                      name="pass"
+                      type="checkbox"
+                      // cssClass="e-success"
+                      // checked={this.state.is}
+                      onChange={(e) => {
+                        if(e.target.value==="on"){
+                          click(1);
+                        }
+                        else{
+                          click(0);
+                        }
+                      }}
+                    />
+                  </h1>
                 </div>
                 <h5 class="title">{assessment.passCond}</h5>
               </div>
@@ -96,17 +106,18 @@ const Assessment = (props) => {
                 <br />
               </div>
               <div className="box">
-                <div
-                  class="card wow bounceInUp"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    click(0);
-                  }}
-                >
-                  <Button type="notpass">
-                    <h1>ไม่ผ่าน</h1>
-                  </Button>
-                </div>
+                <h1>
+                  ไม่ผ่าน :
+                  <input
+                    name="notpass"
+                    type="checkbox"
+                    cssClass="e-success"
+                    // checked={}
+                    onChange={(e) => {
+                      click(e.target.value);
+                    }}
+                  />
+                </h1>
                 <h5 class="title">{assessment.nopassCond}</h5>
               </div>
             </div>
