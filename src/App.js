@@ -88,7 +88,6 @@ class App extends Component {
                 <AuthRoute exact path="/search" component={search} />
                 <AuthRoute exact path="/editchild" component={editChild} />
                 <AuthRoute exact path="/nurseryInfo" component={nurseryInfo_parent} />
-
                 {/* Nusery */}
                 
                 <AuthRoute exact path="/assessment" component={assessment} />

@@ -13,21 +13,21 @@ import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../../components/NewBiz/css/style.css"
 
 const Index = () => {
-    const [Name , setName] = useState("เด็กชายสุริยา ทอหุล");
+    const [Name , setName] = useState("เด็กชายสุริยา เตชะบุญ");
   return (
     <div>
       <main id="main">
           <section id="your-fam">
           <div className="container">
-            <header className="section-header">
-              <h3>ครอบครัวของคุณ</h3>
+              <header className="section-header">
+              <h3><a href="/childmanager">ครอบครัวของคุณ</a></h3>
               <p></p>
-            </header>
+              </header>
             <div className="row row-eq-height justify-content-center">
-              <div className="col-lg-4 mb-4">
+              <div className="col-lg-3.5 mb-4">
                 <div className="card wow bounceInUp">
                   {/* <i className="fa fa-diamond" /> */}
-                  <img src="./suriya.png" />
+                  <div className="img-size"><img src="./suriya.png" /></div>
                   <div className="card-body">
                     <h5 className="card-title"><a href="">{Name}</a></h5>
                     <p className="card-text">4 ขวบ</p>
