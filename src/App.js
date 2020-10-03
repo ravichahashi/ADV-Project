@@ -75,31 +75,31 @@ class App extends Component {
             <div> {/*className ="paddingtop"*/}
               <Switch>
                 {/* No User */}
-                <Route exact path="/" component={indexGuardian} />
-                <Route exact path="/login" component={login} />
-                <Route exact path="/signup" component={signup} />
-                <Route exact path="/signupnurserypackage" component={signUpNurseryPackage} />
-                <Route exact path="/signupnursery" component={signupNursery} />
+                <AuthRoute exact path="/" component={indexGuardian} />
+                <AuthRoute exact path="/login" component={login} />
+                <AuthRoute exact path="/signup" component={signup} />
+                <AuthRoute exact path="/signupnurserypackage" component={signUpNurseryPackage} />
+                <AuthRoute exact path="/signupnursery" component={signupNursery} />
                 
                 {/* Parent */}
-                <AuthRoute exact path="/landing" component={landing} />
-                <AuthRoute exact path="/inbox" component={inbox} />
-                <AuthRoute exact path="/childmanager" component={overviewChild} />
-                <AuthRoute exact path="/search" component={search} />
-                <AuthRoute exact path="/editchild" component={editChild} />
-                <AuthRoute exact path="/nurseryInfo" component={nurseryInfo_parent} />
+                <Route exact path="/landing" component={landing} />
+                <Route exact path="/inbox" component={inbox} />
+                <Route exact path="/childmanager" component={overviewChild} />
+                <Route exact path="/search" component={search} />
+                <Route exact path="/editchild" component={editChild} />
+                <Route exact path="/nurseryInfo" component={nurseryInfo_parent} />
                 {/* Nusery */}
                 
-                <AuthRoute exact path="/assessment" component={assessment} />
-                <AuthRoute exact path="/assResults" component={AssResults} />
+                <Route exact path="/assessment" component={assessment} />
+                <Route exact path="/assResults" component={AssResults} />
                 <Route exact path="/home" component={home} />
-                <AuthRoute
+                <Route
                   exact
                   path="/indexGuardian"
                   component={indexGuardian}
                 />
                 
-                <AuthRoute
+                <Route
                   exact
                   path="/overviewChild"
                   component={overviewChild}

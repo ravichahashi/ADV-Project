@@ -67,7 +67,7 @@ class signup extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form} style={{ padding: 80 }}>
+      <Grid container className={classes.form} style={{ padding: 100 }}>
         <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
@@ -91,6 +91,7 @@ class signup extends Component {
               onChange={this.handleChange}
               halfWidth
             />
+            <a>&nbsp;&nbsp;</a>
             <TextField
               id="Last Name"
               name="Last Name"
@@ -168,22 +169,23 @@ class signup extends Component {
                 {errors.general}
               </Typography>
             )}
+            <div className="form-check">
+              <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+              <label className="form-check-label" htmlFor="exampleCheck1">
+                <small>I agree to Sunerry's <Link to="#">Terms of Use</Link> and <Link to="#">Cookie &amp; Privacy Policy.</Link></small>
+              </label>
+            </div>
             <Button
               type="submit"
               variant="contained"
               color="primary"
               className={classes.button}
               disabled={loading}
-            >
-              <Link to="/login">Sign Up to Sunerry</Link>
+            >Sign Up to Sunerry
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
-            <br />
-            <small>
-              Already have an account ? Sign in <Link to="/login">Here</Link>
-            </small>
           </form>
         </Grid>
         <Grid item sm />

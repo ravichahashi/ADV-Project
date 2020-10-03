@@ -56,7 +56,7 @@ class login extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form} style={{ padding: 80 }}>
+      <Grid container className={classes.form} style={{ padding: 100 }}>
         <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
@@ -99,17 +99,20 @@ class login extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
-            >
-              <Link to="/landing">Sign in</Link>
+            >Sign in
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
             <br />
             <small>
-              dont have an account ? sign up <Link to="/signup">here</Link>
+              Don't have an account ? sign up <Link to="/signup">here</Link>
             </small>
           </form>
+          <br />
+          <br />
+          <br />
+          <br />
         </Grid>
         <Grid item sm />
       </Grid>
