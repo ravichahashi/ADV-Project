@@ -8,11 +8,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-.paddingtopzero{
+.paddingtopzero {
   padding-top: 0%;
 }
 
-.paddingtop{
+.paddingtop {
   padding-top: 5%;
 }
 
@@ -620,7 +620,7 @@ h6 {
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
-#services .box h5{
+#services .box h5 {
   font-weight: 600;
   font-size: 17px;
 }
@@ -647,8 +647,6 @@ h6 {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
-
-
 
 #services .icon {
   position: absolute;
@@ -684,7 +682,7 @@ h6 {
   margin-bottom: 0;
 }
 
-#services .img-size img{
+#services .img-size img {
   max-width: 70px;
   max-height: 70px;
   width: auto;
@@ -789,7 +787,7 @@ h6 {
   background: #f4938a;
 }
 
-#why-us .section-header h3{
+#why-us .section-header h3 {
   color: #fff;
 }
 
@@ -960,7 +958,7 @@ h6 {
   border-color: #7a0070;
 }
 
-#your-fam .img-size img{
+#your-fam .img-size img {
   max-width: 150px;
   max-height: 150px;
   width: auto;
@@ -971,7 +969,7 @@ h6 {
 #your-fam .card i {
   font-size: 48px;
   padding-top: 15px;
-  color: #fc906f
+  color: #fc906f;
 }
 
 #your-fam .card h5 {
@@ -982,7 +980,7 @@ h6 {
 
 #your-fam .card p {
   font-size: 15px;
-  color:  rgb(54, 54, 54);
+  color: rgb(54, 54, 54);
 }
 
 #your-fam .card .readmore {
@@ -1159,8 +1157,18 @@ h6 {
   background: #3395ff;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i,
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover i {
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-preview:hover
+  i,
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-details:hover
+  i {
   color: #fff;
 }
 
@@ -1491,7 +1499,7 @@ h6 {
   cursor: pointer;
 }
 
-#contact .img-size img{
+#contact .img-size img {
   max-width: 200px;
   max-height: 200px;
   width: auto;
@@ -1511,7 +1519,7 @@ h6 {
   padding: 3px 15px;
   color: #fff;
   transition: 0.3s;
-} 
+}
 
 #search .form button[type="submit"]:hover {
   background: #ff8c8c;
@@ -1750,7 +1758,6 @@ h6 {
   }
 }
 
-
 #about {
   background: #feddcb;
   padding: 60px 0;
@@ -1814,7 +1821,7 @@ h6 {
 
 /* <--assessment--> */
 
-#assessment  button[type="pass"] {
+#assessment button[type="pass"] {
   background: #43eb10;
   border: 0;
   border-radius: 0 px;
@@ -1822,12 +1829,12 @@ h6 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
 }
-#assessment   button[type="pass"]:hover {
+#assessment button[type="pass"]:hover {
   background: #bcf0ac;
   cursor: pointer;
 }
 
-#assessment  button[type="notpass"] {
+#assessment button[type="notpass"] {
   background: #eb1010;
   border: 0;
   border-radius: 0px;
@@ -1835,12 +1842,29 @@ h6 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
 }
-#assessment   button[type="notpass"]:hover {
+#assessment button[type="notpass"]:hover {
   background: #f0c5ac;
   cursor: pointer;
 }
 
-#assessment  button[type="ChangeType"] {
+#assessment  input[ name="notpass"] {
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+
+#assessment  input[ name="pass"] {
+  outline: 2px solid green;
+  outline-offset: -2px;
+}
+
+#assessment input[type="checkbox"] {
+  padding-top: 500px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+#assessment button[type="ChangeType"] {
   background: #4632f7;
   border: 0;
   border-radius: 0px;
@@ -1848,7 +1872,7 @@ h6 {
   color: rgb(255, 255, 255);
   transition: 0.3s;
 }
-#assessment   button[type="ChangeType"]:hover {
+#assessment button[type="ChangeType"]:hover {
   background: #acb3f0;
   cursor: pointer;
 }
@@ -1940,7 +1964,7 @@ h6 {
   font-weight: 600;
   margin-bottom: 5px;
   font-size: 18px;
-} 
+}
 
 #assResults .about-container .icon-box .title a {
   color: #283d50;

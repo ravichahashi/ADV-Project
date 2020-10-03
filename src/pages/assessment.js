@@ -86,7 +86,6 @@ const Assessment = (props) => {
                     <input
                       name="pass"
                       type="checkbox"
-                      // cssClass="e-success"
                       // checked={this.state.is}
                       onChange={(e) => {
                         if(e.target.value==="on"){
