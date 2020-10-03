@@ -24,6 +24,7 @@ import login from "./pages/NoUser/login";
 import signup from "./pages/NoUser/signup";
 import signUpNurseryPackage from "./pages/NoUser/signUpNurseryPackage";
 import signupNursery from "./pages/NoUser/signUpNursery";
+import pretestinfo from "./pages/NoUser/pretestinfo";
 // Parent
 import landing from "./pages/Parent/landing";
 import inbox from "./pages/Parent/inbox";
@@ -80,6 +81,13 @@ class App extends Component {
                 <AuthRoute exact path="/signup" component={signup} />
                 <AuthRoute exact path="/signupnurserypackage" component={signUpNurseryPackage} />
                 <AuthRoute exact path="/signupnursery" component={signupNursery} />
+
+                <Route exact path="/" component={indexGuardian} />
+                <Route exact path="/login" component={login} />
+                <Route exact path="/signup" component={signup} />
+                <Route exact path="/signupnurserypackage" component={signUpNurseryPackage} />
+                <Route exact path="/signupnursery" component={signupNursery} />
+                <Route exact path="/pretestinfo" component={pretestinfo} />
                 
                 {/* Parent */}
                 <Route exact path="/landing" component={landing} />

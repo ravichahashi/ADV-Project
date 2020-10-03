@@ -13,14 +13,19 @@ import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../../components/NewBiz/css/style.css"
 
 const Index = () => {
-    const [Name , setName] = useState("เด็กชายสุริยา เตชะบุญ");
+  const [Name, setName] = useState("เด็กชายสุริยา เตชะบุญ");
   return (
     <div>
       <main id="main">
-          <section id="your-fam">
-          <div className="container">
+        <section id="your-fam">
+          <div className="container" align-text="center">
               <header className="section-header">
-              <h3><a href="/childmanager">ครอบครัวของคุณ</a></h3>
+                <h3><a href="/childmanager">ครอบครัวของคุณ</a></h3>
+                <section id="more">
+                <div class="form">
+                  <div align="center"><button type="submit" title="More"><a href="/childmanager">เพิ่มเติม</a></button></div>
+                </div>
+              </section>
               <p></p>
               </header>
             <div className="row row-eq-height justify-content-center">
@@ -29,7 +34,7 @@ const Index = () => {
                   {/* <i className="fa fa-diamond" /> */}
                   <div className="img-size"><img src="./suriya.png" /></div>
                   <div className="card-body">
-                    <h5 className="card-title"><a href="">{Name}</a></h5>
+                    <h5 className="card-title"><a href="/childinfo">{Name}</a></h5>
                     <p className="card-text">4 ขวบ</p>
                     {/* <a href="#" className="readmore">Read more </a> */}
                   </div>
@@ -37,7 +42,7 @@ const Index = () => {
               </div>
             </div>
           </div>
-          </section>
+        </section>
         {/* <section id="testimonials" className="section-bg">
           <div className="container">
             <header className="section-header">
@@ -112,7 +117,7 @@ const Index = () => {
               </div>
               <div className="col-lg-4 mb-4">
                 <div className="card wow bounceInUp">
-                  <i className="fa fa-language" />
+                  <i className="fa fa-diamond" />
                   <div className="card-body">
                     <h5 className="card-title">Name Nursery love love</h5>
                     <p className="card-text">Address 123</p>
@@ -123,7 +128,7 @@ const Index = () => {
               </div>
               <div className="col-lg-4 mb-4">
                 <div className="card wow bounceInUp">
-                  <i className="fa fa-object-group" />
+                  <i className="fa fa-diamond" />
                   <div className="card-body">
                     <h5 className="card-title">Name Nursery love love</h5>
                     <p className="card-text">Address 123</p>

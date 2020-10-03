@@ -61,17 +61,40 @@ const AssResults = () => {
     <div>
       <section id="assResults" className="section-bg">
         <div className="container">
-          <header className="section-content">
-            <h3>ผลการประเมิน</h3>
-            <p>
-              ชื่อ: {child.name} อายุ: {child.age} ชื่อเล่น: {child.nickname}
-            </p>
-            <br></br>
-            <p>
-              เพศ:{child.gender} น้ำหนัก:{child.weight} ส่วนสูง:{child.high}
-              Nursery:{child.Nursery}
-            </p>
-          </header>
+          <div className="row">
+            <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+              <section id="goback">
+                <div class="form">
+                  <div><button type="submit" title="Go back">ย้อนกลับ</button></div>
+                </div>
+              </section>
+              <br></br>
+              <div className="box">
+              <div className="img-sizee"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                <table>
+                  <tr>
+                    <td>
+                      <div className="img-size"><a href="/addchild"><img src="./suriya.png" /></a></div>&nbsp;
+                    </td>
+                    <td>
+                      <header className="section-content">
+                        <h3>ผลการประเมิน</h3>
+                        <h5>
+                          ชื่อ: {child.name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; อายุ: {child.age}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ชื่อเล่น: {child.nickname}
+                        </h5>
+                        <h5>
+                          เพศ: {child.gender}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; น้ำหนัก: {child.weight}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ส่วนสูง: {child.high}
+                        </h5>
+                        <h5>
+                          Nursery: {child.Nursery}
+                        </h5>
+                      </header>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="assResults2">
@@ -85,7 +108,7 @@ const AssResults = () => {
                     <div
                       className={`card text-center ${
                         isParent ? `bg-dark text-white` : ""
-                      }`}
+                        }`}
                     >
                       Parent
                     </div>
@@ -95,7 +118,7 @@ const AssResults = () => {
                     <div
                       className={`card text-center ${
                         !isParent ? `bg-dark text-white` : ""
-                      }`}
+                        }`}
                     >
                       Nursery
                     </div>
