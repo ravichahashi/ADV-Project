@@ -2150,3 +2150,21 @@ h6 {
   line-height: 28px;
   font-size: 14px;
 }
+
+#assResults2 .vertical-center{
+  margin: 0;
+  position: absolute;
+  right: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#assResults2 .img-edit img{
+  max-width: 30px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
+  border-radius: 0px;
+  position:absolute;
+	right:30px;
+}

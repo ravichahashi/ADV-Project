@@ -8,7 +8,7 @@ const click = (e) => {
 };
 
 const AssResults = () => {
-  const data = [
+  const DSPM_data = [
     {
       data: {
         GM: 0.84,
@@ -31,13 +31,44 @@ const AssResults = () => {
     },
   ];
 
-  const captions = {
+  const A49_data = [
+    {
+      data: {
+        GM: 0.84,
+        FM: 0.8,
+        RL: 0.9,
+        EL: 0.67,
+        PS: 0.8,
+      },
+      meta: { color: "blue" },
+    },
+    {
+      data: {
+        GM: 0.9,
+        FM: 0.6,
+        RL: 0.7,
+        EL: 0.3,
+        PS: 0.75,
+      },
+      meta: { color: "red" },
+    },
+  ];
+
+  const DSPM_captions = {
     // columns
     GM: "Gross Motor",
     FM: "Fine Motor",
     RL: "Receptive Language",
     EL: "Expressive Language",
     PS: "Personal and Social",
+  };
+
+  const A49_captions = {
+    // columns
+    GM: "Gross Motor",
+    FM: "Fine Motor",
+    RL: "Receptive Language",
+    EL: "Expressive Language",
   };
 
   const [child, setchild] = useState({
@@ -101,7 +132,7 @@ const AssResults = () => {
         <div className="container-fluid">
           <table>
             <tr>
-              <td width="80%">
+              <td width="75%">
                 <div className="box">
                   <div className="row wow fadeInUp">
                     <div className="col-lg-6">
@@ -115,7 +146,7 @@ const AssResults = () => {
                                 }`}
                             >
                               Parent
-                    </div>
+                          </div>
                           </div>
                           <div className="col-sm" style={{ padding: 0 }}>
                             {" "}
@@ -125,52 +156,140 @@ const AssResults = () => {
                                 }`}
                             >
                               Nursery
-                    </div>
+                            </div>
                             <button onClick={() => setParent(!isParent)}>Toggle</button>
                           </div>
                         </div>
+                        <table>
+                          <tr>
+                            <td>
+                              <div className="box">
+                                <h3>DSPM</h3>
+                                <RadarChart size={550} captions={DSPM_captions} data={DSPM_data} />
+                                <div className="col-lg-6">
+                                  <div className="container">
+                                    <div className="row about-container">
+                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                                        <h4 className="title">
+                                          <a>ผลการประเมิน:</a>
+                                        </h4>
+                                        <p className="description">GM: {child.GM}</p>
+                                        <p className="description">FM: {child.FM}</p>
+                                        <p className="description">EL: {child.EL}</p>
+                                        <p className="description">RL: {child.RL}</p>
+                                        <p className="description">PS: {child.PS}</p>
+                                      </div>
+                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                                        <h4 className="title">
+                                          <a>คำแนะนำด้านพัฒนาการ:</a>
+                                        </h4>
+                                        <p className="description">
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                            </p>
+                                      </div>
 
-                        <RadarChart size={550} captions={captions} data={data} />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="container">
-                        <div className="row about-container">
-                          <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                            <h4 className="title">
-                              <a>ผลการประเมิน:</a>
-                            </h4>
-                            <p className="description">GM: {child.GM}</p>
-                            <p className="description">FM: {child.FM}</p>
-                            <p className="description">EL: {child.EL}</p>
-                            <p className="description">RL: {child.RL}</p>
-                            <p className="description">PS: {child.PS}</p>
-                          </div>
-                          <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                            <h4 className="title">
-                              <a>คำแนะนำด้านพัฒนาการ:</a>
-                            </h4>
-                            <p className="description">
-                              ..............................................................................................................
-                              ..............................................................................................................
-                              ..............................................................................................................
-                              ..............................................................................................................
-                    </p>
-                          </div>
+                                      <button
+                                        onClick={() => click(10)}
+                                        className="btn btn-info btn-lg"
+                                      >
+                                        ทำแบบประเมิน
+                          </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div className="box">
+                                <h3>อนามัย 49</h3>
+                                <RadarChart size={550} captions={A49_captions} data={A49_data} />
+                                <div className="col-lg-6">
+                                  <div className="container">
+                                    <div className="row about-container">
+                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                                        <h4 className="title">
+                                          <a>ผลการประเมิน:</a>
+                                        </h4>
+                                        <p className="description">GM: {child.GM}</p>
+                                        <p className="description">FM: {child.FM}</p>
+                                        <p className="description">EL: {child.EL}</p>
+                                        <p className="description">RL: {child.RL}</p>
+                                        <br></br>
+                                      </div>
+                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                                        <h4 className="title">
+                                          <a>คำแนะนำด้านพัฒนาการ:</a>
+                                        </h4>
+                                        <p className="description">
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                                          ..............................................................................................................
+                            </p>
+                                      </div>
+                                      {/* <div className="vertical-center"> */}
+                                      <button
+                                        onClick={() => click(10)}
+                                        className="btn btn-info btn-lg"
+                                      >
+                                        ทำแบบประเมิน
+                          </button>
+                                      {/* </div> */}
 
-                          <button
-                            onClick={() => click(10)}
-                            className="btn btn-info btn-lg"
-                          >
-                            ทำแบบประเมิน
-                  </button>
-                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </div>
                   </div>
+                  <table width="100%">
+                    <h3>บันทึกประจำวัน : </h3>
+                    <tr>
+                      <td>
+                        <div className="box">
+                          <div className="row">
+                          <h4>&nbsp;&nbsp;อาหาร</h4>
+                          <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                          </div>
+                          <br></br>
+                          <h5>เช้า: </h5>
+                          <br></br>
+                          <h5>กลางวัน: </h5>
+                          <br></br>
+                          <h5>เย็น: </h5>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="box">
+                          <h4>การขับถ่าย</h4>
+                          <br></br>
+                          <h5>น้ำหนัก: </h5>
+                          <br></br>
+                          <h5>ส่วนสูง: </h5>
+                          <br></br>
+                          <h5>โดยรวม: </h5>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="box" >
+                        <div className="row">
+                          <h4>พฤติกรรม</h4>
+                          <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
               </td>
-              <td width="20%">
+              <td width="25%">
                 <div className="box">
                   <section id="more">
                     <div class="form">
