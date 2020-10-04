@@ -5,10 +5,6 @@ import { connect } from "react-redux";
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import * as ReactDom from "react-dom";
 
-const click = (e) => {
-  console.log(e);
-};
-
 const Assessment = (props) => {
   const [child, setChild] = useState({
     name: "Suriya Techalue",
