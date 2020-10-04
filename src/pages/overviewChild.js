@@ -21,11 +21,6 @@ const Index = () => {
     },
   ]);
   const [numChild, setnumChild] = useState(4);
-  // const [Child, setChild] = useState(
-  //   {name: "รักษ์พงศ์ ทอหุล"},
-  //   {name: "suriya "},
-  //   {name: "กวิสรา"}
-  // );
   const [Child, setChild] = useState([
     { name: "รักษ์พงศ์ ทอหุล", gender: "ชาย", age: 2, weight: 20, high: 50 },
     { name: "suriya ", gender: "หญิง", age: 3, weight: 100, high: 250 },
@@ -33,7 +28,7 @@ const Index = () => {
 
   const item = [];
   for (const key in Child) {
-    console.log(Child[key].name);
+    console.log(Child.length);
     item.push(
       <div
         className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
