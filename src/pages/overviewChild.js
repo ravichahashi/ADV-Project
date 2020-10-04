@@ -38,6 +38,7 @@ const Index = () => {
       <div
         className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
         data-wow-duration="1.4s"
+        align="center"
       >
         <div className="box">
           <table>
