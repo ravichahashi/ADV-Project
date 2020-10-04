@@ -46,6 +46,7 @@ class signup extends Component {
     const newUserData = {
       fName: this.state.fName,
       lName: this.state.lName,
+      userName: this.state.userName,
       email: this.state.email,
       address: this.address,
       phoneNumber: this.phoneNumber,
@@ -93,9 +94,9 @@ class signup extends Component {
             />
             <a>&nbsp;&nbsp;</a>
             <TextField
-              id="Last Name"
-              name="Last Name"
-              type="Last Name"
+              id="lName"
+              name="lName"
+              type="lName"
               label="Last Name"
               className={classes.textField}
               helperText={errors.lName}
@@ -105,10 +106,22 @@ class signup extends Component {
               halfWidth
             />
             <TextField
+              id="username"
+              name="username"
+              type="username"
+              label="User name"
+              className={classes.textField}
+              helperText={errors.username}
+              error={errors.username ? true : false}
+              value={this.state.username}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            <TextField
               id="email"
               name="email"
               type="email"
-              label="Email"
+              label="E-mail"
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}
@@ -117,9 +130,9 @@ class signup extends Component {
               fullWidth
             />
             <TextField
-              id="Address"
-              name="Address"
-              type="Address"
+              id="address"
+              name="address"
+              type="address"
               label="Address"
               className={classes.textField}
               helperText={errors.address}
@@ -129,9 +142,9 @@ class signup extends Component {
               fullWidth
             />
             <TextField
-              id="Phone Number"
-              name="Phone Number"
-              type="Phone Number"
+              id="phoneNumber"
+              name="phoneNumber"
+              type="phoneNumber"
               label="Phone Number"
               className={classes.textField}
               helperText={errors.phoneNumber}

@@ -712,6 +712,129 @@ h6 {
   margin: auto;
 }
 
+/* ---------------Services New-------------------- */
+#servicesNew {
+  padding: 20px 0 5px 0;
+}
+
+#servicesNew .section-header h3 {
+  color: #fff;
+}
+
+#servicesNew .box {
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#servicesNew .box2 {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+#servicesNew .box h5 {
+  font-weight: 600;
+  font-size: 17px;
+}
+#servicesNew .box2:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+#servicesNew .box2:hover .title a {
+  color: #b43e25;
+}
+
+#servicesNew .box-n {
+  padding: 30px;
+  position: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#servicesNew .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+#servicesNew .icon {
+  position: absolute;
+  left: -10px;
+  top: calc(50% - 32px);
+}
+
+#servicesNew .icon i {
+  font-size: 64px;
+  line-height: 1;
+  transition: 0.5s;
+}
+
+#servicesNew .title {
+  margin-left: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#servicesNew .title a {
+  color: #111;
+}
+
+#servicesNew .box:hover .title a {
+  color: #b43e25;
+}
+
+#servicesNew .description {
+  font-size: 14px;
+  margin-left: 40px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+#servicesNew .img-size img {
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+}
+
+#servicesNew .img-over img{
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+#servicesNew .img-overr img{
+  max-width: 20px;
+  max-height: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 0px;
+  display: block;
+  margin: auto;
+}
+/* End services */
+
 #more .form button[type="submit"] {
   background: #f1ca4d;
   border: 0;

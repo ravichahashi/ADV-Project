@@ -26,7 +26,7 @@ const Index = () => {
         {/*==========================
 Services Section
     ============================*/}
-        <section id="services" className="section-bg">
+        <section id="servicesNew" className="section-bg">
           <div className="container" align="center">
             <div className="col-md-10 col-lg-ุ5">
               <div className="box">
@@ -58,7 +58,22 @@ Services Section
               </div>
             </div>
           </div>
-        </section>{/* #services */}
+        </section>
+
+        <section id="why-uss" className="section-bg">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                <div className="box">
+                  <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#3fcdc7' }} /></div>
+                  <h4 className="title"><a href="">ลงทะเบียน Nursery</a></h4>
+                  <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
     </div>

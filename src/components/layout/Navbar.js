@@ -262,7 +262,7 @@ class Nevbar extends Component {
         <nav className="main-nav float-right d-none d-lg-block">
           <ul>
             <li className="active">
-              <a href="/">ลงทะเบียน Nursery กับ Sunnery</a>
+              <a href="/signupnurserypackage">ลงทะเบียน Nursery กับ Sunnery</a>
             </li>
             <li>
               <a href="/signup">Sign Up</a>
