@@ -36,8 +36,7 @@ const AssResults = () => {
       data: {
         GM: 0.84,
         FM: 0.8,
-        RL: 0.9,
-        EL: 0.67,
+        UL: 0.67,
         PS: 0.8,
       },
       meta: { color: "blue" },
@@ -46,8 +45,7 @@ const AssResults = () => {
       data: {
         GM: 0.9,
         FM: 0.6,
-        RL: 0.7,
-        EL: 0.3,
+        UL: 0.7,
         PS: 0.75,
       },
       meta: { color: "red" },
@@ -67,8 +65,8 @@ const AssResults = () => {
     // columns
     GM: "Gross Motor",
     FM: "Fine Motor",
-    RL: "Receptive Language",
-    EL: "Expressive Language",
+    UL: "Using Language",
+    PS: "Personal and Social",
   };
 
   const [child, setchild] = useState({
@@ -133,7 +131,7 @@ const AssResults = () => {
           <table>
             <tr>
               <td width="75%">
-                <div className="box">
+                <div className="box-n">
                   <div className="row wow fadeInUp">
                     <div className="col-lg-6">
                       <div className="map mb-4 mb-lg-0">
@@ -141,23 +139,19 @@ const AssResults = () => {
                           <div className="col-sm" style={{ paddingRight: 0 }}>
                             {" "}
                             <div
-                              className={`card text-center ${
-                                isParent ? `bg-dark text-white` : ""
-                                }`}
+                              className="card text-center bg-info text-white"
                             >
                               Parent
                           </div>
+                            <br></br>
                           </div>
                           <div className="col-sm" style={{ padding: 0 }}>
                             {" "}
                             <div
-                              className={`card text-center ${
-                                !isParent ? `bg-dark text-white` : ""
-                                }`}
+                              className="card text-center bg-danger text-white"
                             >
                               Nursery
                             </div>
-                            <button onClick={() => setParent(!isParent)}>Toggle</button>
                           </div>
                         </div>
                         <table>
@@ -255,8 +249,8 @@ const AssResults = () => {
                       <td>
                         <div className="box">
                           <div className="row">
-                          <h4>&nbsp;&nbsp;อาหาร</h4>
-                          <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                            <h4>&nbsp;&nbsp;อาหาร</h4>
+                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
                           </div>
                           <br></br>
                           <h5>เช้า: </h5>
@@ -270,18 +264,16 @@ const AssResults = () => {
                         <div className="box">
                           <h4>การขับถ่าย</h4>
                           <br></br>
-                          <h5>น้ำหนัก: </h5>
+                          <h5>กินกี่ครั้งในวันนี้ </h5>
                           <br></br>
-                          <h5>ส่วนสูง: </h5>
-                          <br></br>
-                          <h5>โดยรวม: </h5>
+                          
                         </div>
                       </td>
                       <td>
                         <div className="box" >
-                        <div className="row">
-                          <h4>พฤติกรรม</h4>
-                          <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                          <div className="row">
+                            <h4>พฤติกรรม</h4>
+                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
                           </div>
                         </div>
                       </td>
