@@ -21,9 +21,68 @@ const Index = () => {
     },
   ]);
   const [numChild, setnumChild] = useState(4);
-  const [Child, setChild] = useState({
-    name: "รักษ์พงศ์ ทอหุล",
-  });
+  // const [Child, setChild] = useState(
+  //   {name: "รักษ์พงศ์ ทอหุล"},
+  //   {name: "suriya "},
+  //   {name: "กวิสรา"}
+  // );
+  const [Child, setChild] = useState([
+    { name: "รักษ์พงศ์ ทอหุล", gender: "ชาย", age: 2, weight: 20, high: 50 },
+    { name: "suriya ", gender: "หญิง", age: 3, weight: 100, high: 250 },
+  ]);
+
+  const item = [];
+  for (const key in Child) {
+    console.log(Child[key].name);
+    item.push(
+      <div
+        className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
+        data-wow-duration="1.4s"
+      >
+        <div className="box">
+          <table>
+            <tr>
+              <td>
+                <div className="img-over">
+                  <a href="/addchild">
+                    <img src="./suriya.png" />
+                  </a>
+                </div>
+              </td>
+              <td>
+                <div className="row">
+                  <h4 className="title">
+                    <a>&nbsp;&nbsp;{Child[key].name}</a>
+                  </h4>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div className="img-overr">
+                    <a href="/editChild">
+                      <img src="./pencil.png" />
+                    </a>
+                  </div>
+                </div>
+                <p className="description">เพศ :{Child[key].gender}</p>
+                <p className="description">อายุ :{Child[key].age}</p>
+                <p className="description">น้ำหนัก :{Child[key].weight}</p>
+                <p className="description">ส่วนสูง :{Child[key].high}</p>
+                <br></br>
+                <section id="more">
+                  <div class="form">
+                    <div align="center">
+                      <button type="submit" title="More">
+                        <a href="/assResults">เพิ่มเติม</a>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       {/* ==========================
@@ -94,112 +153,9 @@ const Index = () => {
               <p></p>
             </header>
             <div className="row">
-              
-              {/* for (let nums = 0; nums < 4; nums++){ */}
-                // const element = array[nums];
-                <div
-                className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
-                data-wow-duration="1.4s"
-              >
-                <div className="box">
-                  <table>
-                    <tr>
-                      <td>
-                        <div className="img-over">
-                          <a href="/addchild">
-                            <img src="./suriya.png" />
-                          </a>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="row">
-                          <h4 className="title">
-                            <a>&nbsp;&nbsp;{Child.name}</a>
-                          </h4>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <div className="img-overr">
-                            <a href="/editChild">
-                              <img src="./pencil.png" />
-                            </a>
-                          </div>
-                        </div>
-                        <p className="description">เพศ :</p>
-                        <p className="description">อายุ :</p>
-                        <p className="description">น้ำหนัก :</p>
-                        <p className="description">ส่วนสูง :</p>
-                        <br></br>
-                        <section id="more">
-                          <div class="form">
-                            <div align="center">
-                              <button type="submit" title="More">
-                                <a href="/assResults">เพิ่มเติม</a>
-                              </button>
-                            </div>
-                          </div>
-                        </section>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              {/* } */}
-              
-              {/* <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
-                <div className="box">
-                  <table>
-                    <tr>
-                      <td>
-                        <div className="img-over"><a href="/addchild"><img src="./suriya.png" /></a></div>
-                      </td>
-                      <td>
-                        <div className="row">
-                          <h4 className="title"><a>&nbsp;&nbsp;{Name}</a></h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <div className="img-overr"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                        </div>
-                        <p className="description">เพศ :</p>
-                        <p className="description">อายุ :</p>
-                        <p className="description">น้ำหนัก :</p>
-                        <p className="description">ส่วนสูง :</p>
-                        <br></br>
-                        <section id="more">
-                          <div class="form">
-                            <div align="center"><button type="submit" title="More"><a href="/assResults">เพิ่มเติม</a></button></div>
-                          </div>
-                        </section>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-              <div className="box">
-                  <table>
-                    <tr>
-                      <td>
-                        <div className="img-over"><a href="/addchild"><img src="./suriya.png" /></a></div>
-                      </td>
-                      <td>
-                        <div className="row">
-                          <h4 className="title"><a>&nbsp;&nbsp;{Name}</a></h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <div className="img-overr"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                        </div>
-                        <p className="description">เพศ :</p>
-                        <p className="description">อายุ :</p>
-                        <p className="description">น้ำหนัก :</p>
-                        <p className="description">ส่วนสูง :</p>
-                        <br></br>
-                        <section id="more">
-                          <div class="form">
-                            <div align="center"><button type="submit" title="More"><a href="/assResults">เพิ่มเติม</a></button></div>
-                          </div>
-                        </section>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div> */}
+              {item}
               <div
-                className="col-md-6 col-lg-5 wow bounceInUp"
+                className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
                 data-wow-duration="1.4s"
               >
                 <div className="box">
