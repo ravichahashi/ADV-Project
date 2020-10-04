@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
 
 // Redux stuff
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 // CSS
-import "../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
-import "../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
-import "../components/NewBiz/lib/animate/animate.min.css"
-import "../components/NewBiz/lib/ionicons/css/ionicons.min.css"
-import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
-import "../components/NewBiz/lib/lightbox/css/lightbox.min.css"
-import "../components/NewBiz/css/style.css"
+import "../components/NewBiz/lib/bootstrap/css/bootstrap.min.css";
+import "../components/NewBiz/lib/font-awesome/css/font-awesome.min.css";
+import "../components/NewBiz/lib/animate/animate.min.css";
+import "../components/NewBiz/lib/ionicons/css/ionicons.min.css";
+import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
+import "../components/NewBiz/lib/lightbox/css/lightbox.min.css";
+import "../components/NewBiz/css/style.css";
 
 const Index = () => {
   const [nursery, setNursery] = useState([
     {
       nurseryName: "",
       city: "เชียงใหม่",
-      district: "เมือง"
-    }
+      district: "เมือง",
+    },
   ]);
-  const [Name, setName] = useState("รักษ์พงศ์ ทอหุล");
+  const [numChild, setnumChild] = useState(4);
+  const [Child, setChild] = useState({
+    name: "รักษ์พงศ์ ทอหุล",
+  });
   return (
     <div>
       {/* ==========================
@@ -37,35 +40,48 @@ const Index = () => {
     </div>
   </section>{/* #intro */}
       <main id="main">
-        {/*==========================
-Services Section
-    ============================*/}
         <section id="services" className="section-bg">
           <div className="container">
             <div className="container" align="center">
               <div className="col-md-11 col-lg-ุ5">
                 <div className="box">
                   <div className="row">
-                    <h4 className="title">Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-                    <h4 className="title">จังหวัด<a>&nbsp;</a></h4>
+                    <h4 className="title">
+                      Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </h4>
+                    <h4 className="title">
+                      จังหวัด<a>&nbsp;</a>
+                    </h4>
                     <option></option>
                     <form>
                       <select name="position">
-                        <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
-                      </select>&nbsp;&nbsp;&nbsp;&nbsp;
-                      </form>
+                        <option></option>
+                        <option value="city">{nursery[0].city}</option>
+                        <option value="Accounting">Accounting</option>
+                      </select>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                    </form>
                     <h4 className="title">อำเภอ&nbsp;</h4>
                     <option></option>
                     <form>
                       <select name="position">
-                        <option></option><option value="district">{nursery[0].district}</option><option value="Accounting">Accounting</option>
-                      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  </form>
-                    <section><option></option></section>
+                        <option></option>
+                        <option value="district">{nursery[0].district}</option>
+                        <option value="Accounting">Accounting</option>
+                      </select>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </form>
+                    <section>
+                      <option></option>
+                    </section>
                     <section id="search">
                       <div class="form">
                         {/* <form action="" method="post" role="form" class="contactForm"> */}
-                        <div class="text-center"><button type="submit" title="Search">ค้นหา</button></div>
+                        <div class="text-center">
+                          <button type="submit" title="Search">
+                            ค้นหา
+                          </button>
+                        </div>
                         {/* </form> */}
                       </div>
                     </section>
@@ -78,17 +94,34 @@ Services Section
               <p></p>
             </header>
             <div className="row">
-              <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+              
+              {/* for (let nums = 0; nums < 4; nums++){ */}
+                // const element = array[nums];
+                <div
+                className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
+                data-wow-duration="1.4s"
+              >
                 <div className="box">
                   <table>
                     <tr>
                       <td>
-                        <div className="img-over"><a href="/addchild"><img src="./suriya.png" /></a></div>
+                        <div className="img-over">
+                          <a href="/addchild">
+                            <img src="./suriya.png" />
+                          </a>
+                        </div>
                       </td>
                       <td>
                         <div className="row">
-                          <h4 className="title"><a>&nbsp;&nbsp;{Name}</a></h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <div className="img-overr"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                          <h4 className="title">
+                            <a>&nbsp;&nbsp;{Child.name}</a>
+                          </h4>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <div className="img-overr">
+                            <a href="/editChild">
+                              <img src="./pencil.png" />
+                            </a>
+                          </div>
                         </div>
                         <p className="description">เพศ :</p>
                         <p className="description">อายุ :</p>
@@ -97,7 +130,11 @@ Services Section
                         <br></br>
                         <section id="more">
                           <div class="form">
-                            <div align="center"><button type="submit" title="More"><a href="/assResults">เพิ่มเติม</a></button></div>
+                            <div align="center">
+                              <button type="submit" title="More">
+                                <a href="/assResults">เพิ่มเติม</a>
+                              </button>
+                            </div>
                           </div>
                         </section>
                       </td>
@@ -105,7 +142,9 @@ Services Section
                   </table>
                 </div>
               </div>
-              <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
+              {/* } */}
+              
+              {/* <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
                   <table>
                     <tr>
@@ -158,20 +197,29 @@ Services Section
                     </tr>
                   </table>
                 </div>
-              </div>
-              <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
+              </div> */}
+              <div
+                className="col-md-6 col-lg-5 wow bounceInUp"
+                data-wow-duration="1.4s"
+              >
                 <div className="box">
-                  <div className="img-size"><a href="/addchild"><img src="./add.png" /></a></div>&nbsp;
-                  <h5 align="center"><a href="/addchild">Add Child</a></h5>
+                  <div className="img-size">
+                    <a href="/addchild">
+                      <img src="./add.png" />
+                    </a>
+                  </div>
+                  &nbsp;
+                  <h5 align="center">
+                    <a href="/addchild">Add Child</a>
+                  </h5>
                 </div>
               </div>
             </div>
           </div>
-        </section>{/* #services */}
+        </section>
+        {/* #services */}
       </main>
-
     </div>
-
   );
 };
 
