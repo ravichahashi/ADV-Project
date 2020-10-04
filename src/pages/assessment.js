@@ -3,41 +3,115 @@ import Button from "@material-ui/core/Button";
 import { getQuestions } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
-import * as ReactDom from 'react-dom';
+import * as ReactDom from "react-dom";
 
 const click = (e) => {
   console.log(e);
 };
 
 const Assessment = (props) => {
+  const [child, setChild] = useState({
+    name: "Suriya Techalue",
+    birthDate: {
+      year: "2019",
+      month: "10",
+      date: "10",
+    },
+    age: "5",
+    nickname: "ฟลุ๊ค",
+  });
+
   const { getQuestions } = props;
   useEffect(() => {
     getQuestions();
   }, [getQuestions]);
   const { questions, loading } = props.data;
-  questions.map((question) => console.log(question));
+  // questions.map((question) => console.log(question));
 
+  const calMonth = (year, month) => {
+    return (
+      (new Date().getFullYear() - year) * 12 + (new Date().getMonth() - month)
+    );
+  };
+  const childMonth = calMonth(child.birthDate.year, child.birthDate.month);
+  const initialScore = () => {
+    let countGM = 0,
+      countFM = 0,
+      countRL = 0,
+      countEL = 0,
+      countPS = 0;
+    questions.forEach((question) => {
+      if (question.month <= childMonth) {
+        countGM += question.GM.length;
+        countFM += question.FM.length;
+        countRL += question.RL.length;
+        countEL += question.EL.length;
+        countPS += question.PS.length;
+      }
+    });
+    return { GM: countGM, FM: countFM, RL: countRL, EL: countEL, PS: countPS };
+  };
+  let childScore = initialScore();
+
+  // function findQuestions(month) {
+  //   month = month.toString;
+  //   let output = {};
+  //   questions.forEach((question) => {
+  //     if (question.month === month) {
+  //       // output = question;
+  //       return question;
+  //     }
+  //   });
+  //   // return output;
+  // }
   const ChangeType = (e) => {
     console.log(e);
   };
-  const [child, setchild] = useState({
-    name: "Suriya Techalue",
-    age: "2",
-    nickname: "ฟลุ๊ค",
-  });
 
-  const [assessment, setassessment] = useState({
+  let assessments = {};
+  assessments.changeQuestions = (month)=>{
+    questions.forEach((question) => {
+    if (question.month === month) {
+      assessments = question;
+    }
+  });
+  }
+  // questions.forEach((question) => {
+  //   if (question.month === childMonth) {
+  //     assessments = question;
+  //   }
+  // });
+
+  const [assessment, setAssessment] = useState({
     ques: "คำถามข้อที่ 1",
-    assType: "GM",
+    num: "1",
+    // month: assessments.month,
+    tag: "GM",
     detail: "รายละเอียดการทดสอบ",
-    passCond: "รายละเอียดการผ่าน",
+    passCond: "jjjjj",
     nopassCond: "รายละเอียดการไม่ผ่าน",
+    status: "",
     comment: "",
   });
 
   function setComment(msg) {
-    setassessment({ ...assessment, comment: msg });
+    setAssessment({ ...assessment, comment: msg });
   }
+  let assessmentResults = [];
+
+  const handleNext = () => {
+    if (assessment.status === "") {
+      alert("please check...");
+    } else {
+      console.log(assessments);
+      console.log(childMonth);
+    }
+  };
+
+  const handleCheck = (e) => {
+    const { name } = e.target;
+    setAssessment({ ...assessment, status: name });
+  };
 
   return (
     <div>
@@ -74,7 +148,7 @@ const Assessment = (props) => {
               <h1>{assessment.ques}</h1>
               <img src="./suriya.png" className="img-fluid" alt />
               <p>
-                <b>{assessment.assType}</b> <br></br>
+                <b>{assessment.tag}</b> <br></br>
                 {assessment.detail}
               </p>
             </div>
@@ -85,16 +159,17 @@ const Assessment = (props) => {
                     ผ่าน :
                     <input
                       name="pass"
-                      type="checkbox"
-                      // checked={this.state.is}
-                      onChange={(e) => {
-                        if(e.target.value==="on"){
-                          click(1);
-                        }
-                        else{
-                          click(0);
-                        }
-                      }}
+                      type="radio"
+                      checked={assessment.status === "pass"}
+                      // onChange={(e) => {
+                      //   if (e.target.value === "on") {
+                      //     click(1);
+                      //   } else {
+                      //     click(0);
+                      //   }
+                      // }}
+                      value="pass"
+                      onChange={handleCheck}
                     />
                   </h1>
                 </div>
@@ -108,13 +183,12 @@ const Assessment = (props) => {
                 <h1>
                   ไม่ผ่าน :
                   <input
-                    name="notpass"
-                    type="checkbox"
+                    name="notPass"
+                    type="radio"
                     cssClass="e-success"
-                    // checked={}
-                    onChange={(e) => {
-                      click(e.target.value);
-                    }}
+                    value="notPass"
+                    checked={assessment.status === "notPass"}
+                    onChange={handleCheck}
                   />
                 </h1>
                 <h5 class="title">{assessment.nopassCond}</h5>
@@ -162,7 +236,7 @@ const Assessment = (props) => {
 
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
-              <Button type="ChangeType" onClick={() => ChangeType(11)}>
+              <Button type="ChangeType" onClick={handleNext}>
                 <h1>Next</h1>
               </Button>
             </div>
