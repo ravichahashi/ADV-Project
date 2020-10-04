@@ -99,14 +99,14 @@ const Assessment = (props) => {
     if (assessment.status === "") {
       alert("please check...");
     } else {
-      console.log(assessments);
+      console.log(assessment);
       console.log(childMonth);
     }
   };
 
   const handleCheck = (e) => {
-    const { name } = e.target;
-    setAssessment({ ...assessment, status: name });
+    const { value } = e.target;
+    setAssessment({ ...assessment, status: value });
   };
 
   return (
@@ -155,7 +155,7 @@ const Assessment = (props) => {
                     ผ่าน :
                     <input
                       name="pass"
-                      type="radio"
+                      type="checkbox"
                       checked={assessment.status === "pass"}
                       // onChange={(e) => {
                       //   if (e.target.value === "on") {
@@ -179,8 +179,8 @@ const Assessment = (props) => {
                 <h1>
                   ไม่ผ่าน :
                   <input
-                    name="notPass"
-                    type="radio"
+                    name="notpass"
+                    type="checkbox"
                     cssClass="e-success"
                     value="notPass"
                     checked={assessment.status === "notPass"}
