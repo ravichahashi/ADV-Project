@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+//Redux
+import { connect } from 'react-redux';
+import { logoutUser, uploadImage } from '../../redux/actions/userActions';
 
 // CSS
 import "../NewBiz/lib/bootstrap/css/bootstrap.min.css";
@@ -40,17 +42,23 @@ var nursery = [
   "/calendar",
 ];
 
-const Nevbar = (props) => {
-  const {
-    user: {
-      credentials: { handle, createdAt, imageUrl, bio, website, location },
-      loading,
-      authenticated,
-    },
-  } = props;
-  console.log("dd");
-  console.log(handle);
-  var pathname = window.location.pathname;
+class Nevbar extends Component {
+  
+  handleLogout = () => {
+  this.props.logoutUser();
+  };
+
+  render(){
+    const {
+      classes,
+      user: {
+        credentials: { handle, createdAt, imageUrl, bio, website, location },
+        loading,
+        authenticated
+      }
+    } = this.props;
+
+    var pathname = window.location.pathname;
   if (parent.indexOf(pathname) >= 0) {
     return (
       <header id="header" className="fixed-top">
@@ -121,7 +129,7 @@ const Nevbar = (props) => {
               </a>
             </li>
             <li className="drop-down">
-              <a>Account</a>
+              <a>{handle}</a>
               <ul>
                 <li>
                   <a href>บัญชีของฉัน</a>
@@ -133,7 +141,7 @@ const Nevbar = (props) => {
                   <a href>Nursery</a>
                 </li>
                 <li>
-                  <a href="/">Log out</a>
+                  <a href="/" onClick={this.handleLogout}>Log out</a>
                 </li>
               </ul>
             </li>
@@ -215,7 +223,7 @@ const Nevbar = (props) => {
               </a>
             </li>
             <li className="drop-down">
-              <a>Account</a>
+    <a>{handle}</a>
               <ul>
                 <li>
                   <a href>บัญชีของฉัน</a>
@@ -227,7 +235,7 @@ const Nevbar = (props) => {
                   <a href>Nursery</a>
                 </li>
                 <li>
-                  <a href="/">Log out</a>
+                  <a href="/" onClick={this.handleLogout}>Log out</a>
                 </li>
               </ul>
             </li>
@@ -271,12 +279,14 @@ const Nevbar = (props) => {
       </header>
     );
   }
-};
+  }
+
+}
 
 const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-const mapActionsToProps = {};
+const mapActionsToProps = {logoutUser};
 
 export default connect(mapStateToProps, mapActionsToProps)(Nevbar);
