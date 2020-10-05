@@ -433,9 +433,8 @@ const Assessment = (props) => {
           <ReactPlayer
             url={dataAssessment.video}
             controls
-            playbackRate={2}
-            width="400px"
-            height="300px"
+            width="500px"
+            height="400px"
           />
           <p>
             <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
