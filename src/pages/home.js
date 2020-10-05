@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import Scream from '../components/scream/Scream';
 import Profile from '../components/profile/Profile';
@@ -33,10 +33,10 @@ class home extends Component {
   }
 }
 
-home.propTypes = {
-  getScreams: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired
-};
+// home.propTypes = {
+//   getScreams: PropTypes.func.isRequired,
+//   data: PropTypes.object.isRequired
+// };
 
 const mapStateToProps = (state) => ({
   data: state.data
