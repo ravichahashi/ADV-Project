@@ -7,7 +7,7 @@ const click = (e) => {
   console.log(e);
 };
 
-const AssResults = () => {
+const AssResultsNursery = () => {
   const DSPM_data = [
     {
       data: {
@@ -18,16 +18,6 @@ const AssResults = () => {
         PS: 0.8,
       },
       meta: { color: "blue" },
-    },
-    {
-      data: {
-        GM: 0.9,
-        FM: 0.6,
-        RL: 0.7,
-        EL: 0.3,
-        PS: 0.75,
-      },
-      meta: { color: "red" },
     },
   ];
 
@@ -40,15 +30,6 @@ const AssResults = () => {
         PS: 0.8,
       },
       meta: { color: "blue" },
-    },
-    {
-      data: {
-        GM: 0.9,
-        FM: 0.6,
-        UL: 0.7,
-        PS: 0.75,
-      },
-      meta: { color: "red" },
     },
   ];
 
@@ -136,22 +117,12 @@ const AssResults = () => {
                     <div className="col-lg-6">
                       <div className="map mb-4 mb-lg-0">
                         <div className="row">
-                          <div className="col-sm" style={{ paddingRight: 0 }}>
-                            {" "}
-                            <div
-                              className="card text-center bg-info text-white"
-                            >
-                              Parent
-                          </div>
-                            <br></br>
-                          </div>
                           <div className="col-sm" style={{ padding: 0 }}>
                             {" "}
-                            <div
-                              className="card text-center bg-danger text-white"
-                            >
+                            <div className="card text-center bg-info text-white">
                               Nursery
                             </div>
+                            <br></br>
                           </div>
                         </div>
                         <table>
@@ -185,12 +156,9 @@ const AssResults = () => {
                             </p>
                                       </div>
 
-                                      <button
-                                        onClick={() => click(10)}
-                                        className="btn btn-info btn-lg"
-                                      >
-                                        ทำแบบประเมิน
-                          </button>
+                                      <button onClick={() => click(10)} className="btn btn-info btn-lg">
+                                        <a href="/assessment">ทำแบบประเมิน</a>
+                                      </button>
                                     </div>
                                   </div>
                                 </div>
@@ -225,12 +193,9 @@ const AssResults = () => {
                             </p>
                                       </div>
                                       {/* <div className="vertical-center"> */}
-                                      <button
-                                        onClick={() => click(10)}
-                                        className="btn btn-info btn-lg"
-                                      >
-                                        ทำแบบประเมิน
-                          </button>
+                                      <button onClick={() => click(10)} className="btn btn-info btn-lg">
+                                        <a href="">ทำแบบประเมิน</a>
+                                      </button>
                                       {/* </div> */}
 
                                     </div>
@@ -306,4 +271,4 @@ const AssResults = () => {
   );
 };
 
-export default AssResults;
+export default AssResultsNursery;

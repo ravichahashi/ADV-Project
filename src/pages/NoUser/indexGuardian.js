@@ -36,7 +36,7 @@ Services Section
                   <option></option>
                   <form>
                     <select name="position">
-                  <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
+                      <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
                     </select>&nbsp;&nbsp;&nbsp;&nbsp;
                   </form>
                   <h4 className="title">อำเภอ&nbsp;</h4>
@@ -88,13 +88,14 @@ Services Section
               <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                 <div className="box">
                   <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#3fcdc7' }} /></div>
-                  <h4 className="title"><a href="">ลงทะเบียน Nursery</a></h4>
+                  <h4 className="title"><a href="">ลงทะเบียน Nursery กับ Sunerry</a></h4>
                   <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        
         <section id="why-us" className="wow fadeIn">
           <div className="container">
             <header className="section-header">

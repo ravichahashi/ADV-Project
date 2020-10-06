@@ -48,7 +48,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy">Buy</button></div>
+                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy">Buy</button></div>
+                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy">Buy</button></div>
+                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
                 </div>
               </div>
             </div>

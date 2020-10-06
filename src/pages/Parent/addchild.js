@@ -75,8 +75,8 @@ const Index = () => {
                                     </div>
                                     <div className="row" class="text-right">
                                     <p>
-                                        <button type="submit" title="Send Message"><a href="/overviewChild">Cancel</a></button>&nbsp;&nbsp;&nbsp;
-                                        <button type="submit" title="Send Message"><a href="/overviewChild">Add Child</a></button>
+                                        <button type="submit" title="Send Message"><a href="/childmanager">Cancel</a></button>&nbsp;&nbsp;&nbsp;
+                                        <button type="submit" title="Send Message"><a href="/childmanager">Add Child</a></button>
                                     </p>
                                     </div>
                                 </form>
