@@ -36,8 +36,9 @@ import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 
 // Nusery
-import home from "./pages/home";
-import user from "./pages/user";
+import home from "./pages/Nursery/home";
+import user from "./pages/Nursery/user";
+import selectPackage from "./pages/Nursery/selectPackage";
 
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
@@ -102,6 +103,7 @@ class App extends Component {
                 
                 <Route exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
+                <Route exact path="/selectPackage" component={selectPackage} />
                 <Route exact path="/home" component={home} />
                 <Route
                   exact
