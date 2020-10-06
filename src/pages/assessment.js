@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import { getQuestions } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
+import ReactPlayer from 'react-player'
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import * as ReactDom from "react-dom";
 
@@ -446,7 +447,12 @@ const Assessment = (props) => {
             {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
           </h1>
           {/* <img src="./suriya.png" className="img-fluid" alt /> */}
-          <iframe width="420" height="315" src={dataAssessment.video}></iframe>
+          <ReactPlayer
+            url={dataAssessment.video}
+            controls
+            width="500px"
+            height="400px"
+          />
           <p>
             <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
             {dataAssessment.detail}

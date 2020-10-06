@@ -18,7 +18,7 @@ import { loginUser } from '../../redux/actions/userActions';
 import "../../components/NewBiz/css/style.css"
 
 const styles = (theme) => ({
-  ...theme
+  ...theme.spreadThis
 });
 
 class login extends Component {
