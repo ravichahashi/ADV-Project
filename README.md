@@ -8,3 +8,6 @@ Sunnery Nursery assessment project
 
 **Chart Assessment**
 * `npm install react-svg-radar-chart` cann't install on yarn?
+
+**React Player**
+* `npm i react-player`
