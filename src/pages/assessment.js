@@ -29,6 +29,14 @@ const Assessment = (props) => {
     nickname: "ฟลุ๊ค",
   });
 
+  const [nursery, setNursery] = useState([
+    {
+      nurseryName: "",
+      city: "เชียงใหม่",
+      district: "เมือง"
+    }
+  ]);
+
   const { getQuestions } = props;
   useEffect(() => {
     getQuestions();
@@ -496,86 +504,121 @@ const Assessment = (props) => {
       </div>
     </div>
   ) : (
-    <div class="container">
-      <div className="row about-extra">
-        <div className="col-lg-6 wow fadeInUp">
-          <h1>question xxxxxxxxx</h1>
-          <img src="./suriya.png" className="img-fluid" alt />
-          <p>
-            <b>tag xxxxxxxxx</b> <br></br>
-            detail xxxxxxxxx
+      <div class="container">
+        <div className="row about-extra">
+          <div className="col-lg-6 wow fadeInUp">
+            <h1>question xxxxxxxxx</h1>
+            <img src="./suriya.png" className="img-fluid" alt />
+            <p>
+              <b>tag xxxxxxxxx</b> <br></br>
+              detail xxxxxxxxx
           </p>
-        </div>
-        <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-          <div className="box">
-            <div class="card wow bounceInUp">
-              <h1>
-                ผ่าน :
+          </div>
+          <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+            <div className="box">
+              <div class="card wow bounceInUp">
+                <h1>
+                  ผ่าน :
                 <input
-                  name="pass"
-                  type="checkbox"
-                  value="pass"
-                  checked={false}
+                    name="pass"
+                    type="checkbox"
+                    value="pass"
+                    checked={false}
                   // onChange={handleCheck}
+                  />
+                </h1>
+              </div>
+              <h5 class="title">passCond xxxxxxxxx</h5>
+            </div>
+            <div>
+              <br />
+              <br />
+            </div>
+            <div className="box">
+              <h1>
+                ไม่ผ่าน :
+              <input
+                  name="notpass"
+                  type="checkbox"
+                  cssClass="e-success"
+                  value="notPass"
+                  checked={false}
+                // onChange={handleCheck}
                 />
               </h1>
+              <h5 class="title">nopassCond xxxxxxxxx</h5>
             </div>
-            <h5 class="title">passCond xxxxxxxxx</h5>
-          </div>
-          <div>
-            <br />
-            <br />
-          </div>
-          <div className="box">
-            <h1>
-              ไม่ผ่าน :
-              <input
-                name="notpass"
-                type="checkbox"
-                cssClass="e-success"
-                value="notPass"
-                checked={false}
-                // onChange={handleCheck}
-              />
-            </h1>
-            <h5 class="title">nopassCond xxxxxxxxx</h5>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
 
   return (
     <div>
-      <div section id="services" className="section-bg">
-        <div className="container">
-          <div
-            className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp"
-            data-wow-delay="0.1s"
-            data-wow-duration="1.4s"
-          >
-            <div className="box2">
-              <div className="icon">
-                <i
-                  className="ion-ios-paper-outline"
-                  style={{ color: "#000000" }}
-                />
+      <section id="services" className="section-bg">
+        <div className="container" align="center">
+          <div className="col-md-10 col-lg-ุ5">
+            <div className="box">
+              <div className="row">
+                <h4 className="title">Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                <h4 className="title">จังหวัด<a>&nbsp;</a></h4>
+                <option></option>
+                <form>
+                  <select name="position">
+                    <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
+                  </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                  </form>
+                <h4 className="title">อำเภอ&nbsp;</h4>
+                <option></option>
+                <form>
+                  <select name="position">
+                    <option></option><option value="district">{nursery[0].district}</option><option value="Accounting">Accounting</option>
+                  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </form>
+                <section><option></option></section>
+                <section id="search">
+                  <div class="form">
+                    <div class="text-center"><button type="submit" title="Search">ค้นหา</button></div>
+                  </div>
+                </section>
               </div>
-              <h4 className="title">
-                <a>
-                  {" "}
-                  ชื่อ {child.name} อายุ {child.age} ปี ชื่อเล่น{" "}
-                  {child.nickname}{" "}
-                </a>
-              </h4>
             </div>
           </div>
         </div>
-      </div>
+      </section>{/* #services */}
+
+      <section id="boxname" className="section-bg">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+              <div className="box">
+                <table>
+                  <tr>
+                    <td>
+                      <div className="img-size"><a href="/addchild"><img src="./suriya.png" /></a></div>&nbsp;
+                    </td>
+                    <td>
+                      <header className="section-content">
+                      <h4 className="title">
+                        <a>{" "} ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "} {child.nickname}{" "}</a>
+                      </h4>
+                      <br></br>
+                      <h4 className="title">
+                        <a>Caution : {}</a>
+                      </h4>
+                      </header>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="assessment">{assessment}</section>
 
-      <section id="contact">
+      {/* <section id="contact">
         <div className="container-fluid">
           <div className="section-header">
             <h3>ความคิดเห็นผู้ประเมิน</h3>
@@ -601,8 +644,9 @@ const Assessment = (props) => {
             </div>
           </div>
         </div>
-      </section>
-      <section id="assessment">
+      </section> */}
+      {/* <section id="assessment"> */}
+      <section id="boxname">
         <div class="row row-eq-height justify-content-center">
           {/* <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
@@ -611,21 +655,24 @@ const Assessment = (props) => {
               </Button>
             </div>
           </div> */}
-
-          <div class="col-lg-4 mb-4">
-            <div class="card wow bounceInUp">
+          <table width="80%" align="left">
+            <tr>
+              <td width="50%" align="center">
+              <div class="col-lg-4 mb-4">
               <Button type="ChangeType" onClick={handlePrev}>
                 <h1>Previous</h1>
               </Button>
-            </div>
           </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card wow bounceInUp">
+              </td>
+              <td width="50%" align="center">
+              <div class="col-lg-4 mb-4">
               <Button type="ChangeType" onClick={handleNext}>
                 <h1>Next</h1>
               </Button>
-            </div>
           </div>
+              </td>
+            </tr>
+          </table>
         </div>
       </section>
     </div>
