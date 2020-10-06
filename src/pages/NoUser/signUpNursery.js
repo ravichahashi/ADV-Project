@@ -71,7 +71,6 @@ class signupnersery extends Component {
       <Grid container className={classes.form} style={{ padding: 100 }}>
         <Grid item xs={12} sm={7} />
         <Grid item sm>
-          <img src={AppIcon} alt="monkey" className={classes.image} />
           <Typography
             variant="h1"
             class="cursive-font"
@@ -79,8 +78,44 @@ class signupnersery extends Component {
           >
             Sign Up to Sunerry
           </Typography>
+          <div className="box-g">
+            <h5 className="card-title">Gold</h5>
+          </div>
+          <table>
+            <tr>
+              <td>
+              <TextField
+              id="fName"
+              name="fName"
+              type="fName"
+              label="First Name"
+              className={classes.textField}
+              helperText={errors.fName}
+              error={errors.fName ? true : false}
+              value={this.state.fName}
+              onChange={this.handleChange}
+              halfWidth
+            />
+              </td>
+              <a>&nbsp;&nbsp;</a>
+              <td>
+              <TextField
+              id="lName"
+              name="lName"
+              type="lName"
+              label="Last Name"
+              className={classes.textField}
+              helperText={errors.lName}
+              error={errors.lName ? true : false}
+              value={this.state.lName}
+              onChange={this.handleChange}
+              halfWidth
+            />
+              </td>
+            </tr>
+          </table>
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
-            <TextField
+            {/* <TextField
               id="fName"
               name="fName"
               type="fName"
@@ -104,7 +139,7 @@ class signupnersery extends Component {
               value={this.state.lName}
               onChange={this.handleChange}
               halfWidth
-            />
+            /> */}
             <TextField
               id="username"
               name="username"
