@@ -36,8 +36,8 @@ import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 
 // Nusery
-import home from "./pages/Nursery/home";
-import user from "./pages/Nursery/user";
+import home from "./pages/home";
+import user from "./pages/user";
 
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
