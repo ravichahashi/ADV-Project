@@ -592,7 +592,7 @@ h6 {
 --------------------------------*/
 
 #services {
-  padding: 60px 0 10px 0;
+  padding: 60px 0 2px 0;
 }
 
 #services .section-header h3 {
@@ -854,7 +854,7 @@ h6 {
 --------------------------------*/
 
 #op {
-  padding: 10px 0 10px 0;
+  padding: 1px 0 10px 0;
 }
 
 #op .section-header h3 {
@@ -941,7 +941,7 @@ h6 {
 }
 
 #why-us {
-  padding: 5px 0;
+  padding: 2px 0;
   background: #f4938a;
 }
 
@@ -1022,7 +1022,7 @@ h6 {
 /* Why-us Box
 --------------------------------*/
 #why-uss {
-  padding: 10px 0 10px 0;
+  padding: 10px 0 0 0;
   background: #f4938a;
 }
 
