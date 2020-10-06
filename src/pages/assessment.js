@@ -110,7 +110,7 @@ const Assessment = (props) => {
       alert("please check...");
     } else {
       assessmentResults.push(dataAssessment);
-      console.log(assessmentResults);
+      // console.log(assessmentResults);
       switch (dataAssessment.tag) {
         case "GM":
           if (dataAssessment.status === "notPass") {
@@ -359,7 +359,7 @@ const Assessment = (props) => {
     if (assessmentResults.length > 0) {
       const prevAssessment = assessmentResults.pop();
       haveFail = prevAssessment.haveFail;
-      console.log(prevAssessment);
+      // console.log(prevAssessment);
       setDataAssessment({
         ...prevAssessment,
       });
@@ -418,23 +418,18 @@ const Assessment = (props) => {
 
   if (start > 0) {
     start--;
-    console.log(start);
+    // console.log(start);
   }
   if (!loading && start === 0) {
     start--;
-    console.log(start);
-    const full = { ...questions[questionIdxBase] };
-    const oneType = { ...full.GM };
-    const question = { ...oneType[0] };
-    console.log(question);
     setDataAssessment({
       ques: "คำถามข้อที่ 1",
       questionIdx: questionIdxBase,
       num: 1,
-      video: question.video,
-      month: full.month,
+      video: questions[questionIdxBase].GM[0].video,
+      month: questions[questionIdxBase].month,
       tag: "GM",
-      detail: question.text,
+      detail: questions[questionIdxBase].GM[0].text,
       passCond: "รายละเอียดการผ่าน",
       nopassCond: "รายละเอียดการไม่ผ่าน",
       status: "",
