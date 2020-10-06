@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import { getQuestions } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
-import ReactPlayer from "react-player";
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import * as ReactDom from "react-dom";
 
@@ -15,6 +14,7 @@ let failCount = {
   EL: 0,
   PS: 0,
 };
+let start = 3;
 
 const Assessment = (props) => {
   const [child, setChild] = useState({
@@ -357,7 +357,7 @@ const Assessment = (props) => {
   const handlePrev = (e) => {
     e.preventDefault();
     if (assessmentResults.length > 0) {
-      let prevAssessment = assessmentResults.pop();
+      const prevAssessment = assessmentResults.pop();
       haveFail = prevAssessment.haveFail;
       console.log(prevAssessment);
       setDataAssessment({
@@ -387,23 +387,23 @@ const Assessment = (props) => {
     }
   };
 
-  const handleSet = (e) => {
-    e.preventDefault();
-    setDataAssessment({
-      ques: "คำถามข้อที่ 1",
-      questionIdx: questionIdxBase,
-      num: 1,
-      video: questions[questionIdxBase].GM[0].video,
-      month: questions[questionIdxBase].month,
-      tag: "GM",
-      detail: questions[questionIdxBase].GM[0].text,
-      passCond: "รายละเอียดการผ่าน",
-      nopassCond: "รายละเอียดการไม่ผ่าน",
-      status: "",
-      comment: "",
-      haveFail: false,
-    });
-  };
+  // const handleSet = (e) => {
+  //   e.preventDefault();
+  //   setDataAssessment({
+  //     ques: "คำถามข้อที่ 1",
+  //     questionIdx: questionIdxBase,
+  //     num: 1,
+  //     video: questions[questionIdxBase].GM[0].video,
+  //     month: questions[questionIdxBase].month,
+  //     tag: "GM",
+  //     detail: questions[questionIdxBase].GM[0].text,
+  //     passCond: "รายละเอียดการผ่าน",
+  //     nopassCond: "รายละเอียดการไม่ผ่าน",
+  //     status: "",
+  //     comment: "",
+  //     haveFail: false,
+  //   });
+  // };
 
   const handleCheck = (e) => {
     const { value } = e.target;
@@ -415,12 +415,33 @@ const Assessment = (props) => {
     const { value } = e.target;
     setDataAssessment({ ...dataAssessment, comment: value });
   };
-  // if (!loading) {
-  //   flag = false;
-  //   let full = { ...questions[questionIdxBase] };
-  //   let oneType = { ...full.GM };
-  //   let question = { ...oneType[0] };
-  // }
+
+  if (start > 0) {
+    start--;
+    console.log(start);
+  }
+  if (!loading && start === 0) {
+    start--;
+    console.log(start);
+    const full = { ...questions[questionIdxBase] };
+    const oneType = { ...full.GM };
+    const question = { ...oneType[0] };
+    console.log(question);
+    setDataAssessment({
+      ques: "คำถามข้อที่ 1",
+      questionIdx: questionIdxBase,
+      num: 1,
+      video: question.video,
+      month: full.month,
+      tag: "GM",
+      detail: question.text,
+      passCond: "รายละเอียดการผ่าน",
+      nopassCond: "รายละเอียดการไม่ผ่าน",
+      status: "",
+      comment: "",
+      haveFail: false,
+    });
+  }
 
   let assessment = !loading ? (
     <div class="container">
@@ -430,12 +451,7 @@ const Assessment = (props) => {
             {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
           </h1>
           {/* <img src="./suriya.png" className="img-fluid" alt /> */}
-          <ReactPlayer
-            url={dataAssessment.video}
-            controls
-            width="500px"
-            height="400px"
-          />
+          <iframe width="420" height="315" src={dataAssessment.video}></iframe>
           <p>
             <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
             {dataAssessment.detail}
@@ -587,13 +603,13 @@ const Assessment = (props) => {
       </section>
       <section id="assessment">
         <div class="row row-eq-height justify-content-center">
-          <div class="col-lg-4 mb-4">
+          {/* <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
               <Button type="ChangeType" onClick={handleSet}>
                 <h1>SET</h1>
               </Button>
             </div>
-          </div>
+          </div> */}
 
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
