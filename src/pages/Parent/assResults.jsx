@@ -266,7 +266,6 @@ const AssResults = () => {
                           <br></br>
                           <h5>กินกี่ครั้งในวันนี้ </h5>
                           <br></br>
-                          
                         </div>
                       </td>
                       <td>

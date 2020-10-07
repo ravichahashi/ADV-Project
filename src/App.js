@@ -38,15 +38,15 @@ import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 // Nusery
 import home from "./pages/home";
 import user from "./pages/user";
-import assResultsNursery from "./pages/assResultsNursery";
-// import dashboardNursery from "./pages/dashboardNursery";
+import assResultsNursery from "./pages/Nursery/assResultsNursery";
+import dashboardNursery from "./pages/Nursery/dashboardNursery";
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
 
 
 
 import axios from "axios";
-import AssResults from "./pages/assResults";
+import AssResults from "./pages/Parent/assResults";
 
 const theme = createMuiTheme(themeObject);
 
@@ -105,7 +105,7 @@ class App extends Component {
                 <Route exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
                 <Route exact path="/assResultsNursery" component={assResultsNursery} />
-                {/* <Route exact path="/dashboardNursery" component={dashboardNursery} /> */}
+                <Route exact path="/dashboardNursery" component={dashboardNursery} />
                 <Route exact path="/home" component={home} />
                 <Route
                   exact

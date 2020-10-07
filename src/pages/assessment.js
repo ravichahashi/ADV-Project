@@ -448,61 +448,80 @@ const Assessment = (props) => {
   }
 
   let assessment = !loading ? (
-    <div class="container">
-      <div className="row about-extra">
-        <div className="col-lg-6 wow fadeInUp">
-          <h1>
-            {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
-          </h1>
-          {/* <img src="./suriya.png" className="img-fluid" alt /> */}
-          <ReactPlayer
-            url={dataAssessment.video}
-            controls
-            width="500px"
-            height="400px"
-          />
-          <p>
-            <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
-            {dataAssessment.detail}
-          </p>
-        </div>
-        <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-          <div className="box">
-            <div class="card wow bounceInUp">
-              <h1>
-                ผ่าน :
-                <input
-                  name="pass"
-                  type="checkbox"
-                  value="pass"
-                  checked={dataAssessment.status === "pass"}
-                  onChange={handleCheck}
-                />
-              </h1>
-            </div>
-            {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
-          </div>
-          <div>
-            <br />
-            <br />
-          </div>
-          <div className="box">
-            <h1>
-              ไม่ผ่าน :
-              <input
-                name="notpass"
-                type="checkbox"
-                cssClass="e-success"
-                value="notPass"
-                checked={dataAssessment.status === "notPass"}
-                onChange={handleCheck}
-              />
-            </h1>
-            {/* <h5 class="title">{dataAssessment.nopassCond}</h5> */}
-          </div>
+    <section id="video">
+      <div class="container">
+        <div className="row about-extra">
+          <table width="100%">
+            <tr>
+              <td width="50%">
+                  <div className="box">
+                  <h1>
+                    {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
+                </h1>
+                  {/* <img src="./suriya.png" className="img-fluid" alt /> */}
+                  <ReactPlayer
+                    url={dataAssessment.video}
+                    controls
+                    width="700px"
+                    height="500px"
+                  />
+                  <p>
+                    <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
+                    {dataAssessment.detail}
+                  </p>
+                </div>
+              </td>
+              <td width="50%">
+                <div className="box">
+                  <div className="description">GM : .................................................................................
+                  <br></br>.................................................................................
+                  <br></br>.................................................................................
+                  </div>
+                  <table>
+                    <tr>
+                      <td width="50%">
+                        <div className="box">
+                          <h3>
+                          <input
+                              name="pass"
+                              type="checkbox"
+                              value="pass"
+                              checked={dataAssessment.status === "pass"}
+                              onChange={handleCheck}
+                            />
+                            ผ่าน
+                          </h3>
+                          {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
+                        </div>
+                      </td>
+                      <td width="50%">
+                        <div className="box">
+                          <h3>
+                          <input
+                              name="notpass"
+                              type="checkbox"
+                              cssClass="e-success"
+                              value="notPass"
+                              checked={dataAssessment.status === "notPass"}
+                              onChange={handleCheck}
+                            />
+                            ไม่ผ่าน
+                          </h3>
+                          {/* <h5 class="title">{dataAssessment.nopassCond}</h5> */}
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  {/* <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0"> */}
+                  {/* </div> */}
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
-    </div>
+    </section>
+
   ) : (
       <div class="container">
         <div className="row about-extra">
@@ -599,13 +618,13 @@ const Assessment = (props) => {
                     </td>
                     <td>
                       <header className="section-content">
-                      <h4 className="title">
-                        <a>{" "} ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "} {child.nickname}{" "}</a>
-                      </h4>
-                      <br></br>
-                      <h4 className="title">
-                        <a>Caution : {}</a>
-                      </h4>
+                        <h4 className="title">
+                          <a>{" "} ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "} {child.nickname}{" "}</a>
+                        </h4>
+                        <br></br>
+                        <h4 className="title">
+                          <a>Caution : {}</a>
+                        </h4>
                       </header>
                     </td>
                   </tr>
@@ -647,6 +666,8 @@ const Assessment = (props) => {
       </section> */}
       {/* <section id="assessment"> */}
       <section id="boxname">
+      <br />
+      <br />
         <div class="row row-eq-height justify-content-center">
           {/* <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
@@ -658,18 +679,18 @@ const Assessment = (props) => {
           <table width="80%" align="left">
             <tr>
               <td width="50%" align="center">
-              <div class="col-lg-4 mb-4">
-              <Button type="ChangeType" onClick={handlePrev}>
-                <h1>Previous</h1>
-              </Button>
-          </div>
+                <div class="col-lg-4 mb-4">
+                  <Button type="ChangeType" onClick={handlePrev}>
+                    <h1>Previous</h1>
+                  </Button>
+                </div>
               </td>
               <td width="50%" align="center">
-              <div class="col-lg-4 mb-4">
-              <Button type="ChangeType" onClick={handleNext}>
-                <h1>Next</h1>
-              </Button>
-          </div>
+                <div class="col-lg-4 mb-4">
+                  <Button type="ChangeType" onClick={handleNext}>
+                    <h1>Next</h1>
+                  </Button>
+                </div>
               </td>
             </tr>
           </table>

@@ -2078,11 +2078,11 @@ h6 {
   margin-bottom: 15px;
   font-size: 18px;
 }
-
+/* 
 #assessment {
   background: #f7f7e2;
-  padding: 60px 0;
-}
+  padding: 60px 1px 1px 1px;
+} */
 
 #assessment .about-container .background {
   margin: 20px 0;
@@ -2104,6 +2104,17 @@ h6 {
 
 #assessment .about-container p:last-child {
   margin-bottom: 0;
+}
+
+#assessment {
+  padding: 1px 0px 0px 0px;
+  background: #edcccd;
+}
+
+#assessment .box .description {
+  margin-left: 10px;
+  line-height: 24px;
+  font-size: 14px;
 }
 
 /* assResults */
@@ -2455,7 +2466,7 @@ h6 {
 }
 
 #boxname {
-  padding: 5px 0 80px 0;
+  padding: 5px 1px 80px 1px;
   background: #edcccd;
 }
 
@@ -2557,4 +2568,76 @@ h6 {
 #boxname button[type="ChangeType"]:hover {
   background: #c3e97d;
   cursor: pointer;
+}
+
+#tap {
+  padding: 70px 0 1px 0;
+  background: #fff;
+}
+
+#tab {
+  border-top: 25px solid #dafc1a;
+  border-bottom: 15px solid #dafc1a;
+  padding: 1px 0 0px 0;
+  background: #fff;
+}
+
+.box-g {
+  background-color: gold;
+  width: 360px;
+  height: 70px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  padding: 22px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#tab button {
+  width: 360px;
+  height: 70px;
+  background-color: #f0c5ac;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 5px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+#tab .tab button:hover {
+  background-color: #f1ca4d;
+}
+
+#dashboard {
+  padding: 60px;
+  background-color: #ff8c8c;
+}
+
+#dashboard .box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#dashboard .box-n {
+  padding: 30px;
+  position: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#dashboard .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
