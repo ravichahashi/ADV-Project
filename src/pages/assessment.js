@@ -27,6 +27,7 @@ const Assessment = (props) => {
     },
     age: "5",
     nickname: "ฟลุ๊ค",
+    caution: "ไม่มี",
   });
 
   const [nursery, setNursery] = useState([
@@ -467,45 +468,27 @@ const Assessment = (props) => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* #services */}
 
-      <section id="boxname" className="section-bg">
-        <div className="container">
-          <div className="row">
-            <div
-              className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp"
-              data-wow-delay="0.1s"
-              data-wow-duration="1.4s"
-            >
-              <div className="box">
-                <table>
-                  <tr>
-                    <td>
-                      <div className="img-size">
-                        <img src="./suriya.png" />
-                      </div>
-                      &nbsp;
-                    </td>
-                    <td>
-                      <header className="section-content">
-                        <h4 className="title">
-                          <a>
-                            {" "}
-                            ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ{" "}
-                            {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "}
-                            {child.nickname}{" "}
-                          </a>
-                        </h4>
-                        <br></br>
-                        <h4 className="title">
-                          <a>Caution : {}</a>
-                        </h4>
-                      </header>
-                    </td>
-                  </tr>
-                </table>
+          <div className="col-md-10 col-lg-ุ5">
+            <div className="box">
+              <div className="row">
+                <div className="img-size">
+                  <img src="./suriya.png" />
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="Vcenter">
+                  <header className="section-content">
+                    <h5>
+                      ชื่อ: {child.name}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      อายุ: {child.age}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      ชื่อเล่น: {child.nickname}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      โรคประจำตัว: {child.caution}
+                    </h5>
+                  </header>
+                </div>
               </div>
             </div>
           </div>
@@ -513,31 +496,57 @@ const Assessment = (props) => {
       </section>
 
       <section id="assessment">
-        <section id="video">
-          <div class="container">
-            <div className="row about-extra">
-              <table width="100%">
+        <div class="container">
+          <div className="row about-extra">
+            {/* <tr> */}
+            {/* <table width="100%">
+              <td width="20%" bgcolor="#fff">
+                <div className="img-size">
+                  <img src="./suriya.png" />
+                </div>
+              </td>
+              <td width="10%"></td>
+              <td
+                width="60%"
+                align="center"
+                height="50px"
+                bgcolor="#4CAF50"
+                class="Vcenter"
+              >
+                <header className="section-content">
+                  <h4 className="title">
+                    <a>
+                      ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี
+                      &nbsp;&nbsp;&nbsp; ชื่อเล่น {child.nickname}{" "}
+                      &nbsp;&nbsp;&nbsp;Caution : {child.caution}
+                    </a>
+                  </h4>
+                </header>
+              </td>
+              <td width="10%" bgcolor="red"></td>
+            </table> */}
+            {/* </tr> */}
+            <table width="100%" bgcolor="#cbe54e">
+              <tr>
                 <td
+                  width="60%"
                   bgcolor="lightyellow"
                   vertical-align="center"
                   align="center"
                 >
-                  {/* <div className="box"> */}
                   <h1>
                     {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
                   </h1>
                   <ReactPlayer
                     url={dataAssessment.video}
                     controls
-                    width="700px"
-                    height="500px"
+                    width="600px"
+                    height="400px"
                   />
                   <br></br>
                   <br></br>
-                  {/* </div> */}
                 </td>
-                <td bgcolor="lightyellow">
-                  {/* <div className="box"> */}
+                <td bgcolor="lightyellow" width="40%">
                   <p>
                     <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
                     <br></br>
@@ -552,7 +561,7 @@ const Assessment = (props) => {
                   <td
                     width="25%"
                     align="right"
-                    bgcolor="lightgreen"
+                    bgcolor="#cbe54e"
                     vertical-align="center"
                   >
                     <input
@@ -566,31 +575,30 @@ const Assessment = (props) => {
                   <td
                     width="25%"
                     align="left"
-                    bgcolor="lightgreen"
+                    bgcolor="#cbe54e"
                     vertical-align="center"
                   >
                     <h4>&nbsp;ผ่าน</h4>
                   </td>
                   <td>&nbsp;</td>
                   <td
-                    width="15%"
+                    width="20%"
                     align="right"
-                    bgcolor="red"
+                    bgcolor="#e75869"
                     vertical-align="center"
                   >
                     <input
                       name="notpass"
                       type="checkbox"
-                      cssClass="e-success"
                       value="notPass"
                       checked={dataAssessment.status === "notPass"}
                       onChange={handleCheck}
                     />
                   </td>
                   <td
-                    width="35%"
+                    width="30%"
                     align="left"
-                    bgcolor="red"
+                    bgcolor="#e75869"
                     vertical-align="center"
                   >
                     <h4>&nbsp;ไม่ผ่าน</h4>
@@ -603,53 +611,17 @@ const Assessment = (props) => {
                   <br></br>
                   <br></br>
                   <br></br>
-                  {/* </div> */}
                 </td>
-              </table>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      {/* <section id="contact">
-        <div className="container-fluid">
-          <div className="section-header">
-            <h3>ความคิดเห็นผู้ประเมิน</h3>
-          </div>
-          <div className="row wow fadeInUp">
-            <div className="col-lg-12">
-              <form action method="post" role="form" className="contactForm">
-                <div className="form-group">
-                  <textarea
-                    className="form-control"
-                    name="message"
-                    rows={5}
-                    data-rule="required"
-                    data-msg="Please write something for us"
-                    placeholder="Comment"
-                    defaultValue={""}
-                    value={dataAssessment.comment}
-                    onChange={handleComment}
-                  />
-                  <div className="validation" />
-                </div>
-              </form>
-            </div>
+              </tr>
+            </table>
           </div>
         </div>
-      </section> */}
-      {/* <section id="assessment"> */}
+      </section>
+
       <section id="boxname">
         <br />
         <br />
         <div class="row row-eq-height justify-content-center">
-          {/* <div class="col-lg-4 mb-4">
-            <div class="card wow bounceInUp">
-              <Button type="ChangeType" onClick={handleSet}>
-                <h1>SET</h1>
-              </Button>
-            </div>
-          </div> */}
           <table width="80%" align="left">
             <tr>
               <td width="50%" align="center">
