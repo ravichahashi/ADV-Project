@@ -34,7 +34,7 @@ const Index = () => {
                   {/* <i className="fa fa-diamond" /> */}
                   <div className="img-size"><img src="./suriya.png" /></div>
                   <div className="card-body">
-                    <h5 className="card-title"><a href="/childinfo">{Name}</a></h5>
+                    <h5 className="card-title"><a href="/assResults?{Name}">{Name}</a></h5>
                     <p className="card-text">4 ขวบ</p>
                     {/* <a href="#" className="readmore">Read more </a> */}
                   </div>

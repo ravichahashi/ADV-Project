@@ -22,6 +22,7 @@ import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css"
 import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
 import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../../components/NewBiz/css/style.css"
+import { Box } from "@material-ui/core";
 
 // What package
 const packageName = window.location.search;
@@ -34,14 +35,14 @@ class signupnersery extends Component {
   constructor() {
     super();
     this.state = {
-      fName: "",
-      lName: "",
+      username: "",
       email: "",
       address: "",
       phoneNumber: "",
       password: "",
       confirmPassword: "",
       errors: {},
+      type: "Nursery",
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -79,11 +80,26 @@ class signupnersery extends Component {
     const { errors } = this.state;
 
     const iconpackage = [];
-    iconpackage.push(
-      <div className="box-g" >
-        <h5 className="card-title">{packageName}</h5>
-      </div>
-    );
+    if(packageName == "?Sliver"){
+      iconpackage.push(
+        <div className="box-s">
+          <h5 className="card-title">Sliver</h5>
+        </div>
+      );
+    }else if(packageName == "?Gold"){
+      iconpackage.push(
+        <div className="box-g" >
+          <h5 className="card-title">Gold</h5>
+        </div>
+      );
+    }else if(packageName == "?Platinum"){
+      iconpackage.push(
+        <div className="box-p" >
+          <h5 className="card-title">Platinum</h5>
+        </div>
+      );
+    }
+
 
     return (
       <Grid container className={classes.form} style={{ padding: 100 }}>
@@ -96,10 +112,10 @@ class signupnersery extends Component {
           >
             Sign Up to Sunerry
           </Typography>
-          <div className="box-g">
+          {/* <div className="box-g">
             <h5 className="card-title">Gold</h5>
-          </div>
-          {/* {iconpackage} */}
+          </div> */}
+          {iconpackage}
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             {/* <TextField
               id="fName"
