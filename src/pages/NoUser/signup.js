@@ -14,7 +14,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { signupUser } from "../../redux/actions/userActions";
 
-
 const styles = (theme) => ({
   ...theme.spreadThis,
 });
@@ -23,6 +22,7 @@ class signup extends Component {
   constructor() {
     super();
     this.state = {
+      username: "",
       fName: "",
       lName: "",
       email: "",
@@ -31,6 +31,7 @@ class signup extends Component {
       password: "",
       confirmPassword: "",
       errors: {},
+      type: "",
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -46,12 +47,13 @@ class signup extends Component {
     const newUserData = {
       fName: this.state.fName,
       lName: this.state.lName,
-      userName: this.state.userName,
+      username: this.state.username,
       email: this.state.email,
-      address: this.address,
-      phoneNumber: this.phoneNumber,
+      address: this.state.address,
+      phoneNumber: this.state.phoneNumber,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
+      type: this.state.type,
     };
     this.props.signupUser(newUserData, this.props.history);
   };
@@ -183,9 +185,16 @@ class signup extends Component {
               </Typography>
             )}
             <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+              />
               <label className="form-check-label" htmlFor="exampleCheck1">
-                <small>I agree to Sunerry's <Link to="#">Terms of Use</Link> and <Link to="#">Cookie &amp; Privacy Policy.</Link></small>
+                <small>
+                  I agree to Sunerry's <Link to="#">Terms of Use</Link> and{" "}
+                  <Link to="#">Cookie &amp; Privacy Policy.</Link>
+                </small>
               </label>
             </div>
             <Button
@@ -194,7 +203,8 @@ class signup extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
-            >Sign Up to Sunerry
+            >
+              Sign Up to Sunerry
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
