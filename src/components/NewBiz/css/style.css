@@ -137,7 +137,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   padding: 20px 0;
-  background: #ff8b0f;
+  background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
@@ -270,7 +270,7 @@ h6 {
 .main-nav a {
   display: block;
   position: relative;
-  color: #ffffff;
+  color: #3c3f42;
   padding: 10px 15px;
   transition: 0.3s;
   font-size: 14px;
@@ -308,12 +308,13 @@ h6 {
 .main-nav .drop-down li {
   min-width: 180px;
   position: relative;
+  color:#3c3f42;
 }
 
 .main-nav .drop-down ul a {
   padding: 10px 20px;
   font-size: 13px;
-  color: #004289;
+  color: #3c3f42;
 }
 
 .main-nav .drop-down ul a:hover,
@@ -482,7 +483,7 @@ h6 {
 --------------------------------*/
 
 .section-bg {
-  background: #f1ca4d;
+  background: #f5f5f5;
 }
 
 /* About Us Section
@@ -596,7 +597,7 @@ h6 {
 }
 
 #services .section-header h3 {
-  color: #fff;
+  color: rgb(92, 90, 90);
 }
 
 #services .box {
@@ -858,7 +859,7 @@ h6 {
 }
 
 #op .section-header h3 {
-  color: #fff;
+  color: rgb(73, 71, 71);
 }
 
 #op .box {
@@ -867,7 +868,7 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 50px 10px;
-  background: #fff;
+  background: #F9E104;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -942,11 +943,11 @@ h6 {
 
 #why-us {
   padding: 1px 0;
-  background: #f4938a;
+  background: #f5f5f5;
 }
 
 #why-us .section-header h3 {
-  color: #fff;
+  color: rgb(58, 54, 54);
 }
 
 #why-us .section-header p {
@@ -1023,7 +1024,7 @@ h6 {
 --------------------------------*/
 #why-uss {
   padding: 10px 0 1px 0;
-  background: #f4938a;
+  background: #f5f5f5;
 }
 
 #why-uss .box {
@@ -1032,7 +1033,7 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
-  background: #fff;
+  background: #F9E104;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -1073,7 +1074,7 @@ h6 {
 }
 
 #why-uss .title a {
-  color: #111;
+  color: rgb(75, 73, 73);
 }
 
 #why-uss .box:hover .title a {
@@ -1091,7 +1092,7 @@ h6 {
 --------------------------------*/
 #your-fam {
   padding: 40px 0;
-  background: #edcccd;
+  background: #f5f5f5;
 }
 
 #your-fam .section-header h3,
@@ -1100,7 +1101,7 @@ h6 {
 }
 
 #your-fam .card {
-  background: #c7ceea;
+  background: #fff;
   border-color: #392470;
   border-radius: 10px;
   margin: 0 15px;
@@ -1112,8 +1113,8 @@ h6 {
 }
 
 #your-fam .card:hover {
-  background: #a1d3d0;
-  border-color: #7a0070;
+  background: #ffdc6b;
+  border-color: #ddb940;
 }
 
 #your-fam .img-size img {
@@ -1537,7 +1538,7 @@ h6 {
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 60px 0;
   overflow: hidden;
-  background: #edcccd;
+  background: #f5f5f5;
 }
 
 #contact .section-header {
@@ -1647,7 +1648,7 @@ h6 {
 }
 
 #contact .form button[type="submit"] {
-  background: #fe9d5a;
+  background: #F9E104;
   border: 0;
   border-radius: 20px;
   padding: 8px 30px;
@@ -1656,7 +1657,7 @@ h6 {
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #ff8c8c;
+  background: #f3974c;
   cursor: pointer;
 }
 
@@ -1674,16 +1675,16 @@ h6 {
 # Search Button
 --------------------------------------------------------------*/
 #search .form button[type="submit"] {
-  background: #fe9d5a;
+  background: #F9E104;
   border: 0;
   border-radius: 20px;
   padding: 3px 15px;
-  color: #fff;
+  color: rgb(59, 58, 58);
   transition: 0.3s;
 }
 
 #search .form button[type="submit"]:hover {
-  background: #ff8c8c;
+  background: #fdc152;
   cursor: pointer;
 }
 
@@ -2000,7 +2001,7 @@ h6 {
 
 /* <--assessment--> */
 
-#assessment button[type="pass"] {
+/* #assessment button[type="pass"] {
   background: #43eb10;
   border: 0;
   border-radius: 0 px;
@@ -2020,11 +2021,11 @@ h6 {
   padding: 8px 30px;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-}
-#assessment button[type="notpass"]:hover {
+} */
+/* #assessment button[type="notpass"]:hover {
   background: #f0c5ac;
   cursor: pointer;
-}
+} */
 
 #assessment  input[ name="notpass"] {
   outline: 2px solid red;
@@ -2037,10 +2038,10 @@ h6 {
 }
 
 #assessment input[type="checkbox"] {
-  padding-top: 500px;
+  padding: 8px 30px;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 }
 
 #assessment button[type="ChangeType"] {
@@ -2121,7 +2122,7 @@ h6 {
 
 #assResults {
   padding: 45px 0 10px 0;
-  background: #edcccd;
+  background: #f5f5f5;
 }
 
 #assResults .box {
@@ -2215,7 +2216,7 @@ h6 {
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
   padding: 60px 0;
   overflow: hidden;
-  background: #f4938a;
+  background: #f5f5f5;
 }
 
 #assResults2 .section-header {
@@ -2251,7 +2252,7 @@ h6 {
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
-  background: rgb(248, 219, 219);
+  background: #fff;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -2309,11 +2310,11 @@ h6 {
 
 #package {
   padding: 160px;
-  background: #f4938a;
+  background: #f5f5f5;
 }
 
 #package .section-header h3 {
-  color: #fff;
+  color: rgb(63, 60, 60);
   font-size: 36px;
   text-align: center;
   font-weight: 500;
@@ -2440,7 +2441,7 @@ h6 {
   font-weight: 550;
   width: 170px;
   height: 60px;
-  background: #a1d3d0;
+  background: #F9E104;
   border: 0;
   border-radius: 50px;
   padding: 8px 30px;
@@ -2553,8 +2554,8 @@ h6 {
 }
 
 #boxname button[type="ChangeType"] {
-  font-size: 20px;
-  font-weight: 550;
+  font-size: 15px;
+  font-weight: 400;
   width: 300px;
   height: 80px;
   background: #a1d3d0;

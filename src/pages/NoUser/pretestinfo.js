@@ -49,9 +49,7 @@ Services Section
                   <section><option></option></section>
                   <section id="search">
                     <div class="form">
-                      {/* <form action="" method="post" role="form" class="contactForm"> */}
                       <div class="text-center"><button type="submit" title="Search">ค้นหา</button></div>
-                      {/* </form> */}
                     </div>
                   </section>
                 </div>
@@ -65,9 +63,48 @@ Services Section
             <div className="row">
               <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                 <div className="box">
-                  <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#3fcdc7' }} /></div>
-                  <h4 className="title"><a href="">ลงทะเบียน Nursery</a></h4>
-                  <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                  <h4><a>กรอกข้อมูลเบื้องต้น</a></h4><br />
+
+                <form>
+
+                  <div class="row">
+                    <div class="col">
+                      <label>วันเกิด</label>
+                      <input type="text" class="form-control" placeholder=""></input>
+                    </div>
+                    <div class="col">
+                      <label>เพศ</label>
+                        <select class="custom-select">
+                          <option selected></option>
+                          <option value="ชาย">ชาย</option>
+                          <option value="หญิง">หญิง</option>
+                        </select>
+                    </div>
+                  </div>
+
+                  <br />
+                  <div class="row">
+                    <div class="col">
+                      <label>น้ำหนัก</label>
+                      <input type="text" class="form-control" placeholder=""></input>
+                    </div>
+                    <div class="col">
+                      <label>ส่วนสูง</label>
+                      <input type="text" class="form-control" placeholder=""></input>
+                    </div>
+                  </div>
+
+                </form>
+
+                <br />
+                  <section id="search">
+                    <div class="form">
+                      <div align="right">
+                        <a href="/assessment"><button type="submit">ทำแบบประเมิน</button></a>&nbsp;&nbsp;&nbsp;
+                      </div>
+                    </div>
+                  </section>
+
                 </div>
               </div>
             </div>

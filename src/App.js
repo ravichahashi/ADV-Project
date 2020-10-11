@@ -83,7 +83,7 @@ class App extends Component {
                 <AuthRoute exact path="/signup" component={signup} />
                 <AuthRoute exact path="/signupnurserypackage" component={signUpNurseryPackage} />
                 <AuthRoute exact path="/signupnursery" component={signupNursery} />
-                <Route exact path="/pretestinfo" component={pretestinfo} />
+                <AuthRoute exact path="/pretestinfo" component={pretestinfo} />
 
                 <Route exact path="/" component={indexGuardian} />
                 <Route exact path="/login" component={login} />
@@ -102,7 +102,7 @@ class App extends Component {
                 <Route exact path="/nurseryInfo" component={nurseryInfo_parent} />
                 {/* Nusery */}
                 
-                <Route exact path="/assessment" component={assessment} />
+                <AuthRoute exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
                 <Route exact path="/assResultsNursery" component={assResultsNursery} />
                 <Route exact path="/dashboardNursery" component={dashboardNursery} />

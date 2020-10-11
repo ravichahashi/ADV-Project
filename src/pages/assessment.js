@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import { getQuestions } from "../redux/actions/dataActions";
 import { connect } from "react-redux";
-import ReactPlayer from 'react-player'
+import ReactPlayer from "react-player";
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import * as ReactDom from "react-dom";
 
@@ -33,8 +33,8 @@ const Assessment = (props) => {
     {
       nurseryName: "",
       city: "เชียงใหม่",
-      district: "เมือง"
-    }
+      district: "เมือง",
+    },
   ]);
 
   const { getQuestions } = props;
@@ -452,125 +452,122 @@ const Assessment = (props) => {
       <div class="container">
         <div className="row about-extra">
           <table width="100%">
-            <tr>
-              <td width="50%">
-                  <div className="box">
+              <td  bgcolor="lightyellow" vertical-align="center" align="center">
+                {/* <div className="box"> */}
                   <h1>
                     {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
-                </h1>
-                  {/* <img src="./suriya.png" className="img-fluid" alt /> */}
+                  </h1>
                   <ReactPlayer
                     url={dataAssessment.video}
                     controls
                     width="700px"
                     height="500px"
                   />
+                  <br></br><br></br>
+                {/* </div> */}
+              </td>
+              <td bgcolor="lightyellow">
+                {/* <div className="box"> */}
                   <p>
                     <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
+                    <br></br>
+                    <br></br>
                     {dataAssessment.detail}
                   </p>
-                </div>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <td width="25%" align="right" bgcolor="lightgreen" vertical-align="center" >
+                    <input
+                      name="pass"
+                      type="checkbox"
+                      value="pass"
+                      checked={dataAssessment.status === "pass"}
+                      onChange={handleCheck}
+                    />
+                  </td>
+                  <td width="25%" align="left" bgcolor="lightgreen" vertical-align="center" >
+                    <h4>&nbsp;ผ่าน</h4>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td width="15%" align="right" bgcolor="red" vertical-align="center" >
+                    <input
+                      name="notpass"
+                      type="checkbox"
+                      cssClass="e-success"
+                      value="notPass"
+                      checked={dataAssessment.status === "notPass"}
+                      onChange={handleCheck}
+                    />
+                  </td>
+                  <td width="35%" align="left" bgcolor="red" vertical-align="center" >
+                    <h4>&nbsp;ไม่ผ่าน</h4>
+                  </td>
+                  <td>&nbsp;</td>
+                  {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                {/* </div> */}
               </td>
-              <td width="50%">
-                <div className="box">
-                  <div className="description">GM : .................................................................................
-                  <br></br>.................................................................................
-                  <br></br>.................................................................................
-                  </div>
-                  <table>
-                    <tr>
-                      <td width="50%">
-                        <div className="box">
-                          <h3>
-                          <input
-                              name="pass"
-                              type="checkbox"
-                              value="pass"
-                              checked={dataAssessment.status === "pass"}
-                              onChange={handleCheck}
-                            />
-                            ผ่าน
-                          </h3>
-                          {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
-                        </div>
-                      </td>
-                      <td width="50%">
-                        <div className="box">
-                          <h3>
-                          <input
-                              name="notpass"
-                              type="checkbox"
-                              cssClass="e-success"
-                              value="notPass"
-                              checked={dataAssessment.status === "notPass"}
-                              onChange={handleCheck}
-                            />
-                            ไม่ผ่าน
-                          </h3>
-                          {/* <h5 class="title">{dataAssessment.nopassCond}</h5> */}
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                  {/* <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0"> */}
-                  {/* </div> */}
-                </div>
-              </td>
-            </tr>
           </table>
         </div>
       </div>
     </section>
-
   ) : (
-      <div class="container">
-        <div className="row about-extra">
-          <div className="col-lg-6 wow fadeInUp">
-            <h1>question xxxxxxxxx</h1>
-            <img src="./suriya.png" className="img-fluid" alt />
-            <p>
-              <b>tag xxxxxxxxx</b> <br></br>
-              detail xxxxxxxxx
+    <div class="container">
+      <div className="row about-extra">
+        <div className="col-lg-6 wow fadeInUp">
+          <h1>question xxxxxxxxx</h1>
+          <img src="./suriya.png" className="img-fluid" alt />
+          <p>
+            <b>tag xxxxxxxxx</b> <br></br>
+            detail xxxxxxxxx
           </p>
-          </div>
-          <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <div className="box">
-              <div class="card wow bounceInUp">
-                <h1>
-                  ผ่าน :
-                <input
-                    name="pass"
-                    type="checkbox"
-                    value="pass"
-                    checked={false}
-                  // onChange={handleCheck}
-                  />
-                </h1>
-              </div>
-              <h5 class="title">passCond xxxxxxxxx</h5>
-            </div>
-            <div>
-              <br />
-              <br />
-            </div>
-            <div className="box">
+        </div>
+        <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+          <div className="box">
+            <div class="card wow bounceInUp">
               <h1>
-                ไม่ผ่าน :
-              <input
-                  name="notpass"
+                ผ่าน :
+                <input
+                  name="pass"
                   type="checkbox"
-                  cssClass="e-success"
-                  value="notPass"
+                  value="pass"
                   checked={false}
-                // onChange={handleCheck}
+                  // onChange={handleCheck}
                 />
               </h1>
-              <h5 class="title">nopassCond xxxxxxxxx</h5>
             </div>
+            <h5 class="title">passCond xxxxxxxxx</h5>
+          </div>
+          <div>
+            <br />
+            <br />
+          </div>
+          <div className="box">
+            <h1>
+              ไม่ผ่าน :
+              <input
+                name="notpass"
+                type="checkbox"
+                cssClass="e-success"
+                value="notPass"
+                checked={false}
+                // onChange={handleCheck}
+              />
+            </h1>
+            <h5 class="title">nopassCond xxxxxxxxx</h5>
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 
   return (
     <div>
@@ -579,47 +576,78 @@ const Assessment = (props) => {
           <div className="col-md-10 col-lg-ุ5">
             <div className="box">
               <div className="row">
-                <h4 className="title">Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-                <h4 className="title">จังหวัด<a>&nbsp;</a></h4>
+                <h4 className="title">
+                  Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </h4>
+                <h4 className="title">
+                  จังหวัด<a>&nbsp;</a>
+                </h4>
                 <option></option>
                 <form>
                   <select name="position">
-                    <option></option><option value="city">{nursery[0].city}</option><option value="Accounting">Accounting</option>
-                  </select>&nbsp;&nbsp;&nbsp;&nbsp;
-                  </form>
+                    <option></option>
+                    <option value="city">{nursery[0].city}</option>
+                    <option value="Accounting">Accounting</option>
+                  </select>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                </form>
                 <h4 className="title">อำเภอ&nbsp;</h4>
                 <option></option>
                 <form>
                   <select name="position">
-                    <option></option><option value="district">{nursery[0].district}</option><option value="Accounting">Accounting</option>
-                  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  </form>
-                <section><option></option></section>
+                    <option></option>
+                    <option value="district">{nursery[0].district}</option>
+                    <option value="Accounting">Accounting</option>
+                  </select>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </form>
+                <section>
+                  <option></option>
+                </section>
                 <section id="search">
                   <div class="form">
-                    <div class="text-center"><button type="submit" title="Search">ค้นหา</button></div>
+                    <div class="text-center">
+                      <button type="submit" title="Search">
+                        ค้นหา
+                      </button>
+                    </div>
                   </div>
                 </section>
               </div>
             </div>
           </div>
         </div>
-      </section>{/* #services */}
+      </section>
+      {/* #services */}
 
       <section id="boxname" className="section-bg">
         <div className="container">
           <div className="row">
-            <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div
+              className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp"
+              data-wow-delay="0.1s"
+              data-wow-duration="1.4s"
+            >
               <div className="box">
                 <table>
                   <tr>
                     <td>
-                      <div className="img-size"><a href="/addchild"><img src="./suriya.png" /></a></div>&nbsp;
+                      <div className="img-size">
+                        
+                          <img src="./suriya.png" />
+                        
+                      </div>
+                      &nbsp;
                     </td>
                     <td>
                       <header className="section-content">
                         <h4 className="title">
-                          <a>{" "} ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "} {child.nickname}{" "}</a>
+                          <a>
+                            {" "}
+                            ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ{" "}
+                            {child.age} ปี &nbsp;&nbsp;&nbsp; ชื่อเล่น{" "}
+                            {child.nickname}{" "}
+                          </a>
                         </h4>
                         <br></br>
                         <h4 className="title">
@@ -666,8 +694,8 @@ const Assessment = (props) => {
       </section> */}
       {/* <section id="assessment"> */}
       <section id="boxname">
-      <br />
-      <br />
+        <br />
+        <br />
         <div class="row row-eq-height justify-content-center">
           {/* <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
@@ -681,14 +709,14 @@ const Assessment = (props) => {
               <td width="50%" align="center">
                 <div class="col-lg-4 mb-4">
                   <Button type="ChangeType" onClick={handlePrev}>
-                    <h1>Previous</h1>
+                    <h1>ก่อนหน้า</h1>
                   </Button>
                 </div>
               </td>
               <td width="50%" align="center">
                 <div class="col-lg-4 mb-4">
                   <Button type="ChangeType" onClick={handleNext}>
-                    <h1>Next</h1>
+                    <h1>ถัดไป</h1>
                   </Button>
                 </div>
               </td>
