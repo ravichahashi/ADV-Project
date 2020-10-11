@@ -65,7 +65,7 @@ const Index = () => {
               <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
                   <div className="icon"><i className="ion-ios-analytics-outline" style={{ color: '#fff' }} /></div>
-                  <h4 className="title"><a href="/assessment">ทดลองทำการประเมิน</a></h4>
+                  <h4 className="title"><a href="/pretestinfo">ทดลองทำการประเมิน</a></h4>
                   <ul class="b">
                     <p className="description"><li>ทดลองทำการประเมินโดยไม่เก็บข้อมูล</li></p>
                     <p className="description"><li>ไม่สามารถติดตามผลการประเมินภายหลังได้</li></p>
