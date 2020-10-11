@@ -15,7 +15,7 @@ let failCount = {
   EL: 0,
   PS: 0,
 };
-let start = 3;
+let start = 2;
 
 const Assessment = (props) => {
   const [child, setChild] = useState({

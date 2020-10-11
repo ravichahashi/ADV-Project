@@ -1,4 +1,5 @@
 import {
+  SET_CHILDREN,
   SET_QUESTIONS,
   SET_SCREAMS,
   LOADING_DATA,
@@ -14,6 +15,22 @@ import {
   SUBMIT_COMMENT,
 } from "../types";
 import axios from "axios";
+
+// Get children
+export const getChildren = () => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
+  axios
+    .get("/children")
+    .then((res) => {
+      dispatch({
+        type: SET_CHILDREN,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 // Get questions
 export const getQuestions = () => (dispatch) => {
