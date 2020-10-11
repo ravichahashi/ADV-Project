@@ -135,8 +135,8 @@ const AddChild = (props) => {
 
                                         <button
                                             type="submit"
-                                            title="Send Message"
-                                            onClick={handleSubmit}
+                                            // title="Send Message"
+                                            // onClick={handleSubmit}
                                         >
                                             <a href="/childmanager">เพิ่มเด็ก</a>
                                         </button>
