@@ -22,8 +22,8 @@ const Index = () => {
   ]);
   const [numChild, setnumChild] = useState(4);
   const [Child, setChild] = useState([
-    { name: "รักษ์พงศ์ ทอหุล", gender: "ชาย", age: 2, weight: 20, high: 50 },
-    { name: "suriya ", gender: "หญิง", age: 3, weight: 100, high: 250 },
+    { name: "รักษ์พงศ์ ทอหุล", gender: "ชาย", age: "12/02/2541", weight: 20, high: 50 },
+    { name: "suriya ", gender: "หญิง", age: "20/05/2560", weight: 100, high: 250 },
   ]);
 
   const item = [];
