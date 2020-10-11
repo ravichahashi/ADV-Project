@@ -18,16 +18,27 @@ let failCount = {
 let start = 2;
 
 const Assessment = (props) => {
-  const [child, setChild] = useState({
+  const calMonth = (year, month) => {
+    return (
+      (new Date().getFullYear() - year) * 12 +
+      (new Date().getMonth() + 1 - month)
+    );
+  };
+
+  const resChild = {
     name: "Suriya Techalue",
     birthDate: {
       year: "2020",
       month: "1",
       date: "10",
     },
-    age: "5",
     nickname: "ฟลุ๊ค",
     caution: "ไม่มี",
+  };
+
+  const [child, setChild] = useState({
+    ...resChild,
+    month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
   });
 
   const [nursery, setNursery] = useState([
@@ -44,14 +55,6 @@ const Assessment = (props) => {
   }, [getQuestions]);
   const { questions, loading } = props.data;
 
-  const calMonth = (year, month) => {
-    return (
-      (new Date().getFullYear() - year) * 12 +
-      (new Date().getMonth() + 1 - month)
-    );
-  };
-  const childMonth = calMonth(child.birthDate.year, child.birthDate.month);
-
   const findQuestion = (month) => {
     let idx = -1;
     for (let i = 0; i < questions.length; i++) {
@@ -60,7 +63,7 @@ const Assessment = (props) => {
     }
     return idx;
   };
-  const questionIdxBase = findQuestion(childMonth);
+  const questionIdxBase = findQuestion(child.month);
 
   const findAllScore = () => {
     let countGM = 0,
@@ -85,7 +88,7 @@ const Assessment = (props) => {
       countEL = 0,
       countPS = 0;
     questions.forEach((question) => {
-      if (question.month <= childMonth) {
+      if (question.month <= child.month) {
         countGM += question.GM.length;
         countFM += question.FM.length;
         countRL += question.RL.length;
@@ -481,7 +484,7 @@ const Assessment = (props) => {
                     <h5>
                       ชื่อ: {child.name}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      อายุ: {child.age}
+                      อายุ: {child.month}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       ชื่อเล่น: {child.nickname}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
