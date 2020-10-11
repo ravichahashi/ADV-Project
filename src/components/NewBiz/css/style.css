@@ -2001,7 +2001,7 @@ h6 {
 
 /* <--assessment--> */
 
-#assessment button[type="pass"] {
+/* #assessment button[type="pass"] {
   background: #43eb10;
   border: 0;
   border-radius: 0 px;
@@ -2021,11 +2021,11 @@ h6 {
   padding: 8px 30px;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-}
-#assessment button[type="notpass"]:hover {
+} */
+/* #assessment button[type="notpass"]:hover {
   background: #f0c5ac;
   cursor: pointer;
-}
+} */
 
 #assessment  input[ name="notpass"] {
   outline: 2px solid red;
@@ -2038,10 +2038,10 @@ h6 {
 }
 
 #assessment input[type="checkbox"] {
-  padding-top: 500px;
+  padding: 8px 30px;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 }
 
 #assessment button[type="ChangeType"] {
@@ -2554,8 +2554,8 @@ h6 {
 }
 
 #boxname button[type="ChangeType"] {
-  font-size: 20px;
-  font-weight: 550;
+  font-size: 15px;
+  font-weight: 400;
   width: 300px;
   height: 80px;
   background: #a1d3d0;
