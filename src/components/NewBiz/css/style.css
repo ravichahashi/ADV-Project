@@ -1649,6 +1649,20 @@ h6 {
   cursor: pointer;
 }
 
+#contact button[type="submit"] {
+  background: #F9E104;
+  border: 0;
+  border-radius: 20px;
+  padding: 8px 30px;
+  color: rgb(82, 78, 78);
+  transition: 0.3s;
+}
+
+#contact button[type="submit"]:hover {
+  background: #f3974c;
+  cursor: pointer;
+}
+
 #contact .img-size img {
   max-width: 150px;
   max-height: 150px;
