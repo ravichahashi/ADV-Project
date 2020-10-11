@@ -256,7 +256,7 @@ class Nevbar extends Component {
         <div className="logo float-left">
           <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
           <a href="/" className="scrollto">
-            <img src="./sunerry2.png" alt className="img-fluid" />
+            <img src="./sunerry1.png" alt className="img-fluid" />
           </a>
         </div>
         <nav className="main-nav float-right d-none d-lg-block">
