@@ -23,9 +23,6 @@ const Index = () => {
   return (
     <div>
       <main id="main">
-        {/*==========================
-Services Section
-    ============================*/}
         <section id="servicesNew" className="section-bg">
           <div className="container" align="center">
             <div className="col-md-10 col-lg-ุ5">
@@ -56,16 +53,14 @@ Services Section
               </div>
             </div>
           </div>
-        </section>
 
-        <section id="why-uss" className="section-bg">
           <div className="container">
             <div className="row">
               <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                 <div className="box">
                   <h4><a>กรอกข้อมูลเบื้องต้น</a></h4><br />
 
-                <form>
+                  <form>
 
                   <div class="row">
                     <div class="col">
@@ -94,9 +89,9 @@ Services Section
                     </div>
                   </div>
 
-                </form>
+                  </form>
 
-                <br />
+                  <br />
                   <section id="search">
                     <div class="form">
                       <div align="right">
@@ -109,6 +104,7 @@ Services Section
               </div>
             </div>
           </div>
+
         </section>
 
       </main>
