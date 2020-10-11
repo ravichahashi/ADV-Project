@@ -481,7 +481,7 @@ const Assessment = (props) => {
                     <h5>
                       ชื่อ: {child.name}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      อายุ: {child.age}
+                      อายุ: {childMonth} เดือน
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       ชื่อเล่น: {child.nickname}
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -34,14 +34,14 @@ const OverviewChild = (props) => {
       {
         name: "รักษ์พงศ์ ทอหุล",
         gender: "ชาย",
-        age: "12/02/2541",
+        age: { date: "12", month: "02", year: "2541" },
         weight: 20,
         high: 50,
       },
       {
         name: "suriya ",
         gender: "หญิง",
-        age: "20/05/2560",
+        age: { date: "12", month: "02", year: "2541" },
         weight: 100,
         high: 250,
       },
@@ -81,14 +81,19 @@ const OverviewChild = (props) => {
                   </div>
                 </div>
                 <p className="description">เพศ :{Child[key].gender}</p>
-                <p className="description">อายุ :{Child[key].age}</p>
+                <p className="description">
+                  วันเกิด :{Child[key].age.date} / {Child[key].age.month} /{" "}
+                  {Child[key].age.year}
+                </p>
                 <p className="description">น้ำหนัก :{Child[key].weight}</p>
                 <p className="description">ส่วนสูง :{Child[key].high}</p>
                 <br></br>
                 <section id="more">
                   <div class="form">
                     <div align="center">
-                      <a href="/assResults"><button type="submit">เพิ่มเติม</button></a>
+                      <a href="/assResults">
+                        <button type="submit">เพิ่มเติม</button>
+                      </a>
                     </div>
                   </div>
                 </section>
