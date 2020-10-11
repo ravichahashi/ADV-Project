@@ -97,17 +97,12 @@ const Assessment = (props) => {
   const fullScore = findFullScore();
 
   const [dataAssessment, setDataAssessment] = useState({
-    ques: "คำถามข้อที่ 1",
-    questionIdx: questionIdxBase,
-    num: "1",
-    video: "https://www.youtube.com/embed/wM2GxHbOssE",
-    // month: questions[3].month,
-    // tag: questions[questionIdxBase].GM[0].tag,
+    questionIdx: 0,
+    num: 0,
+    video: "",
     month: 0,
-    tag: "",
-    detail: "llll",
-    passCond: "รายละเอียดการผ่าน",
-    nopassCond: "รายละเอียดการไม่ผ่าน",
+    tag: "xx",
+    detail: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     status: "",
     comment: "",
     haveFail: false,
@@ -396,24 +391,6 @@ const Assessment = (props) => {
     }
   };
 
-  // const handleSet = (e) => {
-  //   e.preventDefault();
-  //   setDataAssessment({
-  //     ques: "คำถามข้อที่ 1",
-  //     questionIdx: questionIdxBase,
-  //     num: 1,
-  //     video: questions[questionIdxBase].GM[0].video,
-  //     month: questions[questionIdxBase].month,
-  //     tag: "GM",
-  //     detail: questions[questionIdxBase].GM[0].text,
-  //     passCond: "รายละเอียดการผ่าน",
-  //     nopassCond: "รายละเอียดการไม่ผ่าน",
-  //     status: "",
-  //     comment: "",
-  //     haveFail: false,
-  //   });
-  // };
-
   const handleCheck = (e) => {
     const { value } = e.target;
     setDataAssessment({ ...dataAssessment, status: value });
@@ -432,142 +409,17 @@ const Assessment = (props) => {
   if (!loading && start === 0) {
     start--;
     setDataAssessment({
-      ques: "คำถามข้อที่ 1",
       questionIdx: questionIdxBase,
       num: 1,
       video: questions[questionIdxBase].GM[0].video,
       month: questions[questionIdxBase].month,
       tag: "GM",
       detail: questions[questionIdxBase].GM[0].text,
-      passCond: "รายละเอียดการผ่าน",
-      nopassCond: "รายละเอียดการไม่ผ่าน",
       status: "",
       comment: "",
       haveFail: false,
     });
   }
-
-  let assessment = !loading ? (
-    <section id="video">
-      <div class="container">
-        <div className="row about-extra">
-          <table width="100%">
-              <td  bgcolor="lightyellow" vertical-align="center" align="center">
-                {/* <div className="box"> */}
-                  <h1>
-                    {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
-                  </h1>
-                  <ReactPlayer
-                    url={dataAssessment.video}
-                    controls
-                    width="700px"
-                    height="500px"
-                  />
-                  <br></br><br></br>
-                {/* </div> */}
-              </td>
-              <td bgcolor="lightyellow">
-                {/* <div className="box"> */}
-                  <p>
-                    <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
-                    <br></br>
-                    <br></br>
-                    {dataAssessment.detail}
-                  </p>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <td width="25%" align="right" bgcolor="lightgreen" vertical-align="center" >
-                    <input
-                      name="pass"
-                      type="checkbox"
-                      value="pass"
-                      checked={dataAssessment.status === "pass"}
-                      onChange={handleCheck}
-                    />
-                  </td>
-                  <td width="25%" align="left" bgcolor="lightgreen" vertical-align="center" >
-                    <h4>&nbsp;ผ่าน</h4>
-                  </td>
-                  <td>&nbsp;</td>
-                  <td width="15%" align="right" bgcolor="red" vertical-align="center" >
-                    <input
-                      name="notpass"
-                      type="checkbox"
-                      cssClass="e-success"
-                      value="notPass"
-                      checked={dataAssessment.status === "notPass"}
-                      onChange={handleCheck}
-                    />
-                  </td>
-                  <td width="35%" align="left" bgcolor="red" vertical-align="center" >
-                    <h4>&nbsp;ไม่ผ่าน</h4>
-                  </td>
-                  <td>&nbsp;</td>
-                  {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                  <br></br>
-                {/* </div> */}
-              </td>
-          </table>
-        </div>
-      </div>
-    </section>
-  ) : (
-    <div class="container">
-      <div className="row about-extra">
-        <div className="col-lg-6 wow fadeInUp">
-          <h1>question xxxxxxxxx</h1>
-          <img src="./suriya.png" className="img-fluid" alt />
-          <p>
-            <b>tag xxxxxxxxx</b> <br></br>
-            detail xxxxxxxxx
-          </p>
-        </div>
-        <div className="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-          <div className="box">
-            <div class="card wow bounceInUp">
-              <h1>
-                ผ่าน :
-                <input
-                  name="pass"
-                  type="checkbox"
-                  value="pass"
-                  checked={false}
-                  // onChange={handleCheck}
-                />
-              </h1>
-            </div>
-            <h5 class="title">passCond xxxxxxxxx</h5>
-          </div>
-          <div>
-            <br />
-            <br />
-          </div>
-          <div className="box">
-            <h1>
-              ไม่ผ่าน :
-              <input
-                name="notpass"
-                type="checkbox"
-                cssClass="e-success"
-                value="notPass"
-                checked={false}
-                // onChange={handleCheck}
-              />
-            </h1>
-            <h5 class="title">nopassCond xxxxxxxxx</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div>
@@ -633,9 +485,7 @@ const Assessment = (props) => {
                   <tr>
                     <td>
                       <div className="img-size">
-                        
-                          <img src="./suriya.png" />
-                        
+                        <img src="./suriya.png" />
                       </div>
                       &nbsp;
                     </td>
@@ -663,7 +513,104 @@ const Assessment = (props) => {
         </div>
       </section>
 
-      <section id="assessment">{assessment}</section>
+      <section id="assessment">
+        <section id="video">
+          <div class="container">
+            <div className="row about-extra">
+              <table width="100%">
+                <td
+                  bgcolor="lightyellow"
+                  vertical-align="center"
+                  align="center"
+                >
+                  {/* <div className="box"> */}
+                  <h1>
+                    {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
+                  </h1>
+                  <ReactPlayer
+                    url={dataAssessment.video}
+                    controls
+                    width="700px"
+                    height="500px"
+                  />
+                  <br></br>
+                  <br></br>
+                  {/* </div> */}
+                </td>
+                <td bgcolor="lightyellow">
+                  {/* <div className="box"> */}
+                  <p>
+                    <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
+                    <br></br>
+                    <br></br>
+                    {dataAssessment.detail}
+                  </p>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <td
+                    width="25%"
+                    align="right"
+                    bgcolor="lightgreen"
+                    vertical-align="center"
+                  >
+                    <input
+                      name="pass"
+                      type="checkbox"
+                      value="pass"
+                      checked={dataAssessment.status === "pass"}
+                      onChange={handleCheck}
+                    />
+                  </td>
+                  <td
+                    width="25%"
+                    align="left"
+                    bgcolor="lightgreen"
+                    vertical-align="center"
+                  >
+                    <h4>&nbsp;ผ่าน</h4>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td
+                    width="15%"
+                    align="right"
+                    bgcolor="red"
+                    vertical-align="center"
+                  >
+                    <input
+                      name="notpass"
+                      type="checkbox"
+                      cssClass="e-success"
+                      value="notPass"
+                      checked={dataAssessment.status === "notPass"}
+                      onChange={handleCheck}
+                    />
+                  </td>
+                  <td
+                    width="35%"
+                    align="left"
+                    bgcolor="red"
+                    vertical-align="center"
+                  >
+                    <h4>&nbsp;ไม่ผ่าน</h4>
+                  </td>
+                  <td>&nbsp;</td>
+                  {/* <h5 class="title">{dataAssessment.passCond}</h5> */}
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  {/* </div> */}
+                </td>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
 
       {/* <section id="contact">
         <div className="container-fluid">
