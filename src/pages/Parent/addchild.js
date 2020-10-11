@@ -29,7 +29,7 @@ const AddChild = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newChild = {
-      Name: child.Name,
+      Name: child.name,
       nickname: child.nickname,
       sex: child.sex,
       birthDate: {
@@ -119,7 +119,11 @@ const AddChild = (props) => {
                         <label>เพศ</label>
                       </td>
                       <td width="80%">
-                        <select class="custom-select">
+                        <select
+                          class="custom-select"
+                          name="sex"
+                          onChange={handleChange}
+                        >
                           <option selected></option>
                           <option value="ชาย">ชาย</option>
                           <option value="หญิง">หญิง</option>
@@ -136,23 +140,29 @@ const AddChild = (props) => {
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="date"
                           class="form-control"
                           placeholder="วัน"
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="month"
                           class="form-control"
                           placeholder="เดือน"
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="year"
                           class="form-control"
                           placeholder="ปี"
+                          onChange={handleChange}
                         ></input>
                       </td>
                     </table>
@@ -166,9 +176,11 @@ const AddChild = (props) => {
                       </td>
                       <td width="70%">
                         <input
-                          type="text"
+                         type="number"
+                          name="height"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td width="10%">
@@ -185,9 +197,11 @@ const AddChild = (props) => {
                       </td>
                       <td width="70%">
                         <input
-                          type="text"
+                          type="number"
+                          name="weigth"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td width="10%">
@@ -205,8 +219,10 @@ const AddChild = (props) => {
                       <td width="80%">
                         <input
                           type="text"
+                          name="caution"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
                     </table>
@@ -217,7 +233,7 @@ const AddChild = (props) => {
                     <button
                       type="submit"
                       // title="Send Message"
-                      // onClick={handleSubmit}
+                      onClick={handleSubmit}
                     >
                       <a href="/childmanager">เพิ่มเด็ก</a>
                     </button>
