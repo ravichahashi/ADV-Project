@@ -1,5 +1,6 @@
 import {
   SET_CHILDREN,
+  ADD_CHILD,
   SET_QUESTIONS,
   SET_SCREAMS,
   LOADING_DATA,
@@ -31,7 +32,26 @@ export const getChildren = () => (dispatch) => {
       console.log(err);
     });
 };
-
+// Add child
+export const addChild = (newChild,history) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .post("/child", newChild)
+    .then((res) => {
+      dispatch({
+        type: ADD_CHILD,
+        payload: res.data,
+      });
+      dispatch(clearErrors());
+      history.push("/overviewChild");
+    })
+    .catch((err) => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data,
+      });
+    });
+};
 // Get questions
 export const getQuestions = () => (dispatch) => {
   dispatch({ type: LOADING_DATA });

@@ -20,3 +20,4 @@ export const POST_SCREAM = "POST_SCREAM";
 export const SUBMIT_COMMENT = "SUBMIT_COMMENT";
 export const SET_QUESTIONS = "SET_QUESTIONS";
 export const SET_CHILDREN = "SET_CHILDREN";
+export const ADD_CHILD = "ADD_CHILD";

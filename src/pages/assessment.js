@@ -402,10 +402,6 @@ const Assessment = (props) => {
     setDataAssessment({ ...dataAssessment, comment: value });
   };
 
-  if (start > 0) {
-    start--;
-    // console.log(start);
-  }
   if (!loading && start === 0) {
     start--;
     setDataAssessment({
@@ -419,6 +415,9 @@ const Assessment = (props) => {
       comment: "",
       haveFail: false,
     });
+  }
+  if (start > 0) {
+    start--;
   }
 
   return (

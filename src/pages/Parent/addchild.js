@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { addChild } from "../redux/actions/dataActions";
 
 // Redux stuff
 import { connect } from "react-redux";
@@ -12,43 +13,43 @@ import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
 import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css";
 import "../../components/NewBiz/css/style.css";
 
-const Addchild = () => {
+const AddChild = (props) => {
   const [child, setChild] = useState({
     fName: "",
     lName: "",
     nickname: "",
     sex: "",
-    birthDate: {
-      year: "",
-      month: "",
-      date: "",
-    },
+    year: "",
+    month: "",
+    date: "",
     religion: "",
     weigth: "",
     height: "",
   });
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const newUserData = {
-      fName: this.state.fName,
-      lName: this.state.lName,
-      username: this.state.username,
-      email: this.state.email,
-      address: this.state.address,
-      phoneNumber: this.state.phoneNumber,
-      password: this.state.password,
-      confirmPassword: this.state.confirmPassword,
-      type: this.state.type,
+    const newChild = {
+      fName: child.fName,
+      lName: child.lName,
+      nickname: child.nickname,
+      sex: child.sex,
+      birthDate: {
+        year: child.year,
+        month: child.month,
+        date: child.date,
+      },
+      religion: child.religion,
+      weigth: child.weigth,
+      height: child.height,
     };
-    this.props.signupUser(newUserData, this.props.history);
+    event.preventDefault();
+    props.addChild(newChild, props.history);
   };
   const handleChange = (event) => {
-    this.setState({
+    setChild({
       [event.target.name]: event.target.value,
     });
   };
-  const [emil, setemail] = useState("");
   return (
     <div>
       <main id="main">
@@ -84,96 +85,104 @@ const Addchild = () => {
                     <div class="form-group col-lg-6">
                       <input
                         type="text"
-                        name="name"
+                        name="fName"
                         class="form-control"
                         id="name"
                         placeholder="First Name"
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
                         type="text"
-                        name="name"
+                        name="lName"
                         class="form-control"
                         id="name"
                         placeholder="Last Name"
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
                         type="text"
-                        name="name"
+                        name="nickname"
                         class="form-control"
                         id="name"
                         placeholder="Nickname"
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
                         type="text"
-                        name="name"
+                        name="sex"
                         class="form-control"
                         id="name"
                         placeholder="Sex"
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
                         type="text"
-                        name="name"
+                        name="birthDate"
                         class="form-control"
                         id="name"
                         placeholder="Date of Birth"
                         data-rule="minlen:4"
                         data-msg="Please enter at least 4 chars"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
-                        type="email"
+                        type="text"
                         class="form-control"
-                        name="email"
+                        name="religion"
                         id="email"
                         placeholder="Religion"
                         data-rule="email"
                         data-msg="Please enter a valid email"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
-                        type="email"
+                        type="number"
                         class="form-control"
-                        name="email"
+                        name="weigth"
                         id="email"
-                        placeholder="Weight"
+                        placeholder="Weigth"
                         data-rule="email"
                         data-msg="Please enter a valid email"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
                     <div class="form-group col-lg-6">
                       <input
-                        type="email"
+                        type="number"
                         class="form-control"
-                        name="email"
+                        name="height"
                         id="email"
                         placeholder="Height"
                         data-rule="email"
                         data-msg="Please enter a valid email"
+                        onChange={handleChange}
                       />
                       <div class="validation"></div>
                     </div>
@@ -184,7 +193,11 @@ const Addchild = () => {
                         <a href="/childmanager">Cancel</a>
                       </button>
                       &nbsp;&nbsp;&nbsp;
-                      <button type="submit" title="Send Message">
+                      <button
+                        type="submit"
+                        title="Send Message"
+                        onClick={handleSubmit}
+                      >
                         <a href="/childmanager">Add Child</a>
                       </button>
                     </p>
@@ -200,4 +213,12 @@ const Addchild = () => {
   );
 };
 
-export default Addchild;
+const mapStateToProps = (state) => ({
+  UI: state.UI,
+});
+
+const mapDispatchToProps = {
+  addChild: addChild,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddChild);
