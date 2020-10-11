@@ -1640,7 +1640,7 @@ h6 {
   border: 0;
   border-radius: 20px;
   padding: 8px 30px;
-  color: #fff;
+  color: rgb(82, 78, 78);
   transition: 0.3s;
 }
 
@@ -1650,13 +1650,13 @@ h6 {
 }
 
 #contact .img-size img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 150px;
+  max-height: 150px;
   width: auto;
   height: auto;
-  border-radius: 15 px;
+  border-radius: 5px;
   display: block;
-  margin: auto;
+  margin-right: 30px;
 }
 
 /*--------------------------------------------------------------
