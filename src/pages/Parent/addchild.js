@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { addChild } from "../redux/actions/dataActions";
+import { addChild } from "../../redux/actions/dataActions";
 
 // Redux stuff
 import { connect } from "react-redux";
