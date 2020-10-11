@@ -103,7 +103,7 @@ const AssResults = () => {
                 <table>
                   <tr>
                     <td>
-                      <div className="img-size"><a href="/addchild"><img src="./suriya.png" /></a></div>&nbsp;
+                      <div className="img-size"><a href=""><img src="./suriya.png" /></a></div>&nbsp;
                     </td>
                     <td>
                       <header className="section-content">
@@ -207,15 +207,12 @@ const AssResults = () => {
                                 <div className="col-lg-6">
                                   <div className="container">
                                     <div className="row about-container">
-                                      {/* <div className="vertical-center"> */}
                                       <button
                                         onClick={() => click(10)}
                                         className="btn btn-info btn-lg"
                                       >
                                         ทำแบบประเมิน
                           </button>
-                                      {/* </div> */}
-
                                     </div>
                                   </div>
                                 </div>

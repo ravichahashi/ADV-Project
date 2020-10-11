@@ -130,6 +130,14 @@ const AddChild = (props) => {
                                         </table>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <table width="70%" align="center">
+                                            <td width="20%"><label>โรคประจำตัว</label></td>
+                                            <td width="80%"><input type="text" class="form-control" placeholder=""></input></td>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div className="row" class="text-right">
                                     <p>
 
