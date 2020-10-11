@@ -14,6 +14,17 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { signupUser } from "../../redux/actions/userActions";
 
+// CSS
+import "../../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
+import "../../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
+import "../../components/NewBiz/lib/animate/animate.min.css"
+import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css"
+import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
+import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
+import "../../components/NewBiz/css/style.css"
+
+// What package
+const packageName = window.location.search;
 
 const styles = (theme) => ({
   ...theme.spreadThis,
@@ -67,6 +78,13 @@ class signupnersery extends Component {
     } = this.props;
     const { errors } = this.state;
 
+    const iconpackage = [];
+    iconpackage.push(
+      <div className="box-g" >
+        <h5 className="card-title">{packageName}</h5>
+      </div>
+    );
+
     return (
       <Grid container className={classes.form} style={{ padding: 100 }}>
         <Grid item xs={12} sm={7} />
@@ -81,39 +99,7 @@ class signupnersery extends Component {
           <div className="box-g">
             <h5 className="card-title">Gold</h5>
           </div>
-          <table>
-            <tr>
-              <td>
-              <TextField
-              id="fName"
-              name="fName"
-              type="fName"
-              label="First Name"
-              className={classes.textField}
-              helperText={errors.fName}
-              error={errors.fName ? true : false}
-              value={this.state.fName}
-              onChange={this.handleChange}
-              halfWidth
-            />
-              </td>
-              <a>&nbsp;&nbsp;</a>
-              <td>
-              <TextField
-              id="lName"
-              name="lName"
-              type="lName"
-              label="Last Name"
-              className={classes.textField}
-              helperText={errors.lName}
-              error={errors.lName ? true : false}
-              value={this.state.lName}
-              onChange={this.handleChange}
-              halfWidth
-            />
-              </td>
-            </tr>
-          </table>
+          {/* {iconpackage} */}
           <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
             {/* <TextField
               id="fName"

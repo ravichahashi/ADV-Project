@@ -13,13 +13,7 @@ import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
 import "../../components/NewBiz/css/style.css"
 
 const Index = () => {
-  const [nursery, setNursery] = useState([
-    {
-      nurseryName: "",
-      city: "เชียงใหม่",
-      district: "เมือง"
-    }
-  ]);
+
   return (
     <div>
       <main id="main">
@@ -48,7 +42,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
+                  <div class="text-center"><a href="/signUpNursery?Sliver"><button type="submit" title="Buy">Buy</button></a></div>
                 </div>
               </div>
             </div>
@@ -70,7 +64,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
+                  <div class="text-center"><a href="/signUpNursery?Gold"><button type="submit" title="Buy">Buy</button></a></div>
                 </div>
               </div>
             </div>
@@ -92,7 +86,7 @@ const Index = () => {
                     <li>Ravicha</li>
                     <li>Radit</li>
                   </ul>
-                  <div class="text-center"><button type="submit" title="Buy"><a href="/signUpNursery">Buy</a></button></div>
+                  <div class="text-center"><a href="/signUpNursery?Platinum"><button type="submit" title="Buy">Buy</button></a></div>
                 </div>
               </div>
             </div>

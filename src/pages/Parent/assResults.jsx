@@ -91,7 +91,7 @@ const AssResults = () => {
       <section id="assResults" className="section-bg">
         <div className="container">
           <div className="row">
-            <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div className="col-md-12 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
               <section id="goback">
                 <div class="form">
                   <div><button type="submit" title="Go back"><a href="/childmanager">ย้อนกลับ</a></button></div>
@@ -122,15 +122,39 @@ const AssResults = () => {
                   </tr>
                 </table>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="assResults2">
-        <div className="container-fluid">
-          <table>
+              <div className="box">
+                <table width="100%">
+                  <tr>
+                    <td width="30%" align="center">
+                      <tr>
+                        <h3>น้ำหนัก : </h3>
+                      </tr>
+                      <tr>
+                        sss
+                </tr>
+                    </td>
+                    <td align="center">
+                      <tr>
+                        <h3>สูง : </h3>
+                      </tr>
+                      <tr>
+                        sss
+                </tr>
+                    </td>
+                    <td align="center">
+                      <tr>
+                        <h3>โดยรวม : </h3>
+                      </tr>
+                      <tr>
+                        sss
+                </tr>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <table>
             <tr>
-              <td width="75%">
+              <td>
                 <div className="box-n">
                   <div className="row wow fadeInUp">
                     <div className="col-lg-6">
@@ -159,38 +183,18 @@ const AssResults = () => {
                             <td>
                               <div className="box">
                                 <h3>DSPM</h3>
-                                <RadarChart size={550} captions={DSPM_captions} data={DSPM_data} />
+                                <RadarChart size={430} captions={DSPM_captions} data={DSPM_data} />
                                 <div className="col-lg-6">
                                   <div className="container">
                                     <div className="row about-container">
-                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                                        <h4 className="title">
-                                          <a>ผลการประเมิน:</a>
-                                        </h4>
-                                        <p className="description">GM: {child.GM}</p>
-                                        <p className="description">FM: {child.FM}</p>
-                                        <p className="description">EL: {child.EL}</p>
-                                        <p className="description">RL: {child.RL}</p>
-                                        <p className="description">PS: {child.PS}</p>
-                                      </div>
-                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                                        <h4 className="title">
-                                          <a>คำแนะนำด้านพัฒนาการ:</a>
-                                        </h4>
-                                        <p className="description">
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                            </p>
-                                      </div>
-
+                                      <a href="/assessment">
                                       <button
                                         onClick={() => click(10)}
                                         className="btn btn-info btn-lg"
                                       >
                                         ทำแบบประเมิน
-                          </button>
+                                      </button>
+                                      </a>
                                     </div>
                                   </div>
                                 </div>
@@ -199,31 +203,10 @@ const AssResults = () => {
                             <td>
                               <div className="box">
                                 <h3>อนามัย 49</h3>
-                                <RadarChart size={550} captions={A49_captions} data={A49_data} />
+                                <RadarChart size={430} captions={A49_captions} data={A49_data} />
                                 <div className="col-lg-6">
                                   <div className="container">
                                     <div className="row about-container">
-                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                                        <h4 className="title">
-                                          <a>ผลการประเมิน:</a>
-                                        </h4>
-                                        <p className="description">GM: {child.GM}</p>
-                                        <p className="description">FM: {child.FM}</p>
-                                        <p className="description">EL: {child.EL}</p>
-                                        <p className="description">RL: {child.RL}</p>
-                                        <br></br>
-                                      </div>
-                                      <div className="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                                        <h4 className="title">
-                                          <a>คำแนะนำด้านพัฒนาการ:</a>
-                                        </h4>
-                                        <p className="description">
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                                          ..............................................................................................................
-                            </p>
-                                      </div>
                                       {/* <div className="vertical-center"> */}
                                       <button
                                         onClick={() => click(10)}
@@ -243,62 +226,12 @@ const AssResults = () => {
                       </div>
                     </div>
                   </div>
-                  <table width="100%">
-                    <h3>บันทึกประจำวัน : </h3>
-                    <tr>
-                      <td>
-                        <div className="box">
-                          <div className="row">
-                            <h4>&nbsp;&nbsp;อาหาร</h4>
-                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                          </div>
-                          <br></br>
-                          <h5>เช้า: </h5>
-                          <br></br>
-                          <h5>กลางวัน: </h5>
-                          <br></br>
-                          <h5>เย็น: </h5>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="box">
-                          <h4>การขับถ่าย</h4>
-                          <br></br>
-                          <h5>กินกี่ครั้งในวันนี้ </h5>
-                          <br></br>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="box" >
-                          <div className="row">
-                            <h4>พฤติกรรม</h4>
-                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </td>
-              <td width="25%">
-                <div className="box">
-                  <section id="more">
-                    <div class="form">
-                      <div align="right"><button type="submit" title="Update"><a href="">Update</a></button></div>
-                    </div>
-                  </section>
-                  <br></br>
-                  <h5>น้ำหนัก: </h5>
-                  <br></br>
-                  <h5>ส่วนสูง: </h5>
-                  <br></br>
-                  <h5>โดยรวม: </h5>
                 </div>
               </td>
             </tr>
           </table>
-
-
+            </div>
+          </div>
         </div>
       </section>
     </div>
