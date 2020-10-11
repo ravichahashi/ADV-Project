@@ -326,6 +326,7 @@ const AddChild = (props) => {
                                             <div class="validation"></div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                     <div className="row" class="text-right">
                                         <p>
                                             <button type="submit" title="Send Message">
@@ -350,6 +351,29 @@ const AddChild = (props) => {
       </main>
     </div>
   );
+=======
+                                </div>
+                                <div className="row" class="text-right">
+                                    <p>
+
+                                        <button
+                                            type="submit"
+                                            // title="Send Message"
+                                            // onClick={handleSubmit}
+                                        >
+                                            <a href="/childmanager">เพิ่มเด็ก</a>
+                                        </button>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                {/* #services */}
+            </main>
+        </div>
+    );
+>>>>>>> 84ed9f05fbfabba77710abe237e4bea948116b66
 };
 
 const mapStateToProps = (state) => ({

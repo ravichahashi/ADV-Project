@@ -183,7 +183,7 @@ const OverviewChild = (props) => {
                   </div>
                   &nbsp;
                   <h5 align="center">
-                    <a href="/addchild">Add Child</a>
+                    <a href="/addchild">เพิ่มเด็ก</a>
                   </h5>
                 </div>
               </div>
