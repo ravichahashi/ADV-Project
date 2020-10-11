@@ -65,9 +65,7 @@ const Index = () => {
                 <section id="more">
                   <div class="form">
                     <div align="center">
-                      <button type="submit" title="More">
-                        <a href="/assResults">เพิ่มเติม</a>
-                      </button>
+                      <a href="/assResults"><button type="submit">เพิ่มเติม</button></a>
                     </div>
                   </div>
                 </section>
