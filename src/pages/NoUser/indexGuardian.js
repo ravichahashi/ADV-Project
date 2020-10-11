@@ -67,14 +67,14 @@ Services Section
             <div className="row">
               <div className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
-                  <div className="icon"><i className="ion-ios-analytics-outline" style={{ color: '#ff689b' }} /></div>
+                  <div className="icon"><i className="ion-ios-analytics-outline" style={{ color: '#fff' }} /></div>
                   <h4 className="title"><a href="/assessment">ทดลองทำการประเมิน</a></h4>
                   <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                 </div>
               </div>
               <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
-                  <div className="icon"><i className="ion-ios-bookmarks-outline" style={{ color: '#e9bf06' }} /></div>
+                  <div className="icon"><i className="ion-ios-bookmarks-outline" style={{ color: '#fff' }} /></div>
                   <h4 className="title"><a href="">สมัครสมาชิก</a></h4>
                   <p className="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
                 </div>
@@ -87,7 +87,7 @@ Services Section
             <div className="row">
               <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                 <div className="box">
-                  <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#3fcdc7' }} /></div>
+                  <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#fff' }} /></div>
                   <h4 className="title"><a href="">ลงทะเบียน Nursery กับ Sunerry</a></h4>
                   <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 </div>

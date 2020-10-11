@@ -19,9 +19,6 @@ const Index = () => {
             <main id="main">
                 <section id="contact" className="section-bg">
                     <div className="container">
-                        <header className="section-header">
-                            <h3>Add Child</h3>
-                        </header>
                         <div class="col-lg-12">
                             <div class="form" align="center">
                                 <div className="img-size">
@@ -30,7 +27,7 @@ const Index = () => {
                                 <section id="op"></section>
                                 <div class="col-lg-10">
                                     <div class="form">
-                                        <div class="text-center"><button type="submit" title="Send Message">Upload</button></div>
+                                        <div class="text-center"><button type="submit" title="Send Message">เลือกรูป</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +73,7 @@ const Index = () => {
                                     <div className="row" class="text-right">
                                     <p>
                                         <button type="submit" title="Send Message"><a href="/childmanager">Cancel</a></button>&nbsp;&nbsp;&nbsp;
-                                        <button type="submit" title="Send Message"><a href="/childmanager">Add Child</a></button>
+                                        <button type="submit" title="Send Message"><a href="/childmanager">เพิ่ม</a></button>
                                     </p>
                                     </div>
                                 </form>
