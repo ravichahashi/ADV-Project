@@ -15,19 +15,21 @@ import "../../components/NewBiz/css/style.css";
 
 const AddChild = (props) => {
   const [child, setChild] = useState({
-    Name: "",
+    name: "",
     nickname: "",
     sex: "",
-    year: "",
-    month: "",
-    date: "",
-    weigth: "",
-    height: "",
+    date: 0,
+    month: 0,
+    year: 0,
+    weigth: 0,
+    height: 0,
+    caution: "",
   });
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const newChild = {
-      Name: child.Name,
+      Name: child.name,
       nickname: child.nickname,
       sex: child.sex,
       birthDate: {
@@ -38,11 +40,11 @@ const AddChild = (props) => {
       weigth: child.weigth,
       height: child.height,
     };
-    event.preventDefault();
     props.addChild(newChild, props.history);
   };
   const handleChange = (event) => {
     setChild({
+      ...child,
       [event.target.name]: event.target.value,
     });
   };
@@ -83,8 +85,10 @@ const AddChild = (props) => {
                       <td width="80%">
                         <input
                           type="text"
+                          name="name"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
                     </table>
@@ -93,14 +97,16 @@ const AddChild = (props) => {
                 <div class="row">
                   <div class="col">
                     <table width="70%" align="center">
-                      <td>
+                      <td width="20%">
                         <label>ชื่อเล่น</label>
                       </td>
-                      <td>
+                      <td width="80%">
                         <input
                           type="text"
+                          name="nickname"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
                     </table>
@@ -109,11 +115,15 @@ const AddChild = (props) => {
                 <div class="row">
                   <div class="col">
                     <table width="70%" align="center">
-                      <td>
+                      <td width="20%">
                         <label>เพศ</label>
                       </td>
-                      <td>
-                        <select class="custom-select">
+                      <td width="80%">
+                        <select
+                          class="custom-select"
+                          name="sex"
+                          onChange={handleChange}
+                        >
                           <option selected></option>
                           <option value="ชาย">ชาย</option>
                           <option value="หญิง">หญิง</option>
@@ -125,28 +135,34 @@ const AddChild = (props) => {
                 <div class="row">
                   <div class="col">
                     <table width="70%" align="center">
-                      <td>
+                      <td width="20%">
                         <label>วันเกิด</label>
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="date"
                           class="form-control"
-                          placeholder=""
+                          placeholder="วัน"
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="month"
                           class="form-control"
-                          placeholder=""
+                          placeholder="เดือน"
+                          onChange={handleChange}
                         ></input>
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="number"
+                          name="year"
                           class="form-control"
-                          placeholder=""
+                          placeholder="ปี"
+                          onChange={handleChange}
                         ></input>
                       </td>
                     </table>
@@ -155,17 +171,19 @@ const AddChild = (props) => {
                 <div class="row">
                   <div class="col">
                     <table width="70%" align="center">
-                      <td>
+                      <td width="20%">
                         <label>ส่วนสูง</label>
                       </td>
-                      <td>
+                      <td width="70%">
                         <input
-                          type="text"
+                          type="number"
+                          name="height"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
-                      <td>
+                      <td width="10%">
                         <label>เซนติเมตร</label>
                       </td>
                     </table>
@@ -174,176 +192,36 @@ const AddChild = (props) => {
                 <div class="row">
                   <div class="col">
                     <table width="70%" align="center">
-                      <td>
+                      <td width="20%">
                         <label>น้ำหนัก</label>
                       </td>
-                      <td>
+                      <td width="70%">
                         <input
-                          type="text"
+                          type="number"
+                          name="weigth"
                           class="form-control"
                           placeholder=""
+                          onChange={handleChange}
                         ></input>
                       </td>
-                      <td>
+                      <td width="10%">
                         <label>กิโลกรัม</label>
                       </td>
                     </table>
                   </div>
                 </div>
-
-                {/* <div class="row">
-                                    <div class="col">
-                                        <label>ชื่อเล่น</label>
-                                        <input type="text" class="form-control" placeholder=""></input>
-                                    </div>
-                                    <div class="col">
-                                        <label>เพศ</label>
-                                        <select class="custom-select">
-                                            <option selected></option>
-                                            <option value="ชาย">ชาย</option>
-                                            <option value="หญิง">หญิง</option>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <label>วันเกิด</label>
-                                        <input type="text" class="form-control" placeholder=""></input>
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="row">
-                                    <div class="col">
-                                        <label>น้ำหนัก</label>
-                                        <input type="text" class="form-control" placeholder=""></input>
-                                    </div>
-                                    <div class="col">
-                                        <label>ส่วนสูง</label>
-                                        <input type="text" class="form-control" placeholder=""></input>
-                                    </div>
-                                </div> */}
-              </form>
-              {/* <div class="form">
-                                <div id="sendmessage">
-                                    Your message has been sent. Thank you!
+                <div className="row" class="text-right">
+                  <p>
+                    <button
+                      type="submit"
+                      // title="Send Message"
+                      onClick={handleSubmit}
+                    >
+                      <a href="/childmanager">เพิ่มเด็ก</a>
+                    </button>
+                  </p>
                 </div>
-                                <div id="errormessage"></div>
-                                <form action="" method="post" role="form" class="contactForm">
-                                    <div class="form-row">
-                                        <div class="form-group col-lg-6">
-                                            <table>
-                                                <td><label>ชื่อ</label></td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        name="Name"
-                                                        class="form-control"
-                                                        id="name"
-                                                        placeholder=""
-                                                        data-rule="minlen:4"
-                                                        data-msg="Please enter at least 4 chars"
-                                                        onChange={handleChange}
-                                                    />
-                                                    <div class="validation"></div>
-                                                </td>
-                                            </table>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="text"
-                                                name="nickname"
-                                                class="form-control"
-                                                id="name"
-                                                placeholder="Nickname"
-                                                data-rule="minlen:4"
-                                                data-msg="Please enter at least 4 chars"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="text"
-                                                name="sex"
-                                                class="form-control"
-                                                id="name"
-                                                placeholder="Sex"
-                                                data-rule="minlen:4"
-                                                data-msg="Please enter at least 4 chars"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="text"
-                                                name="birthDate"
-                                                class="form-control"
-                                                id="name"
-                                                placeholder="Date of Birth"
-                                                data-rule="minlen:4"
-                                                data-msg="Please enter at least 4 chars"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="religion"
-                                                id="email"
-                                                placeholder="Religion"
-                                                data-rule="email"
-                                                data-msg="Please enter a valid email"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="number"
-                                                class="form-control"
-                                                name="weigth"
-                                                id="email"
-                                                placeholder="Weigth"
-                                                data-rule="email"
-                                                data-msg="Please enter a valid email"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <input
-                                                type="number"
-                                                class="form-control"
-                                                name="height"
-                                                id="email"
-                                                placeholder="Height"
-                                                data-rule="email"
-                                                data-msg="Please enter a valid email"
-                                                onChange={handleChange}
-                                            />
-                                            <div class="validation"></div>
-                                        </div>
-                                    </div>
-<<<<<<< HEAD
-                                    <div className="row" class="text-right">
-                                        <p>
-                                            <button type="submit" title="Send Message">
-                                                <a href="/childmanager">Cancel</a>
-                                            </button>
-                                            &nbsp;&nbsp;&nbsp;
-                      <button
-                                                type="submit"
-                                                title="Send Message"
-                                                onClick={handleSubmit}
-                                            >
-                                                <a href="/childmanager">Add Child</a>
-                                            </button>
-                                        </p>
-                                    </div>
-                                </form>
-                            </div> */}
+              </form>
             </div>
           </div>
         </section>
@@ -351,29 +229,6 @@ const AddChild = (props) => {
       </main>
     </div>
   );
-=======
-                                </div>
-                                <div className="row" class="text-right">
-                                    <p>
-
-                                        <button
-                                            type="submit"
-                                            // title="Send Message"
-                                            // onClick={handleSubmit}
-                                        >
-                                            <a href="/childmanager">เพิ่มเด็ก</a>
-                                        </button>
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-                {/* #services */}
-            </main>
-        </div>
-    );
->>>>>>> 84ed9f05fbfabba77710abe237e4bea948116b66
 };
 
 const mapStateToProps = (state) => ({
