@@ -23,9 +23,6 @@ const Index = () => {
   return (
     <div>
       <main id="main">
-        {/*==========================
-Services Section
-    ============================*/}
         <section id="services" className="section-bg">
           <div className="container" align="center">
             <div className="col-md-10 col-lg-ุ5">
@@ -56,7 +53,7 @@ Services Section
               </div>
             </div>
           </div>
-        </section>{/* #services */}
+        </section>
         <section id="op" className="section-bg">
           <div className="container">
             <header className="section-header">
@@ -69,14 +66,20 @@ Services Section
                 <div className="box">
                   <div className="icon"><i className="ion-ios-analytics-outline" style={{ color: '#fff' }} /></div>
                   <h4 className="title"><a href="/assessment">ทดลองทำการประเมิน</a></h4>
-                  <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                  <ul class="b">
+                    <p className="description"><li>ทดลองทำการประเมินโดยไม่เก็บข้อมูล</li></p>
+                    <p className="description"><li>ไม่สามารถติดตามผลการประเมินภายหลังได้</li></p>
+                  </ul>
                 </div>
               </div>
               <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
                   <div className="icon"><i className="ion-ios-bookmarks-outline" style={{ color: '#fff' }} /></div>
-                  <h4 className="title"><a href="">สมัครสมาชิก</a></h4>
-                  <p className="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                  <h4 className="title"><a href="/login">สมัครสมาชิก</a></h4>
+                  <ul class="b">
+                    <p className="description"><li>ให้เราเก็บข้อมูลการพัฒนาการลูกของคุณ</li></p>
+                    <p className="description"><li>ฝากลูกของคุณให้กับ nusery ที่มีคุณภาพ</li></p>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -88,8 +91,8 @@ Services Section
               <div className="col-md-10 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
                 <div className="box">
                   <div className="icon"><i className="ion-ios-paper-outline" style={{ color: '#fff' }} /></div>
-                  <h4 className="title"><a href="">ลงทะเบียน Nursery กับ Sunerry</a></h4>
-                  <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                  <h4 className="title"><a href="/signupnurserypackage">ลงทะเบียน Nursery กับ Sunerry</a></h4>
+                  <p className="description">ให้ Sunerry ช่วยให้คุณจัดการ nursery ของคุณให้ง่ายขึ้น และประชาสัมพันธ์ nursery ของคุณให้ผู้ปกครองที่อยู่ในระแวกใกล้เคียง</p>
                 </div>
               </div>
             </div>
