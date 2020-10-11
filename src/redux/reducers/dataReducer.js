@@ -1,4 +1,6 @@
 import {
+  SET_CHILDREN,
+  ADD_CHILD,
   SET_QUESTIONS,
   SET_SCREAMS,
   LIKE_SCREAM,
@@ -15,11 +17,23 @@ const initialState = {
   scream: {},
   questions: [],
   question: {},
+  children: [],
   loading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_CHILDREN:
+      return {
+        ...state,
+        children: action.payload,
+        loading: false,
+      };
+    case ADD_CHILD:
+      return {
+        ...state,
+        children: [action.payload, ...state.children],
+      };
     case SET_QUESTIONS:
       return {
         ...state,

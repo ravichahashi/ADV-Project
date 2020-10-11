@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { getChildren } from "../redux/actions/dataActions";
 
 // Redux stuff
 import { connect } from "react-redux";
@@ -12,7 +13,14 @@ import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
 import "../components/NewBiz/lib/lightbox/css/lightbox.min.css";
 import "../components/NewBiz/css/style.css";
 
-const Index = () => {
+const OverviewChild = (props) => {
+  const { getChildren } = props;
+  useEffect(() => {
+    getChildren();
+  }, [getChildren]);
+  const { children, loading } = props.data;
+  console.log(children);
+
   const [nursery, setNursery] = useState([
     {
       nurseryName: "",
@@ -21,10 +29,25 @@ const Index = () => {
     },
   ]);
   const [numChild, setnumChild] = useState(4);
-  const [Child, setChild] = useState([
-    { name: "รักษ์พงศ์ ทอหุล", gender: "ชาย", age: "12/02/2541", weight: 20, high: 50 },
-    { name: "suriya ", gender: "หญิง", age: "20/05/2560", weight: 100, high: 250 },
-  ]);
+  const [Child, setChild] = useState(
+    [
+      {
+        name: "รักษ์พงศ์ ทอหุล",
+        gender: "ชาย",
+        age: "12/02/2541",
+        weight: 20,
+        high: 50,
+      },
+      {
+        name: "suriya ",
+        gender: "หญิง",
+        age: "20/05/2560",
+        weight: 100,
+        high: 250,
+      },
+    ]
+    // children
+  );
 
   const item = [];
   for (const key in Child) {
@@ -173,4 +196,12 @@ const Index = () => {
   );
 };
 
-export default Index;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+const mapDispatchToProps = {
+  getChildren: getChildren,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(OverviewChild);

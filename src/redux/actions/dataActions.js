@@ -1,4 +1,6 @@
 import {
+  SET_CHILDREN,
+  ADD_CHILD,
   SET_QUESTIONS,
   SET_SCREAMS,
   LOADING_DATA,
@@ -15,6 +17,41 @@ import {
 } from "../types";
 import axios from "axios";
 
+// Get children
+export const getChildren = () => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
+  axios
+    .get("/children")
+    .then((res) => {
+      dispatch({
+        type: SET_CHILDREN,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+// Add child
+export const addChild = (newChild,history) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .post("/child", newChild)
+    .then((res) => {
+      dispatch({
+        type: ADD_CHILD,
+        payload: res.data,
+      });
+      dispatch(clearErrors());
+      history.push("/overviewChild");
+    })
+    .catch((err) => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data,
+      });
+    });
+};
 // Get questions
 export const getQuestions = () => (dispatch) => {
   dispatch({ type: LOADING_DATA });
