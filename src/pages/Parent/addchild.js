@@ -14,125 +14,184 @@ import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css";
 import "../../components/NewBiz/css/style.css";
 
 const AddChild = (props) => {
-    const [child, setChild] = useState({
-        Name: "",
-        nickname: "",
-        sex: "",
-        year: "",
-        month: "",
-        date: "",
-        weigth: "",
-        height: "",
+  const [child, setChild] = useState({
+    Name: "",
+    nickname: "",
+    sex: "",
+    year: "",
+    month: "",
+    date: "",
+    weigth: "",
+    height: "",
+  });
+
+  const handleSubmit = (event) => {
+    const newChild = {
+      Name: child.Name,
+      nickname: child.nickname,
+      sex: child.sex,
+      birthDate: {
+        year: child.year,
+        month: child.month,
+        date: child.date,
+      },
+      weigth: child.weigth,
+      height: child.height,
+    };
+    event.preventDefault();
+    props.addChild(newChild, props.history);
+  };
+  const handleChange = (event) => {
+    setChild({
+      [event.target.name]: event.target.value,
     });
+  };
+  return (
+    <div>
+      <main id="main">
+        <section id="contact" className="section-bg">
+          <div className="container">
+            <div className="box">
+              <div>
+                <table>
+                  <tr>
+                    <td>
+                      <div className="img-size">
+                        <img src="./suriya.png" />
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form">
+                        <div class="text-center">
+                          <button type="submit" title="Send Message">
+                            เลือกรูป
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <br></br>
+              <form>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td width="20%">
+                        <label>ชื่อ</label>
+                      </td>
+                      <td width="80%">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td>
+                        <label>ชื่อเล่น</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td>
+                        <label>เพศ</label>
+                      </td>
+                      <td>
+                        <select class="custom-select">
+                          <option selected></option>
+                          <option value="ชาย">ชาย</option>
+                          <option value="หญิง">หญิง</option>
+                        </select>
+                      </td>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td>
+                        <label>วันเกิด</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td>
+                        <label>ส่วนสูง</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                      <td>
+                        <label>เซนติเมตร</label>
+                      </td>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <table width="70%" align="center">
+                      <td>
+                        <label>น้ำหนัก</label>
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=""
+                        ></input>
+                      </td>
+                      <td>
+                        <label>กิโลกรัม</label>
+                      </td>
+                    </table>
+                  </div>
+                </div>
 
-    const handleSubmit = (event) => {
-        const newChild = {
-            Name: child.Name,
-            nickname: child.nickname,
-            sex: child.sex,
-            birthDate: {
-                year: child.year,
-                month: child.month,
-                date: child.date,
-            },
-            weigth: child.weigth,
-            height: child.height,
-        };
-        event.preventDefault();
-        props.addChild(newChild, props.history);
-    };
-    const handleChange = (event) => {
-        setChild({
-            [event.target.name]: event.target.value,
-        });
-    };
-    return (
-        <div>
-            <main id="main">
-                <section id="contact" className="section-bg">
-                    <div className="container">
-                        <div className="box">
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div className="img-size">
-                                                <img src="./suriya.png" />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="form">
-                                                <div class="text-center">
-                                                    <button type="submit" title="Send Message">
-                                                        เลือกรูป
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <br></br>
-                            <form>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td width="20%"><label>ชื่อ</label></td>
-                                            <td width="80%"><input type="text" class="form-control" placeholder=""></input></td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td><label>ชื่อเล่น</label></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td><label>เพศ</label></td>
-                                            <td><select class="custom-select">
-                                            <option selected></option>
-                                            <option value="ชาย">ชาย</option>
-                                            <option value="หญิง">หญิง</option>
-                                        </select></td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td><label>วันเกิด</label></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td><label>ส่วนสูง</label></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                            <td><label>เซนติเมตร</label></td>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <table width="70%" align="center">
-                                            <td><label>น้ำหนัก</label></td>
-                                            <td><input type="text" class="form-control" placeholder=""></input></td>
-                                            <td><label>กิโลกรัม</label></td>
-                                        </table>
-                                    </div>
-                                </div>
-
-
-                                {/* <div class="row">
+                {/* <div class="row">
                                     <div class="col">
                                         <label>ชื่อเล่น</label>
                                         <input type="text" class="form-control" placeholder=""></input>
@@ -162,9 +221,8 @@ const AddChild = (props) => {
                                         <input type="text" class="form-control" placeholder=""></input>
                                     </div>
                                 </div> */}
-
-                            </form>
-                            {/* <div class="form">
+              </form>
+              {/* <div class="form">
                                 <div id="sendmessage">
                                     Your message has been sent. Thank you!
                 </div>
@@ -285,21 +343,21 @@ const AddChild = (props) => {
                                     </div>
                                 </form>
                             </div> */}
-                        </div>
-                    </div>
-                </section>
-                {/* #services */}
-            </main>
-        </div>
-    );
+            </div>
+          </div>
+        </section>
+        {/* #services */}
+      </main>
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
-    UI: state.UI,
+  UI: state.UI,
 });
 
 const mapDispatchToProps = {
-    addChild: addChild,
+  addChild: addChild,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddChild);
