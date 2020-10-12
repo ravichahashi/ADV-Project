@@ -34,6 +34,7 @@ import search from "./pages/Parent/search";
 import editChild from "./pages/Parent/editChild";
 import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
+import registerChild from "./pages/Parent/registerChild";
 
 // Nusery
 import home from "./pages/home";
@@ -101,6 +102,7 @@ class App extends Component {
                 <Route exact path="/editchild" component={editChild} />
                 <Route exact path="/addchild" component={addchild} />
                 <Route exact path="/nurseryInfo" component={nurseryInfo_parent} />
+                <Route exact path="/registerChild" component={registerChild} />
                 {/* Nusery */}
                 
                 <Route exact path="/assessment" component={assessment} />

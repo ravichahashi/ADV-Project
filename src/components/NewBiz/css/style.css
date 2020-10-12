@@ -2224,7 +2224,8 @@ h6 {
   height: auto;
   border-radius: 10px;
   display: block;
-  margin-right: 30px;
+  margin-right: 60px;
+  margin-left: 40px;
 }
 
 #assResults .row .img-sizee img{
@@ -2610,4 +2611,136 @@ h6 {
 #dashboard .box:hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
+}
+
+#regischild {
+  padding: 60px 0 2px 0;
+}
+
+#regischild .section-header h3 {
+  color: rgb(92, 90, 90);
+}
+
+#regischild .box {
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#regischild .box h5 {
+  font-weight: 600;
+  font-size: 17px;
+}
+#regischild .box2:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+#regischild .box2:hover .title a {
+  color: #b43e25;
+}
+
+#regischild .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+#regischild table th{
+  text-align: center;
+  background-color: #F9E104;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: grey;
+}
+
+#regischild .title {
+  margin-left: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#regischild .title a {
+  color: #111;
+}
+
+#regischild .box:hover .title a {
+  color: #b43e25;
+}
+
+#regischild .description {
+  font-size: 14px;
+  margin-left: 40px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+#regischild .img-size img {
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+}
+
+#regischild .img-over img{
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+#regischild .img-overr img{
+  max-width: 20px;
+  max-height: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 0px;
+  display: block;
+  margin: auto;
+}
+
+.box-low {
+  background-color: #add8e6;
+  width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  padding: 13px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.box-medium {
+  background-color: greenyellow;
+  width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  padding: 13px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.box-high {
+  background-color: orange;
+  width: 250px;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  padding: 13px;
+  text-align: center;
+  box-sizing: border-box;
 }
