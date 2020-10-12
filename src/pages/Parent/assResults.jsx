@@ -137,15 +137,14 @@ const AssResults = (props) => {
   // });
 
   const [isParent, setParent] = useState(false);
-  const [islow_w, setLow_w] = useState(true);
-  const [ismedium_w, setMedium_w] = useState(false);
+  const [islow_w, setLow_w] = useState(false);
+  const [ismedium_w, setMedium_w] = useState(true);
 
-  const [islow_h, setLow_h] = useState(true);
+  const [islow_h, setLow_h] = useState(false);
   const [ismedium_h, setMedium_h] = useState(true);
 
-  const [islow_t, setLow_t] = useState(true);
+  const [islow_t, setLow_t] = useState(false);
   const [ismedium_t, setMedium_t] = useState(true);
-  const [ishigh, setHigh] = useState(true);
 
   return (
     <div>
@@ -214,8 +213,8 @@ const AssResults = (props) => {
                         <h3>น้ำหนัก : </h3>
                       </tr>
                       <tr>
-                        <div className={`${islow_w ? `box-low`: ismedium_w ? `box-medium` : ishigh ? `box-high` : ""}`}>
-                        {`${islow_w ? `ต่ำกว่าเกณฑ์`: ismedium_w ? `ตามเกณฑ์` : ishigh ? `สูงกว่าเกณฑ์` : ""}`}
+                        <div className={`${islow_w ? `box-low`: ismedium_w ? `box-medium` : `box-high`}`}>
+                        {`${islow_w ? `ต่ำกว่าเกณฑ์`: ismedium_w ? `ตามเกณฑ์` : `สูงกว่าเกณฑ์`}`}
                         </div>
                       </tr>
                     </td>
@@ -224,8 +223,8 @@ const AssResults = (props) => {
                         <h3>ส่วนสูง : </h3>
                       </tr>
                       <tr>
-                        <div className={`${islow_h ? `box-low`: ismedium_h ? `box-medium` : ishigh ? `box-high` : ""}`}>
-                        {`${islow_h ? `ต่ำกว่าเกณฑ์`: ismedium_h ? `ตามเกณฑ์` : ishigh ? `สูงกว่าเกณฑ์` : ""}`}
+                        <div className={`${islow_h ? `box-low`: ismedium_h ? `box-medium` : `box-high`}`}>
+                        {`${islow_h ? `ต่ำกว่าเกณฑ์`: ismedium_h ? `ตามเกณฑ์` : `สูงกว่าเกณฑ์`}`}
                         </div>
                       </tr>
                     </td>
@@ -234,8 +233,8 @@ const AssResults = (props) => {
                         <h3>โดยรวม : </h3>
                       </tr>
                       <tr>
-                        <div className={`${islow_t ? `box-low`: ismedium_t ? `box-medium` : ishigh ? `box-high` : ""}`}>
-                        {`${islow_t ? `ต่ำกว่าเกณฑ์`: ismedium_t ? `ตามเกณฑ์` : ishigh ? `สูงกว่าเกณฑ์` : ""}`}
+                        <div className={`${islow_t ? `box-low`: ismedium_t ? `box-medium` : `box-high`}`}>
+                        {`${islow_t ? `ต่ำกว่าเกณฑ์`: ismedium_t ? `ตามเกณฑ์` : `สูงกว่าเกณฑ์`}`}
                         </div>
                       </tr>
                     </td>
