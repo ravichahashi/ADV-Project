@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import AppIcon from '../../images/sunerry1.png';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+import AppIcon from "../../images/sunerry1.png";
+import { Link } from "react-router-dom";
 
 // MUI Stuff
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 // Redux stuff
-import { connect } from 'react-redux';
-import { loginUser } from '../../redux/actions/userActions';
+import { connect } from "react-redux";
+import { loginUser } from "../../redux/actions/userActions";
 
 // CSS
-import "../../components/NewBiz/css/style.css"
+import "../../components/NewBiz/css/style.css";
 
 const styles = (theme) => ({
-  ...theme.spreadThis
+  ...theme.spreadThis,
 });
 
-class login extends Component { 
+class login extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       errors: {},
-      type: ''
+      type: "nursery",
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -40,31 +40,38 @@ class login extends Component {
     event.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      type: this.state.type,
     };
     this.props.loginUser(userData, this.props.history);
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
-    }); 
+      [event.target.name]: event.target.value,
+    });
   };
 
   isParent = false;
-  selectParent = () =>{
+  selectParent = () => {
     this.isParent = true;
+    this.setState({
+      type: "parent",
+    });
     this.forceUpdate();
-  }
+  };
 
-  selectNursery = () =>{
+  selectNursery = () => {
     this.isParent = false;
+    this.setState({
+      type: "nursery",
+    });
     this.forceUpdate();
-  }
+  };
 
   render() {
     const {
       classes,
-      UI: { loading }
+      UI: { loading },
     } = this.props;
     const { errors } = this.state;
 
@@ -73,21 +80,51 @@ class login extends Component {
         <Grid item xs={12} sm={7} />
         <Grid item sm>
           <img src={AppIcon} alt="monkey" className={classes.image} />
-          <Typography variant="h1" class="cursive-font" className={classes.pageTitle}>
+          <Typography
+            variant="h1"
+            class="cursive-font"
+            className={classes.pageTitle}
+          >
             Sign in to Sunerry
           </Typography>
 
           <form noValidate onSubmit={this.handleSubmit}>
-
-          {/* {toggleType} */}
-          <div className="btn-group btn-group-toggle" data-toggle="buttons">
-            <label className={`${this.isParent ? `btn btn-secondary active` : `btn btn-secondary`}`} onClick={this.selectParent}>
-              <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked /> Parent
-            </label>
-            <label className={`${!this.isParent ? `btn btn-secondary active` : `btn btn-secondary`}`} onClick={this.selectNursery}>
-              <input type="radio" name="options" id="option2" autoComplete="off" /> Nursery
-            </label>
-          </div>
+            {/* {toggleType} */}
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+              <label
+                className={`${
+                  this.isParent
+                    ? `btn btn-secondary active`
+                    : `btn btn-secondary`
+                }`}
+                onClick={this.selectParent}
+              >
+                <input
+                  type="radio"
+                  name="options"
+                  id="option1"
+                  autoComplete="off"
+                  defaultChecked
+                />{" "}
+                Parent
+              </label>
+              <label
+                className={`${
+                  !this.isParent
+                    ? `btn btn-secondary active`
+                    : `btn btn-secondary`
+                }`}
+                onClick={this.selectNursery}
+              >
+                <input
+                  type="radio"
+                  name="options"
+                  id="option2"
+                  autoComplete="off"
+                />{" "}
+                Nursery
+              </label>
+            </div>
 
             <TextField
               id="email"
@@ -124,7 +161,8 @@ class login extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
-            >Sign in
+            >
+              Sign in
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
@@ -149,16 +187,16 @@ login.propTypes = {
   classes: PropTypes.object.isRequired,
   loginUser: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-  UI: PropTypes.object.isRequired
+  UI: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  UI: state.UI
+  UI: state.UI,
 });
 
 const mapActionsToProps = {
-  loginUser
+  loginUser,
 };
 
 export default connect(
