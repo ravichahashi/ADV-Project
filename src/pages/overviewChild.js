@@ -13,13 +13,14 @@ import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
 import "../components/NewBiz/lib/lightbox/css/lightbox.min.css";
 import "../components/NewBiz/css/style.css";
 
+let start = 2;
+
 const OverviewChild = (props) => {
   const { getChildren } = props;
   useEffect(() => {
     getChildren();
   }, [getChildren]);
   const { children, loading } = props.data;
-  console.log(children);
 
   const [nursery, setNursery] = useState([
     {
@@ -30,27 +31,35 @@ const OverviewChild = (props) => {
   ]);
   const [numChild, setnumChild] = useState(4);
   const [Child, setChild] = useState(
-    [
-      {
-        name: "รักษ์พงศ์ ทอหุล",
-        gender: "ชาย",
-        age: { date: "12", month: "02", year: "2541" },
-        weight: 20,
-        high: 50,
-      },
-      {
-        name: "suriya ",
-        gender: "หญิง",
-        age: { date: "12", month: "02", year: "2541" },
-        weight: 100,
-        high: 250,
-      },
-    ]
-    // children
+    // [
+    //   {
+    //     name: "รักษ์พงศ์ ทอหุล",
+    //     sex: "ชาย",
+    //     birthDate: { date: "12", month: "02", year: "2541" },
+    //     weigth: 20,
+    //     height: 50,
+    //   },
+    //   {
+    //     name: "suriya ",
+    //     sex: "หญิง",
+    //     birthDate: { date: "12", month: "02", year: "2541" },
+    //     weigth: 100,
+    //     height: 250,
+    //   },
+    // ]
+    []
   );
 
-  const item = [];
-  for (const key in Child) {
+  if (!loading && start === 0) {
+    start--;
+    setChild(children);
+  }
+  if (start > 0) {
+    start--;
+  }
+
+  let item = [];
+  for (let key in Child) {
     console.log(Child.length);
     item.push(
       <div
@@ -80,18 +89,19 @@ const OverviewChild = (props) => {
                     </a>
                   </div>
                 </div>
-                <p className="description">เพศ :{Child[key].gender}</p>
+                <p className="description">เพศ :{Child[key].sex}</p>
                 <p className="description">
-                  วันเกิด :{Child[key].age.date} / {Child[key].age.month} /{" "}
-                  {Child[key].age.year}
+                  วันเกิด :{Child[key].birthDate.date} /{" "}
+                  {Child[key].birthDate.month} / {Child[key].birthDate.year}
                 </p>
-                <p className="description">น้ำหนัก :{Child[key].weight}</p>
-                <p className="description">ส่วนสูง :{Child[key].high}</p>
+                <p className="description">น้ำหนัก :{Child[key].weigth}</p>
+                <p className="description">ส่วนสูง :{Child[key].height}</p>
                 <br></br>
                 <section id="more">
                   <div class="form">
                     <div align="center">
                       <a href="/assResults">
+                      {/* <a href={`/assResults/${Child[key].name}`}> */}
                         <button type="submit">เพิ่มเติม</button>
                       </a>
                     </div>

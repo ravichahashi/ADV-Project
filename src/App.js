@@ -105,6 +105,7 @@ class App extends Component {
                 
                 <Route exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
+                {/* <Route exact path="/assResults/:childName" component={AssResults} /> */}
                 <Route exact path="/assResultsNursery" component={assResultsNursery} />
                 <Route exact path="/dashboardNursery" component={dashboardNursery} />
                 <Route exact path="/home" component={home} />

@@ -29,7 +29,7 @@ const AddChild = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newChild = {
-      Name: child.name,
+      name: child.name,
       nickname: child.nickname,
       sex: child.sex,
       birthDate: {
@@ -39,6 +39,7 @@ const AddChild = (props) => {
       },
       weigth: child.weigth,
       height: child.height,
+      caution: child.caution,
     };
     props.addChild(newChild, props.history);
   };
@@ -176,7 +177,7 @@ const AddChild = (props) => {
                       </td>
                       <td width="70%">
                         <input
-                         type="number"
+                          type="number"
                           name="height"
                           class="form-control"
                           placeholder=""
