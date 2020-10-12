@@ -217,8 +217,9 @@ const AssResults = (props) => {
     calWeigth(child.month, child.weigth);
     calHeight(child.month, child.height);
     calTotal();
+    start--;
   }
-  if (start >= 0) {
+  if (start > 0) {
     start--;
     return (
       <div>

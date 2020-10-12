@@ -26,8 +26,9 @@ const Landing = (props) => {
 
   if (start === 0) {
     setChild(children);
+    start--;
   }
-  if (start >= 0) {
+  if (start > 0) {
     start--;
     return (
       <div>

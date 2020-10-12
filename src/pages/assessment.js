@@ -426,8 +426,9 @@ const Assessment = (props) => {
       comment: "",
       haveFail: false,
     });
+    start--;
   }
-  if (start >= 0) {
+  if (start > 0) {
     start--;
     return (
       <div>
