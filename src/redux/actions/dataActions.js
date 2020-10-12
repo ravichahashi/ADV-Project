@@ -1,4 +1,5 @@
 import {
+  SET_CHILD,
   SET_CHILDREN,
   ADD_CHILD,
   SET_QUESTIONS,
@@ -17,6 +18,21 @@ import {
 } from "../types";
 import axios from "axios";
 
+// Get child
+export const getChild = (childName) => (dispatch) => {
+  dispatch({ type: LOADING_DATA });
+  axios
+    .get(`/child/${childName}`)
+    .then((res) => {
+      dispatch({
+        type: SET_CHILD,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 // Get children
 export const getChildren = () => (dispatch) => {
   dispatch({ type: LOADING_DATA });

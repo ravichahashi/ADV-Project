@@ -1,4 +1,5 @@
 import {
+  SET_CHILD,
   SET_CHILDREN,
   ADD_CHILD,
   SET_QUESTIONS,
@@ -18,11 +19,18 @@ const initialState = {
   questions: [],
   question: {},
   children: [],
+  child: {},
   loading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case SET_CHILD:
+      return {
+        ...state,
+        child: action.payload,
+        loading: false,
+      };
     case SET_CHILDREN:
       return {
         ...state,
