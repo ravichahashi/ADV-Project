@@ -15,13 +15,13 @@ import { connect } from "react-redux";
 import { signupUser } from "../../redux/actions/userActions";
 
 // CSS
-import "../../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
-import "../../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
-import "../../components/NewBiz/lib/animate/animate.min.css"
-import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css"
-import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
-import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
-import "../../components/NewBiz/css/style.css"
+import "../../components/NewBiz/lib/bootstrap/css/bootstrap.min.css";
+import "../../components/NewBiz/lib/font-awesome/css/font-awesome.min.css";
+import "../../components/NewBiz/lib/animate/animate.min.css";
+import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css";
+import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
+import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css";
+import "../../components/NewBiz/css/style.css";
 import { Box } from "@material-ui/core";
 
 // What package
@@ -36,6 +36,8 @@ class signupnersery extends Component {
     super();
     this.state = {
       username: "",
+      fName: "",
+      lName: "",
       email: "",
       address: "",
       phoneNumber: "",
@@ -58,12 +60,13 @@ class signupnersery extends Component {
     const newUserData = {
       fName: this.state.fName,
       lName: this.state.lName,
-      userName: this.state.userName,
+      username: this.state.username,
       email: this.state.email,
-      address: this.address,
-      phoneNumber: this.phoneNumber,
+      address: this.state.address,
+      phoneNumber: this.state.phoneNumber,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
+      type: this.state.type,
     };
     this.props.signupUser(newUserData, this.props.history);
   };
@@ -80,26 +83,25 @@ class signupnersery extends Component {
     const { errors } = this.state;
 
     const iconpackage = [];
-    if(packageName == "?Sliver"){
+    if (packageName == "?Sliver") {
       iconpackage.push(
         <div className="box-s">
           <h5 className="card-title">Sliver</h5>
         </div>
       );
-    }else if(packageName == "?Gold"){
+    } else if (packageName == "?Gold") {
       iconpackage.push(
-        <div className="box-g" >
+        <div className="box-g">
           <h5 className="card-title">Gold</h5>
         </div>
       );
-    }else if(packageName == "?Platinum"){
+    } else if (packageName == "?Platinum") {
       iconpackage.push(
-        <div className="box-p" >
+        <div className="box-p">
           <h5 className="card-title">Platinum</h5>
         </div>
       );
     }
-
 
     return (
       <Grid container className={classes.form} style={{ padding: 100 }}>
@@ -220,9 +222,16 @@ class signupnersery extends Component {
               </Typography>
             )}
             <div className="form-check">
-              <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+              />
               <label className="form-check-label" htmlFor="exampleCheck1">
-                <small>I agree to Sunerry's <Link to="#">Terms of Use</Link> and <Link to="#">Cookie &amp; Privacy Policy.</Link></small>
+                <small>
+                  I agree to Sunerry's <Link to="#">Terms of Use</Link> and{" "}
+                  <Link to="#">Cookie &amp; Privacy Policy.</Link>
+                </small>
               </label>
             </div>
             <Button
@@ -231,7 +240,8 @@ class signupnersery extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
-            >Sign Up to Sunerry
+            >
+              Sign Up to Sunerry
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}

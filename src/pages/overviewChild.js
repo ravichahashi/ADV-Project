@@ -30,25 +30,7 @@ const OverviewChild = (props) => {
     },
   ]);
   const [numChild, setnumChild] = useState(4);
-  const [Child, setChild] = useState(
-    // [
-    //   {
-    //     name: "รักษ์พงศ์ ทอหุล",
-    //     sex: "ชาย",
-    //     birthDate: { date: "12", month: "02", year: "2541" },
-    //     weigth: 20,
-    //     height: 50,
-    //   },
-    //   {
-    //     name: "suriya ",
-    //     sex: "หญิง",
-    //     birthDate: { date: "12", month: "02", year: "2541" },
-    //     weigth: 100,
-    //     height: 250,
-    //   },
-    // ]
-    []
-  );
+  const [Child, setChild] = useState([]);
 
   if (!loading && start === 0) {
     start--;
@@ -100,8 +82,8 @@ const OverviewChild = (props) => {
                 <section id="more">
                   <div class="form">
                     <div align="center">
-                      <a href="/assResults">
-                      {/* <a href={`/assResults/${Child[key].name}`}> */}
+                      {/* <a href="/assResults"> */}
+                      <a href={`/assResults?${Child[key].name}`}>
                         <button type="submit">เพิ่มเติม</button>
                       </a>
                     </div>
