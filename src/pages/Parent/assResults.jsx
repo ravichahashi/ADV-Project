@@ -146,6 +146,42 @@ const AssResults = (props) => {
   const [islow_t, setLow_t] = useState(false);
   const [ismedium_t, setMedium_t] = useState(true);
 
+  const calWeigth = (age, weigth) =>{
+    if((age<=4) && (weigth < 2+(age*0.75))){
+      // set is low
+    }else if((age<=4) && (weigth > 4+(age*0.75))){
+       // set is High
+    }
+    if((age<=12) && (weigth < 4.5+((age-4)*0.375))){
+      // set is low
+    }else if((age<=12) && (weigth > 7.5+((age-4)*0.375))){
+      // set is High
+    }
+    if(age>12 && (weigth < 5+(age*0.167))){
+      // set is low
+    }else if(age>12 && (weigth > 11+(age*0.167))){
+      // set is High
+    }
+  };
+
+  const calHeight = (age, height) =>{
+    if((age<=4) && (height < 46+(age*2.5))){
+      // set is low
+    }else if((age<=4) && (height > 54+(age*2.5))){
+      // set is High
+    }
+    if((age<=12) && (height < 55+((age-4)*1.5))){
+      // set is low
+    }else if((age<=12) && (height > 65+((age-4)*1.5))){
+      // set is High
+    }
+    if((age>4) && (height < 70+(age*0.5))){
+      // set is low
+    }else if((age>4) && (height > 80+(age*0.5))){
+      // set is High
+    }
+  };
+
   return (
     <div>
       <section id="assResults" className="section-bg">
