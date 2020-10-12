@@ -9,7 +9,7 @@ const childName = window.location.search.substring(1);
 const click = (e) => {
   console.log(e);
 };
-let start = 2;
+let start = 3;
 
 const AssResults = (props) => {
   const { getChild } = props;
@@ -21,7 +21,7 @@ const AssResults = (props) => {
 
   const [child, setChild] = useState({
     name: "xxxxx xxxxx",
-    age: "999",
+    month: 0,
     nickname: "xxxxx",
     birthDate: {
       date: 0,
@@ -51,13 +51,6 @@ const AssResults = (props) => {
       },
     },
   });
-  if (!loading && start === 0) {
-    start--;
-    setChild(resChild);
-  }
-  if (start > 0) {
-    start--;
-  }
 
   const DSPM_data = [
     {
@@ -129,7 +122,12 @@ const AssResults = (props) => {
     islow_t: false,
     ismedium_t: true,
   };
-
+  const calMonth = (year, month) => {
+    return (
+      (new Date().getFullYear() - year) * 12 +
+      (new Date().getMonth() + 1 - month)
+    );
+  };
   const calWeigth = (age, weigth) => {
     if (age <= 4 && weigth < 2 + age * 0.75) {
       // set is low
@@ -210,6 +208,21 @@ const AssResults = (props) => {
     }
   };
 
+  if (start === 1) {
+    setChild({
+      ...resChild,
+      month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
+    });
+    start--;
+  } else if (start === 0) {
+    calWeigth(child.month, child.weigth);
+    calHeight(child.month, child.height);
+    calTotal();
+    start--;
+  } else if (start > 0) {
+    start--;
+  }
+
   return (
     <div>
       <section id="assResults" className="section-bg">
@@ -261,7 +274,7 @@ const AssResults = (props) => {
                           {child.birthDate.month} / {child.birthDate.year}
                         </h5>
                         <h5>
-                          อายุ: {child.age}
+                          อายุ: {child.month}
                           &nbsp;ปี&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </h5>
                         <h5>
@@ -393,7 +406,7 @@ const AssResults = (props) => {
                                     <div className="col-lg-6">
                                       <div className="container">
                                         <div className="row about-container">
-                                          <a href="/assessment">
+                                          <a href={`/assessment?${child.name}`}>
                                             <button
                                               onClick={() => click(10)}
                                               className="btn btn-info btn-lg"
