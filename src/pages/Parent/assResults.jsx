@@ -120,25 +120,25 @@ const AssResults = (props) => {
     PS: "Personal and Social",
   };
 
-  const [child, setchild] = useState({
-    name: "Suriya Techalue",
-    age: "2",
-    nickname: "ฟลุ๊ค",
-    gender: "ชาย",
-    birthDate: { date: "12", month: "02", year: "2541" },
-    weight: "80",
-    high: "200",
-    Nursery: "SuperKid",
-    GM: 0.84,
-    FM: 0.8,
-    RL: 0.9,
-    EL: 0.67,
-    PS: 0.8,
-  });
+  // const [child, setchild] = useState({
+  //   name: "Suriya Techalue",
+  //   age: "2",
+  //   nickname: "ฟลุ๊ค",
+  //   gender: "ชาย",
+  //   birthDate: { date: "12", month: "02", year: "2541" },
+  //   weight: "80",
+  //   high: "200",
+  //   Nursery: "SuperKid",
+  //   GM: 0.84,
+  //   FM: 0.8,
+  //   RL: 0.9,
+  //   EL: 0.67,
+  //   PS: 0.8,
+  // });
 
   const [isParent, setParent] = useState(false);
   const [islow_w, setLow_w] = useState(true);
-  const [ismedium_w, setMedium_w] = useState(true);
+  const [ismedium_w, setMedium_w] = useState(false);
 
   const [islow_h, setLow_h] = useState(true);
   const [ismedium_h, setMedium_h] = useState(true);
