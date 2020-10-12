@@ -476,7 +476,7 @@ const Assessment = (props) => {
             <div className="box">
               <div className="row">
                 <div className="img-size">
-                  <img src="./suriya.png" />
+                  <img src="./child.jpg" />
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="Vcenter">
@@ -501,34 +501,6 @@ const Assessment = (props) => {
       <section id="assessment">
         <div class="container">
           <div className="row about-extra">
-            {/* <tr> */}
-            {/* <table width="100%">
-              <td width="20%" bgcolor="#fff">
-                <div className="img-size">
-                  <img src="./suriya.png" />
-                </div>
-              </td>
-              <td width="10%"></td>
-              <td
-                width="60%"
-                align="center"
-                height="50px"
-                bgcolor="#4CAF50"
-                class="Vcenter"
-              >
-                <header className="section-content">
-                  <h4 className="title">
-                    <a>
-                      ชื่อ {child.name} &nbsp;&nbsp;&nbsp; อายุ {child.age} ปี
-                      &nbsp;&nbsp;&nbsp; ชื่อเล่น {child.nickname}{" "}
-                      &nbsp;&nbsp;&nbsp;Caution : {child.caution}
-                    </a>
-                  </h4>
-                </header>
-              </td>
-              <td width="10%" bgcolor="red"></td>
-            </table> */}
-            {/* </tr> */}
             <table width="100%" bgcolor="#cbe54e">
               <tr>
                 <td

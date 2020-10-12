@@ -175,7 +175,7 @@ const AssResults = (props) => {
                 <table>
                   <tr>
                     <td>
-                      <div className="img-size"><img src="./suriya.png" /></div>&nbsp;
+                      <div className="img-size"><img src="./child.jpg" /></div>&nbsp;
                     </td>
                     <td>
                       <header className="section-content">

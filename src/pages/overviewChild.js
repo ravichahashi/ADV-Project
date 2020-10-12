@@ -55,7 +55,7 @@ const OverviewChild = (props) => {
               <td>
                 <div className="img-over">
                   <a href="/addchild">
-                    <img src="./suriya.png" />
+                    <img src="./child.jpg" />
                   </a>
                 </div>
               </td>
@@ -99,19 +99,6 @@ const OverviewChild = (props) => {
 
   return (
     <div>
-      {/* ==========================
-    Intro Section
-  ============================*/}
-      {/* <section id="intro" className="clearfix">
-    <div className="container">
-      <div className="intro-img">
-        <img src="./sunerry1.png" alt className="img-fluid" />
-      </div>
-      <div className="intro-info">
-        <h2>We provide<br /><span>solutions</span><br />for your Nursery!</h2>
-      </div>
-    </div>
-  </section>{/* #intro */}
       <main id="main">
         <section id="services" className="section-bg">
           <div className="container">

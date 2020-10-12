@@ -30,7 +30,7 @@ const Index = () => {
               <td>
                 <div className="img-over">
                   <a href="/addchild">
-                    <img src="./suriya.png" />
+                    <img src="./child.jpg" />
                   </a>
                 </div>
               </td>

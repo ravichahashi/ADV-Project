@@ -60,7 +60,7 @@ const AddChild = (props) => {
                   <tr>
                     <td>
                       <div className="img-size">
-                        <img src="./suriya.png" />
+                        <img src="./child.jpg" />
                       </div>
                     </td>
                     <td>
