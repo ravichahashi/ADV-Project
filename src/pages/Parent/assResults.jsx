@@ -2,30 +2,81 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
+import { connect } from "react-redux";
+import { getChild } from "../../redux/actions/dataActions";
 
+const childName = window.location.search.substring(1);
 const click = (e) => {
   console.log(e);
 };
+let start = 2;
 
-const AssResults = () => {
+const AssResults = (props) => {
+  const { getChild } = props;
+  useEffect(() => {
+    getChild(childName);
+  }, [getChild]);
+  const resChild = props.data.child;
+  const loading = props.data.loading;
+
+  const [child, setchild] = useState({
+    name: "xxxxx xxxxx",
+    age: "999",
+    nickname: "xxxxx",
+    birthDate: {
+      date: 0,
+      month: 0,
+      year: 0,
+    },
+    sex: "xxx",
+    weigth: 0,
+    height: 0,
+    nurseryName: "xxxxx",
+    score: {
+      DSPM: {
+        parent: {
+          GM: 0,
+          FM: 0,
+          RL: 0,
+          EL: 0,
+          PS: 0,
+        },
+        nursery: {
+          GM: 0,
+          FM: 0,
+          RL: 0,
+          EL: 0,
+          PS: 0,
+        },
+      },
+    },
+  });
+  if (!loading && start === 0) {
+    start--;
+    setchild(resChild);
+  }
+  if (start > 0) {
+    start--;
+  }
+
   const DSPM_data = [
     {
       data: {
-        GM: 0.84,
-        FM: 0.8,
-        RL: 0.9,
-        EL: 0.67,
-        PS: 0.8,
+        GM: child.score.DSPM.parent.GM,
+        FM: child.score.DSPM.parent.FM,
+        RL: child.score.DSPM.parent.RL,
+        EL: child.score.DSPM.parent.EL,
+        PS: child.score.DSPM.parent.PS,
       },
       meta: { color: "blue" },
     },
     {
       data: {
-        GM: 0.9,
-        FM: 0.6,
-        RL: 0.7,
-        EL: 0.3,
-        PS: 0.75,
+        GM: child.score.DSPM.nursery.GM,
+        FM: child.score.DSPM.nursery.FM,
+        RL: child.score.DSPM.nursery.RL,
+        EL: child.score.DSPM.nursery.EL,
+        PS: child.score.DSPM.nursery.PS,
       },
       meta: { color: "red" },
     },
@@ -101,15 +152,27 @@ const AssResults = () => {
       <section id="assResults" className="section-bg">
         <div className="container">
           <div className="row">
-            <div className="col-md-12 col-lg-ุ6 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div
+              className="col-md-12 col-lg-ุ6 offset-lg-1 wow bounceInUp"
+              data-wow-delay="0.1s"
+              data-wow-duration="1.4s"
+            >
               <section id="goback">
                 <div class="form">
-                  <div><button type="submit" title="Go back"><a href="/childmanager">ย้อนกลับ</a></button></div>
+                  <div>
+                    <button type="submit" title="Go back">
+                      <a href="/childmanager">ย้อนกลับ</a>
+                    </button>
+                  </div>
                 </div>
               </section>
               <br></br>
               <div className="box">
-                <div className="img-sizee"><a href="/editChild"><img src="./pencil.png" /></a></div>
+                <div className="img-sizee">
+                  <a href="/editChild">
+                    <img src="./pencil.png" />
+                  </a>
+                </div>
                 <table>
                   <tr>
                     <td>
@@ -131,8 +194,13 @@ const AssResults = () => {
                           อายุ: {child.age}&nbsp;ปี&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </h5>
                         <h5>
-                          Nursery: {child.Nursery}
+                          เพศ: {child.sex}
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          น้ำหนัก: {child.weigth}
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          ส่วนสูง: {child.height}
                         </h5>
+                        <h5>Nursery: {child.nurseryName}</h5>
                       </header>
                     </td>
                   </tr>
@@ -257,4 +325,12 @@ const AssResults = () => {
   );
 };
 
-export default AssResults;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+const mapDispatchToProps = {
+  getChild: getChild,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AssResults);
