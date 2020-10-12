@@ -11,7 +11,7 @@ import axios from "axios";
 
 export const loginUser = (userData, history) => (dispatch) => {
   const type=userData.type;
-  const path = (type === "Parent"? "landing" : "dashboardNursery");
+  const path = (type === "parent"? "landing" : "dashboardNursery");
   dispatch({ type: LOADING_UI });
   axios
     .post("/login", userData)
@@ -31,7 +31,7 @@ export const loginUser = (userData, history) => (dispatch) => {
 
 export const signupUser = (newUserData, history) => (dispatch) => {
   const type=newUserData.type;
-  const path = (type === "Parent"? "landing" : "dashboardNursery");
+  const path = (type === "parent"? "landing" : "dashboardNursery");
   dispatch({ type: LOADING_UI });
   axios
     .post("/signup", newUserData)
