@@ -120,6 +120,96 @@ const AssResults = (props) => {
     PS: "Personal and Social",
   };
 
+  const [isParent, setParent] = useState(false);
+  const check = {
+    islow_h: false,
+    ismedium_h: true,
+    islow_w: false,
+    ismedium_w: true,
+    islow_t: false,
+    ismedium_t: true,
+  };
+
+  const calWeigth = (age, weigth) => {
+    if (age <= 4 && weigth < 2 + age * 0.75) {
+      // set is low
+      check.islow_w = true;
+      check.ismedium_w = false;
+    } else if (age <= 4 && weigth > 4 + age * 0.75) {
+      // set is High
+      check.islow_w = false;
+      check.ismedium_w = false;
+    }
+    if (age <= 12 && weigth < 4.5 + (age - 4) * 0.375) {
+      // set is low
+      check.islow_w = true;
+      check.ismedium_w = false;
+    } else if (age <= 12 && weigth > 7.5 + (age - 4) * 0.375) {
+      // set is High
+      check.islow_w = false;
+      check.ismedium_w = false;
+    }
+    if (age > 12 && weigth < 5 + age * 0.167) {
+      // set is low
+      check.islow_w = true;
+      check.ismedium_w = false;
+    } else if (age > 12 && weigth > 11 + age * 0.167) {
+      // set is High
+      check.islow_w = false;
+      check.ismedium_w = false;
+    }
+  };
+
+  const calHeight = (age, height) => {
+    if (age <= 4 && height < 46 + age * 2.5) {
+      // set is low
+      check.islow_h = true;
+      check.ismedium_h = false;
+    } else if (age <= 4 && height > 54 + age * 2.5) {
+      // set is High
+      check.islow_h = false;
+      check.ismedium_h = false;
+    }
+    if (age <= 12 && height < 55 + (age - 4) * 1.5) {
+      // set is low
+      check.islow_h = true;
+      check.ismedium_h = false;
+    } else if (age <= 12 && height > 65 + (age - 4) * 1.5) {
+      // set is High
+      check.islow_h = false;
+      check.ismedium_h = false;
+    }
+    if (age > 4 && height < 70 + age * 0.5) {
+      // set is low
+      check.islow_h = true;
+      check.ismedium_h = false;
+    } else if (age > 4 && height > 80 + age * 0.5) {
+      // set is High
+      check.islow_h = false;
+      check.ismedium_h = false;
+    }
+  };
+  // call calHeight and calWeigth before call calTotal
+  const calTotal = () => {
+    if (
+      check.islow_h == true &&
+      check.ismedium_h == false &&
+      check.islow_w == true &&
+      check.ismedium_w == false
+    ) {
+      check.islow_t = true;
+      check.ismedium_t = false;
+    } else if (
+      check.islow_h == false &&
+      check.ismedium_h == false &&
+      check.islow_w == false &&
+      check.ismedium_w == false
+    ) {
+      check.islow_t = false;
+      check.ismedium_t = false;
+    }
+  };
+
   return (
     <div>
       <section id="assResults" className="section-bg">
@@ -150,9 +240,7 @@ const AssResults = (props) => {
                   <tr>
                     <td>
                       <div className="img-size">
-                        <a href="">
-                          <img src="./suriya.png" />
-                        </a>
+                        <img src="./child.jpg" />
                       </div>
                       &nbsp;
                     </td>
@@ -162,9 +250,19 @@ const AssResults = (props) => {
                         <h5>
                           ชื่อ: {child.name}
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          อายุ: {child.age}
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           ชื่อเล่น: {child.nickname}
+                        </h5>
+                        <h5>
+                          เพศ: {child.gender}
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </h5>
+                        <h5>
+                          วันเกิด :{child.birthDate.date} /{" "}
+                          {child.birthDate.month} / {child.birthDate.year}
+                        </h5>
+                        <h5>
+                          อายุ: {child.age}
+                          &nbsp;ปี&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </h5>
                         <h5>
                           เพศ: {child.sex}
@@ -186,19 +284,73 @@ const AssResults = (props) => {
                       <tr>
                         <h3>น้ำหนัก : </h3>
                       </tr>
-                      <tr>sss</tr>
-                    </td>
-                    <td align="center">
                       <tr>
-                        <h3>สูง : </h3>
+                        <div
+                          className={`${
+                            check.islow_w
+                              ? `box-low`
+                              : check.ismedium_w
+                              ? `box-medium`
+                              : `box-high`
+                          }`}
+                        >
+                          {`${
+                            check.islow_w
+                              ? `ต่ำกว่าเกณฑ์`
+                              : check.ismedium_w
+                              ? `ตามเกณฑ์`
+                              : `สูงกว่าเกณฑ์`
+                          }`}
+                        </div>
                       </tr>
-                      <tr>sss</tr>
                     </td>
-                    <td align="center">
+                    <td width="30%" align="center">
+                      <tr>
+                        <h3>ส่วนสูง : </h3>
+                      </tr>
+                      <tr>
+                        <div
+                          className={`${
+                            check.islow_h
+                              ? `box-low`
+                              : check.ismedium_h
+                              ? `box-medium`
+                              : `box-high`
+                          }`}
+                        >
+                          {`${
+                            check.islow_h
+                              ? `ต่ำกว่าเกณฑ์`
+                              : check.ismedium_h
+                              ? `ตามเกณฑ์`
+                              : `สูงกว่าเกณฑ์`
+                          }`}
+                        </div>
+                      </tr>
+                    </td>
+                    <td width="30%" align="center">
                       <tr>
                         <h3>โดยรวม : </h3>
                       </tr>
-                      <tr>sss</tr>
+                      <tr>
+                        <div
+                          className={`${
+                            check.islow_t
+                              ? `box-low`
+                              : check.ismedium_t
+                              ? `box-medium`
+                              : `box-high`
+                          }`}
+                        >
+                          {`${
+                            check.islow_t
+                              ? `ต่ำกว่าเกณฑ์`
+                              : check.ismedium_t
+                              ? `ตามเกณฑ์`
+                              : `สูงกว่าเกณฑ์`
+                          }`}
+                        </div>
+                      </tr>
                     </td>
                   </tr>
                 </table>
@@ -241,7 +393,7 @@ const AssResults = (props) => {
                                     <div className="col-lg-6">
                                       <div className="container">
                                         <div className="row about-container">
-                                          <a href={`/assessment?${child.name}`}>
+                                          <a href="/assessment">
                                             <button
                                               onClick={() => click(10)}
                                               className="btn btn-info btn-lg"

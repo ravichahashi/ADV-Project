@@ -60,7 +60,7 @@ const AddChild = (props) => {
                   <tr>
                     <td>
                       <div className="img-size">
-                        <img src="./suriya.png" />
+                        <img src="./child.jpg" />
                       </div>
                     </td>
                     <td>
@@ -162,7 +162,7 @@ const AddChild = (props) => {
                           type="number"
                           name="year"
                           class="form-control"
-                          placeholder="ปี"
+                          placeholder="ปี พ.ศ."
                           onChange={handleChange}
                         ></input>
                       </td>

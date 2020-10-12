@@ -75,7 +75,7 @@ const Index = () => {
               <div className="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
                 <div className="box">
                   <div className="icon"><i className="ion-ios-bookmarks-outline" style={{ color: '#fff' }} /></div>
-                  <h4 className="title"><a href="/login">สมัครสมาชิก</a></h4>
+                  <h4 className="title"><a href="/signup">สมัครสมาชิก</a></h4>
                   <ul class="b">
                     <p className="description"><li>ให้เราเก็บข้อมูลการพัฒนาการลูกของคุณ</li></p>
                     <p className="description"><li>ฝากลูกของคุณให้กับ nusery ที่มีคุณภาพ</li></p>

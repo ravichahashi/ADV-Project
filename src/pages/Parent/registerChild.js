@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { getChildren } from "../redux/actions/dataActions";
+import { getChildren } from "../../redux/actions/dataActions";
 
 // Redux stuff
 import { connect } from "react-redux";
 
 // CSS
-import "../components/NewBiz/lib/bootstrap/css/bootstrap.min.css";
-import "../components/NewBiz/lib/font-awesome/css/font-awesome.min.css";
-import "../components/NewBiz/lib/animate/animate.min.css";
-import "../components/NewBiz/lib/ionicons/css/ionicons.min.css";
-import "../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
-import "../components/NewBiz/lib/lightbox/css/lightbox.min.css";
-import "../components/NewBiz/css/style.css";
+import "../../components/NewBiz/lib/bootstrap/css/bootstrap.min.css"
+import "../../components/NewBiz/lib/font-awesome/css/font-awesome.min.css"
+import "../../components/NewBiz/lib/animate/animate.min.css"
+import "../../components/NewBiz/lib/ionicons/css/ionicons.min.css"
+import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css"
+import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css"
+import "../../components/NewBiz/css/style.css"
 
 let start = 2;
 
-const OverviewChild = (props) => {
+const RegisterChild = (props) => {
   const { getChildren } = props;
   useEffect(() => {
     getChildren();
@@ -30,7 +30,25 @@ const OverviewChild = (props) => {
     },
   ]);
   const [numChild, setnumChild] = useState(4);
-  const [Child, setChild] = useState([]);
+  const [Child, setChild] = useState(
+    // [
+    //   {
+    //     name: "รักษ์พงศ์ ทอหุล",
+    //     sex: "ชาย",
+    //     birthDate: { date: "12", month: "02", year: "2541" },
+    //     weigth: 20,
+    //     height: 50,
+    //   },
+    //   {
+    //     name: "suriya ",
+    //     sex: "หญิง",
+    //     birthDate: { date: "12", month: "02", year: "2541" },
+    //     weigth: 100,
+    //     height: 250,
+    //   },
+    // ]
+    []
+  );
 
   if (!loading && start === 0) {
     start--;
@@ -82,8 +100,8 @@ const OverviewChild = (props) => {
                 <section id="more">
                   <div class="form">
                     <div align="center">
-                      {/* <a href="/assResults"> */}
-                      <a href={`/assResults?${Child[key].name}`}>
+                      <a href="/assResults">
+                      {/* <a href={`/assResults/${Child[key].name}`}> */}
                         <button type="submit">เพิ่มเติม</button>
                       </a>
                     </div>
@@ -100,7 +118,7 @@ const OverviewChild = (props) => {
   return (
     <div>
       <main id="main">
-        <section id="services" className="section-bg">
+        <section id="regischild" className="section-bg">
           <div className="container">
             <div className="container" align="center">
               <div className="col-md-11 col-lg-ุ5">
@@ -149,11 +167,14 @@ const OverviewChild = (props) => {
                 </div>
               </div>
             </div>
-            <header className="section-header">
-              <h3>ครอบครัวของฉัน</h3>
-              <p></p>
-            </header>
-            <div className="row">
+            <div className="box" align="center">
+                <table width="100%">
+                    <tr>
+                    <th text-align="center">เลือกเด็กที่จะลงทะเบียน</th>
+                    </tr>
+                </table>
+            </div>
+            {/* <div className="row">
               {item}
               <div
                 className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
@@ -171,7 +192,7 @@ const OverviewChild = (props) => {
                   </h5>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         {/* #services */}
@@ -188,4 +209,4 @@ const mapDispatchToProps = {
   getChildren: getChildren,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OverviewChild);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterChild);
