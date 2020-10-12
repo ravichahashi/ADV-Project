@@ -44,7 +44,7 @@ class signupnersery extends Component {
       password: "",
       confirmPassword: "",
       errors: {},
-      type: "Nursery",
+      type: "nursery",
     };
   }
   componentWillReceiveProps(nextProps) {

@@ -15,6 +15,7 @@ import {
   SET_SCREAM,
   STOP_LOADING_UI,
   SUBMIT_COMMENT,
+  UPDATE_CHILD,
 } from "../types";
 import axios from "axios";
 
@@ -60,6 +61,26 @@ export const addChild = (newChild,history) => (dispatch) => {
       });
       dispatch(clearErrors());
       history.push("/overviewChild");
+    })
+    .catch((err) => {
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data,
+      });
+    });
+};
+// Update child
+export const updateScoreChild = (score,child,scoreType,history) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .post(`/child/${child.id}/score/${scoreType}`, score)
+    .then((res) => {
+      dispatch({
+        type: UPDATE_CHILD,
+        payload: res.data,
+      });
+      dispatch(clearErrors());
+      history.push(`/assResults?${child.name}`);
     })
     .catch((err) => {
       dispatch({

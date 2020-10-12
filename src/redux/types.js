@@ -22,3 +22,4 @@ export const SET_QUESTIONS = "SET_QUESTIONS";
 export const SET_CHILDREN = "SET_CHILDREN";
 export const SET_CHILD = "SET_CHILD";
 export const ADD_CHILD = "ADD_CHILD";
+export const UPDATE_CHILD = "UPDATE_CHILD";

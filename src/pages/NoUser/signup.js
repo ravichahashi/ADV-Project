@@ -31,7 +31,7 @@ class signup extends Component {
       password: "",
       confirmPassword: "",
       errors: {},
-      type: "Parent",
+      type: "parent",
     };
   }
   componentWillReceiveProps(nextProps) {

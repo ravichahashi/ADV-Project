@@ -2,6 +2,7 @@ import {
   SET_CHILD,
   SET_CHILDREN,
   ADD_CHILD,
+  UPDATE_CHILD,
   SET_QUESTIONS,
   SET_SCREAMS,
   LIKE_SCREAM,
@@ -41,6 +42,10 @@ export default function (state = initialState, action) {
       return {
         ...state,
         children: [action.payload, ...state.children],
+      };
+    case UPDATE_CHILD:
+      return {
+        ...state,
       };
     case SET_QUESTIONS:
       return {

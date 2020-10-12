@@ -19,7 +19,7 @@ const AssResults = (props) => {
   const resChild = props.data.child;
   const loading = props.data.loading;
 
-  const [child, setchild] = useState({
+  const [child, setChild] = useState({
     name: "xxxxx xxxxx",
     age: "999",
     nickname: "xxxxx",
@@ -53,7 +53,7 @@ const AssResults = (props) => {
   });
   if (!loading && start === 0) {
     start--;
-    setchild(resChild);
+    setChild(resChild);
   }
   if (start > 0) {
     start--;

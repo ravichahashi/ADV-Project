@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
-import { getQuestions } from "../redux/actions/dataActions";
+import {
+  getChild,
+  getQuestions,
+  updateScoreChild,
+} from "../redux/actions/dataActions";
 import { connect } from "react-redux";
 import ReactPlayer from "react-player";
 // import { CheckBoxComponent } from '@syncfusion/ej2-react-buttons';
 import * as ReactDom from "react-dom";
 
+const childName = window.location.search.substring(1);
+let questionIdxBase = 0;
 let assessmentResults = [];
 let haveFail = false;
 let failCount = {
@@ -15,7 +21,7 @@ let failCount = {
   EL: 0,
   PS: 0,
 };
-let start = 2;
+let start = 4;
 
 const Assessment = (props) => {
   const calMonth = (year, month) => {
@@ -25,20 +31,23 @@ const Assessment = (props) => {
     );
   };
 
-  const resChild = {
-    name: "Suriya Techalue",
-    birthDate: {
-      year: "2020",
-      month: "1",
-      date: "10",
-    },
-    nickname: "ฟลุ๊ค",
-    caution: "ไม่มี",
-  };
-
+  const { getChild, getQuestions } = props;
+  useEffect(() => {
+    getChild(childName);
+    getQuestions();
+  }, [getChild, getQuestions]);
+  const resChild = props.data.child;
+  const { questions, loading } = props.data;
   const [child, setChild] = useState({
-    ...resChild,
-    month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
+    name: "xxxxx xxxxx",
+    birthDate: {
+      year: 0,
+      month: 0,
+      date: 0,
+    },
+    nickname: "xxxxx",
+    caution: "xxx",
+    month: 0,
   });
 
   const [nursery, setNursery] = useState([
@@ -49,12 +58,6 @@ const Assessment = (props) => {
     },
   ]);
 
-  const { getQuestions } = props;
-  useEffect(() => {
-    getQuestions();
-  }, [getQuestions]);
-  const { questions, loading } = props.data;
-
   const findQuestion = (month) => {
     let idx = -1;
     for (let i = 0; i < questions.length; i++) {
@@ -63,8 +66,6 @@ const Assessment = (props) => {
     }
     return idx;
   };
-  const questionIdxBase = findQuestion(child.month);
-
   const findAllScore = () => {
     let countGM = 0,
       countFM = 0,
@@ -100,7 +101,7 @@ const Assessment = (props) => {
   };
   const fullScore = findFullScore();
 
-  const [dataAssessment, setDataAssessment] = useState({
+  const [assessmentData, setAssessmentData] = useState({
     questionIdx: 0,
     num: 0,
     video: "",
@@ -114,34 +115,34 @@ const Assessment = (props) => {
 
   const handleNext = (e) => {
     e.preventDefault();
-    if (dataAssessment.status === "") {
+    if (assessmentData.status === "") {
       alert("please check...");
     } else {
-      assessmentResults.push(dataAssessment);
+      assessmentResults.push(assessmentData);
       // console.log(assessmentResults);
-      switch (dataAssessment.tag) {
+      switch (assessmentData.tag) {
         case "GM":
-          if (dataAssessment.status === "notPass") {
+          if (assessmentData.status === "notPass") {
             haveFail = true;
             failCount.GM++;
           }
           if (
-            dataAssessment.num < questions[dataAssessment.questionIdx].GM.length
+            assessmentData.num < questions[assessmentData.questionIdx].GM.length
           ) {
-            const num = dataAssessment.num;
-            setDataAssessment({
-              ...dataAssessment,
+            const num = assessmentData.num;
+            setAssessmentData({
+              ...assessmentData,
               num: num + 1,
-              video: questions[dataAssessment.questionIdx].GM[num].video,
-              detail: questions[dataAssessment.questionIdx].GM[num].text,
+              video: questions[assessmentData.questionIdx].GM[num].video,
+              detail: questions[assessmentData.questionIdx].GM[num].text,
               status: "",
               comment: "",
               haveFail: haveFail,
             });
-          } else if (!haveFail || dataAssessment.questionIdx === 0) {
+          } else if (!haveFail || assessmentData.questionIdx === 0) {
             haveFail = false;
-            setDataAssessment({
-              ...dataAssessment,
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: questionIdxBase,
               num: 1,
               video: questions[questionIdxBase].FM[0].video,
@@ -154,9 +155,9 @@ const Assessment = (props) => {
             });
           } else {
             haveFail = false;
-            const idx = dataAssessment.questionIdx - 1;
-            setDataAssessment({
-              ...dataAssessment,
+            const idx = assessmentData.questionIdx - 1;
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: idx,
               num: 1,
               video: questions[idx].GM[0].video,
@@ -169,27 +170,27 @@ const Assessment = (props) => {
           }
           break;
         case "FM":
-          if (dataAssessment.status === "notPass") {
+          if (assessmentData.status === "notPass") {
             haveFail = true;
             failCount.FM++;
           }
           if (
-            dataAssessment.num < questions[dataAssessment.questionIdx].FM.length
+            assessmentData.num < questions[assessmentData.questionIdx].FM.length
           ) {
-            const num = dataAssessment.num;
-            setDataAssessment({
-              ...dataAssessment,
+            const num = assessmentData.num;
+            setAssessmentData({
+              ...assessmentData,
               num: num + 1,
-              video: questions[dataAssessment.questionIdx].FM[num].video,
-              detail: questions[dataAssessment.questionIdx].FM[num].text,
+              video: questions[assessmentData.questionIdx].FM[num].video,
+              detail: questions[assessmentData.questionIdx].FM[num].text,
               status: "",
               comment: "",
               haveFail: haveFail,
             });
-          } else if (!haveFail || dataAssessment.questionIdx === 0) {
+          } else if (!haveFail || assessmentData.questionIdx === 0) {
             haveFail = false;
-            setDataAssessment({
-              ...dataAssessment,
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: questionIdxBase,
               num: 1,
               video: questions[questionIdxBase].RL[0].video,
@@ -202,9 +203,9 @@ const Assessment = (props) => {
             });
           } else {
             haveFail = false;
-            const idx = dataAssessment.questionIdx - 1;
-            setDataAssessment({
-              ...dataAssessment,
+            const idx = assessmentData.questionIdx - 1;
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: idx,
               num: 1,
               video: questions[idx].FM[0].video,
@@ -217,27 +218,27 @@ const Assessment = (props) => {
           }
           break;
         case "RL":
-          if (dataAssessment.status === "notPass") {
+          if (assessmentData.status === "notPass") {
             haveFail = true;
             failCount.RL++;
           }
           if (
-            dataAssessment.num < questions[dataAssessment.questionIdx].RL.length
+            assessmentData.num < questions[assessmentData.questionIdx].RL.length
           ) {
-            const num = dataAssessment.num;
-            setDataAssessment({
-              ...dataAssessment,
+            const num = assessmentData.num;
+            setAssessmentData({
+              ...assessmentData,
               num: num + 1,
-              video: questions[dataAssessment.questionIdx].RL[num].video,
-              detail: questions[dataAssessment.questionIdx].RL[num].text,
+              video: questions[assessmentData.questionIdx].RL[num].video,
+              detail: questions[assessmentData.questionIdx].RL[num].text,
               status: "",
               comment: "",
               haveFail: haveFail,
             });
-          } else if (!haveFail || dataAssessment.questionIdx === 0) {
+          } else if (!haveFail || assessmentData.questionIdx === 0) {
             haveFail = false;
-            setDataAssessment({
-              ...dataAssessment,
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: questionIdxBase,
               num: 1,
               video: questions[questionIdxBase].EL[0].video,
@@ -250,9 +251,9 @@ const Assessment = (props) => {
             });
           } else {
             haveFail = false;
-            const idx = dataAssessment.questionIdx - 1;
-            setDataAssessment({
-              ...dataAssessment,
+            const idx = assessmentData.questionIdx - 1;
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: idx,
               num: 1,
               video: questions[idx].RL[0].video,
@@ -265,27 +266,27 @@ const Assessment = (props) => {
           }
           break;
         case "EL":
-          if (dataAssessment.status === "notPass") {
+          if (assessmentData.status === "notPass") {
             haveFail = true;
             failCount.EL++;
           }
           if (
-            dataAssessment.num < questions[dataAssessment.questionIdx].EL.length
+            assessmentData.num < questions[assessmentData.questionIdx].EL.length
           ) {
-            const num = dataAssessment.num;
-            setDataAssessment({
-              ...dataAssessment,
+            const num = assessmentData.num;
+            setAssessmentData({
+              ...assessmentData,
               num: num + 1,
-              video: questions[dataAssessment.questionIdx].EL[num].video,
-              detail: questions[dataAssessment.questionIdx].EL[num].text,
+              video: questions[assessmentData.questionIdx].EL[num].video,
+              detail: questions[assessmentData.questionIdx].EL[num].text,
               status: "",
               comment: "",
               haveFail: haveFail,
             });
-          } else if (!haveFail || dataAssessment.questionIdx === 0) {
+          } else if (!haveFail || assessmentData.questionIdx === 0) {
             haveFail = false;
-            setDataAssessment({
-              ...dataAssessment,
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: questionIdxBase,
               num: 1,
               video: questions[questionIdxBase].PS[0].video,
@@ -298,9 +299,9 @@ const Assessment = (props) => {
             });
           } else {
             haveFail = false;
-            const idx = dataAssessment.questionIdx - 1;
-            setDataAssessment({
-              ...dataAssessment,
+            const idx = assessmentData.questionIdx - 1;
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: idx,
               num: 1,
               video: questions[idx].EL[0].video,
@@ -313,25 +314,25 @@ const Assessment = (props) => {
           }
           break;
         case "PS":
-          if (dataAssessment.status === "notPass") {
+          if (assessmentData.status === "notPass") {
             haveFail = true;
             failCount.PS++;
           }
           if (
-            dataAssessment.num < questions[dataAssessment.questionIdx].PS.length
+            assessmentData.num < questions[assessmentData.questionIdx].PS.length
           ) {
-            const num = dataAssessment.num;
-            setDataAssessment({
-              ...dataAssessment,
+            const num = assessmentData.num;
+            setAssessmentData({
+              ...assessmentData,
               num: num + 1,
-              video: questions[dataAssessment.questionIdx].PS[num].video,
-              detail: questions[dataAssessment.questionIdx].PS[num].text,
+              video: questions[assessmentData.questionIdx].PS[num].video,
+              detail: questions[assessmentData.questionIdx].PS[num].text,
               status: "",
               comment: "",
               haveFail: haveFail,
             });
-          } else if (!haveFail || dataAssessment.questionIdx === 0) {
-            alert("Complete");
+          } else if (!haveFail || assessmentData.questionIdx === 0) {
+            // alert("Complete");
             let childScore = {
               GM: (fullScore.GM - failCount.GM) / allScore.GM,
               FM: (fullScore.FM - failCount.FM) / allScore.FM,
@@ -339,12 +340,13 @@ const Assessment = (props) => {
               EL: (fullScore.EL - failCount.EL) / allScore.EL,
               PS: (fullScore.PS - failCount.PS) / allScore.PS,
             };
-            console.log(childScore);
+            // console.log(childScore);
+            props.updateScoreChild(childScore,child,"DSPM",props.history)
           } else {
             haveFail = false;
-            const idx = dataAssessment.questionIdx - 1;
-            setDataAssessment({
-              ...dataAssessment,
+            const idx = assessmentData.questionIdx - 1;
+            setAssessmentData({
+              ...assessmentData,
               questionIdx: idx,
               num: 1,
               video: questions[idx].PS[0].video,
@@ -368,7 +370,7 @@ const Assessment = (props) => {
       const prevAssessment = assessmentResults.pop();
       haveFail = prevAssessment.haveFail;
       // console.log(prevAssessment);
-      setDataAssessment({
+      setAssessmentData({
         ...prevAssessment,
       });
       if (prevAssessment.status === "notPass") {
@@ -397,18 +399,24 @@ const Assessment = (props) => {
 
   const handleCheck = (e) => {
     const { value } = e.target;
-    setDataAssessment({ ...dataAssessment, status: value });
+    setAssessmentData({ ...assessmentData, status: value });
     // console.log(dataAssessment.status === "notPass");
   };
 
   const handleComment = (e) => {
     const { value } = e.target;
-    setDataAssessment({ ...dataAssessment, comment: value });
+    setAssessmentData({ ...assessmentData, comment: value });
   };
 
-  if (!loading && start === 0) {
+  if (start === 1) {
+    setChild({
+      ...resChild,
+      month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
+    });
     start--;
-    setDataAssessment({
+  } else if (start === 0) {
+    questionIdxBase = findQuestion(child.month);
+    setAssessmentData({
       questionIdx: questionIdxBase,
       num: 1,
       video: questions[questionIdxBase].GM[0].video,
@@ -419,8 +427,8 @@ const Assessment = (props) => {
       comment: "",
       haveFail: false,
     });
-  }
-  if (start > 0) {
+    start--;
+  } else if (start > 0) {
     start--;
   }
 
@@ -538,10 +546,10 @@ const Assessment = (props) => {
                   align="center"
                 >
                   <h1>
-                    {dataAssessment.tag} อายุ {dataAssessment.month} เดือน
+                    {assessmentData.tag} อายุ {assessmentData.month} เดือน
                   </h1>
                   <ReactPlayer
-                    url={dataAssessment.video}
+                    url={assessmentData.video}
                     controls
                     width="600px"
                     height="400px"
@@ -551,10 +559,10 @@ const Assessment = (props) => {
                 </td>
                 <td bgcolor="lightyellow" width="40%">
                   <p>
-                    <b>การทดสอบที่ {dataAssessment.num}</b> <br></br>
+                    <b>การทดสอบที่ {assessmentData.num}</b> <br></br>
                     <br></br>
                     <br></br>
-                    {dataAssessment.detail}
+                    {assessmentData.detail}
                   </p>
                   <br></br>
                   <br></br>
@@ -571,7 +579,7 @@ const Assessment = (props) => {
                       name="pass"
                       type="checkbox"
                       value="pass"
-                      checked={dataAssessment.status === "pass"}
+                      checked={assessmentData.status === "pass"}
                       onChange={handleCheck}
                     />
                   </td>
@@ -594,7 +602,7 @@ const Assessment = (props) => {
                       name="notpass"
                       type="checkbox"
                       value="notPass"
-                      checked={dataAssessment.status === "notPass"}
+                      checked={assessmentData.status === "notPass"}
                       onChange={handleCheck}
                     />
                   </td>
@@ -651,10 +659,13 @@ const Assessment = (props) => {
 
 const mapStateToProps = (state) => ({
   data: state.data,
+  UI: state.UI,
 });
 
 const mapDispatchToProps = {
+  getChild: getChild,
   getQuestions: getQuestions,
+  updateScoreChild: updateScoreChild,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Assessment);
