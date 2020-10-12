@@ -241,7 +241,7 @@ const AssResults = (props) => {
                                     <div className="col-lg-6">
                                       <div className="container">
                                         <div className="row about-container">
-                                          <a href="/assessment">
+                                          <a href={`/assessment?${child.name}`}>
                                             <button
                                               onClick={() => click(10)}
                                               className="btn btn-info btn-lg"
