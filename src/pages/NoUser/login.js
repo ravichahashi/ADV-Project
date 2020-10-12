@@ -21,13 +21,14 @@ const styles = (theme) => ({
   ...theme.spreadThis
 });
 
-class login extends Component {
+class login extends Component { 
   constructor() {
     super();
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      type: ''
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -48,6 +49,18 @@ class login extends Component {
       [event.target.name]: event.target.value
     }); 
   };
+
+  isParent = false;
+  selectParent = () =>{
+    this.isParent = true;
+    this.forceUpdate();
+  }
+
+  selectNursery = () =>{
+    this.isParent = false;
+    this.forceUpdate();
+  }
+
   render() {
     const {
       classes,
@@ -63,7 +76,19 @@ class login extends Component {
           <Typography variant="h1" class="cursive-font" className={classes.pageTitle}>
             Sign in to Sunerry
           </Typography>
+
           <form noValidate onSubmit={this.handleSubmit}>
+
+          {/* {toggleType} */}
+          <div className="btn-group btn-group-toggle" data-toggle="buttons">
+            <label className={`${this.isParent ? `btn btn-secondary active` : `btn btn-secondary`}`} onClick={this.selectParent}>
+              <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked /> Parent
+            </label>
+            <label className={`${!this.isParent ? `btn btn-secondary active` : `btn btn-secondary`}`} onClick={this.selectNursery}>
+              <input type="radio" name="options" id="option2" autoComplete="off" /> Nursery
+            </label>
+          </div>
+
             <TextField
               id="email"
               name="email"
