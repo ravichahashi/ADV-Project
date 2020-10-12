@@ -341,7 +341,7 @@ const Assessment = (props) => {
               PS: (fullScore.PS - failCount.PS) / allScore.PS,
             };
             // console.log(childScore);
-            props.updateScoreChild(childScore,child,"DSPM",props.history)
+            props.updateScoreChild(childScore, child, "DSPM", props.history);
           } else {
             haveFail = false;
             const idx = assessmentData.questionIdx - 1;
@@ -413,7 +413,6 @@ const Assessment = (props) => {
       ...resChild,
       month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
     });
-    start--;
   } else if (start === 0) {
     questionIdxBase = findQuestion(child.month);
     setAssessmentData({
@@ -427,9 +426,17 @@ const Assessment = (props) => {
       comment: "",
       haveFail: false,
     });
+  }
+  if (start >= 0) {
     start--;
-  } else if (start > 0) {
-    start--;
+    return (
+      <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>Loading...
+      </div>
+    );
   }
 
   return (

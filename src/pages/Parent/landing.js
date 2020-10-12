@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { getChildren } from "../../redux/actions/dataActions";
 
 // Redux stuff
 import { connect } from "react-redux";
@@ -12,8 +13,31 @@ import "../../components/NewBiz/lib/owlcarousel/assets/owl.carousel.min.css";
 import "../../components/NewBiz/lib/lightbox/css/lightbox.min.css";
 import "../../components/NewBiz/css/style.css";
 
-const Index = () => {
+let start = 2;
+
+const Landing = (props) => {
+  const { getChildren } = props;
+  useEffect(() => {
+    getChildren();
+  }, [getChildren]);
+  const { children, loading } = props.data;
+
   const [Child, setChild] = useState([]);
+
+  if (start === 0) {
+    setChild(children);
+  }
+  if (start >= 0) {
+    start--;
+    return (
+      <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>Loading...
+      </div>
+    );
+  }
 
   let item = [];
   for (let key in Child) {
@@ -241,4 +265,12 @@ const Index = () => {
   );
 };
 
-export default Index;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+const mapDispatchToProps = {
+  getChildren: getChildren,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);

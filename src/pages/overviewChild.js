@@ -32,12 +32,19 @@ const OverviewChild = (props) => {
   const [numChild, setnumChild] = useState(4);
   const [Child, setChild] = useState([]);
 
-  if (!loading && start === 0) {
-    start--;
+  if (start === 0) {
     setChild(children);
   }
-  if (start > 0) {
+  if (start >= 0) {
     start--;
+    return (
+      <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>Loading...
+      </div>
+    );
   }
 
   let item = [];

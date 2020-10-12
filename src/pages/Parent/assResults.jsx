@@ -213,14 +213,21 @@ const AssResults = (props) => {
       ...resChild,
       month: calMonth(resChild.birthDate.year, resChild.birthDate.month),
     });
-    start--;
   } else if (start === 0) {
     calWeigth(child.month, child.weigth);
     calHeight(child.month, child.height);
     calTotal();
+  }
+  if (start >= 0) {
     start--;
-  } else if (start > 0) {
-    start--;
+    return (
+      <div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>Loading...
+      </div>
+    );
   }
 
   return (
