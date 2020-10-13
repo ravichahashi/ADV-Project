@@ -44,6 +44,7 @@ import assResultsNursery from "./pages/Nursery/assResultsNursery";
 import dashboardNursery from "./pages/Nursery/dashboardNursery";
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
+import childrenList from "./pages/Nursery/childrenList";
 
 
 
@@ -105,8 +106,9 @@ class App extends Component {
                 <Route exact path="/nurseryInfo" component={nurseryInfo_parent} />
                 <Route exact path="/registerChild" component={registerChild} />
                 <Route exact path="/advertise" component={advertise} />
+
                 {/* Nusery */}
-                
+                <Route exact path="/childList" component={childrenList} />
                 <Route exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
                 {/* <Route exact path="/assResults/:childName" component={AssResults} /> */}

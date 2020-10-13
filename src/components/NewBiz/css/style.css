@@ -866,6 +866,39 @@ h6 {
   color: rgb(73, 71, 71);
 }
 
+.box-red{
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background: #FF9882;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.box-green{
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background:#BFDB76;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.box-yellow{
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background:#F8D064;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
 #op .box {
   padding: 40px;
   position: relative;
