@@ -41,7 +41,8 @@ const AddChild = (props) => {
       height: child.height,
       caution: child.caution,
     };
-    props.addChild(newChild, props.history);
+    props.addChild(newChild);
+    props.history.push("/overviewChild");
   };
   const handleChange = (event) => {
     setChild({

@@ -341,7 +341,8 @@ const Assessment = (props) => {
               PS: (fullScore.PS - failCount.PS) / allScore.PS,
             };
             // console.log(childScore);
-            props.updateScoreChild(childScore, child, "DSPM", props.history);
+            props.updateScoreChild(childScore, child, "DSPM");
+            props.history.push(`/assResults?${child.name}`);
           } else {
             haveFail = false;
             const idx = assessmentData.questionIdx - 1;

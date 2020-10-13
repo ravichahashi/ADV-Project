@@ -50,7 +50,7 @@ export const getChildren = () => (dispatch) => {
     });
 };
 // Add child
-export const addChild = (newChild,history) => (dispatch) => {
+export const addChild = (newChild) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
     .post("/child", newChild)
@@ -60,7 +60,6 @@ export const addChild = (newChild,history) => (dispatch) => {
         payload: res.data,
       });
       dispatch(clearErrors());
-      history.push("/overviewChild");
     })
     .catch((err) => {
       dispatch({
@@ -70,7 +69,7 @@ export const addChild = (newChild,history) => (dispatch) => {
     });
 };
 // Update child
-export const updateScoreChild = (score,child,scoreType,history) => (dispatch) => {
+export const updateScoreChild = (score,child,scoreType) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
     .post(`/child/${child.id}/score/${scoreType}`, score)
@@ -80,7 +79,6 @@ export const updateScoreChild = (score,child,scoreType,history) => (dispatch) =>
         payload: res.data,
       });
       dispatch(clearErrors());
-      history.push(`/assResults?${child.name}`);
     })
     .catch((err) => {
       dispatch({
