@@ -42,6 +42,7 @@ import home from "./pages/home";
 import user from "./pages/user";
 import assResultsNursery from "./pages/Nursery/assResultsNursery";
 import dashboardNursery from "./pages/Nursery/dashboardNursery";
+import requestfromParent from "./pages/Nursery/requestfromParent";
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
 import childrenList from "./pages/Nursery/childrenList";
@@ -114,6 +115,7 @@ class App extends Component {
                 {/* <Route exact path="/assResults/:childName" component={AssResults} /> */}
                 <Route exact path="/assResultsNursery" component={assResultsNursery} />
                 <Route exact path="/dashboardNursery" component={dashboardNursery} />
+                <Route exact path="/requestfromParent" component={requestfromParent} />
                 <Route exact path="/home" component={home} />
                 <Route
                   exact

@@ -2754,6 +2754,113 @@ h6 {
   height: 35px;
 }
 
+#request {
+  padding: 1px 0 2px 0;
+}
+
+#request .section-header h3 {
+  color: rgb(92, 90, 90);
+}
+
+#request .box {
+  padding: 5px;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 50px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#request .box h5 {
+  font-weight: 600;
+  font-size: 17px;
+}
+#request .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+#request table th{
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding-top: 25px;
+  padding-bottom: 8px;
+  color: rgb(44, 42, 42);
+}
+
+#request .title {
+  margin-left: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #111;
+}
+
+#request .box:hover .title a {
+  color: #b43e25;
+}
+
+#request .description {
+  font-size: 14px;
+  margin: auto;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+#request .img-size img {
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  display: block;
+}
+
+#request .img-over img{
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+#request .img-overr img{
+  max-width: 20px;
+  max-height: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 0px;
+  display: block;
+  margin: auto;
+}
+
+#request input[type="checkbox"] {
+  padding: 8px 30px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+
+.searchbox {
+  overflow: hidden;
+}
+
+.searchbox input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
+}
+
 .box-low {
   background-color: #add8e6;
   width: 250px;
@@ -2790,3 +2897,6 @@ h6 {
   box-sizing: border-box;
 }
 
+hr.new4 {
+  border: 1px solid rgb(245, 166, 49);
+}
