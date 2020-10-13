@@ -33,6 +33,7 @@ var parent = [
   "/registerChild",
 ];
 var nursery = [
+  "/requestfromParent",
   "/dashboardNursery",
   "/childrenList",
   "/parentList",
