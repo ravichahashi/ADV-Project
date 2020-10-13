@@ -162,7 +162,7 @@ const AddChild = (props) => {
                           type="number"
                           name="year"
                           class="form-control"
-                          placeholder="ปี พ.ศ."
+                          placeholder="ปี ค.ศ."
                           onChange={handleChange}
                         ></input>
                       </td>
