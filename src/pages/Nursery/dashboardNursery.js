@@ -14,6 +14,7 @@ import "../../components/NewBiz/css/style.css"
 
 import CanvasJSReact from "./../../components/canvasjs-3.1/canvasjs.react";
 import RadarChart from "react-svg-radar-chart";
+import Calendar from 'react-calendar';
 
 var Component = React.Component;
 var CanvasJS = CanvasJSReact.CanvasJS;
@@ -68,7 +69,13 @@ class DashboardNursery extends Component {
 		super();
 		this.addSymbols = this.addSymbols.bind(this);
 	};
-	
+  
+  state = {
+    date: new Date(),
+  }
+
+  onChange = date => this.setState({ date })
+  
 	addSymbols(e) {
 		var suffixes = ["", "K", "M", "B"];
 		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
@@ -301,7 +308,12 @@ class DashboardNursery extends Component {
               <td width="35%">
                 <div className="box">
                   <h4>กิจกรรม</h4>
-                  
+                  <div>
+                    <Calendar
+                      onChange={this.onChange}
+                      value={this.state.date}
+                    />
+                  </div>
                 </div>
               </td>
             </tr>
