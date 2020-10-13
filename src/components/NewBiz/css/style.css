@@ -2659,6 +2659,7 @@ h6 {
   padding-bottom: 8px;
   color: rgb(44, 42, 42);
   margin:auto;
+  vertical-align: middle;
 }
 
 #regischild .title {
