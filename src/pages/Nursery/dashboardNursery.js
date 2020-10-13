@@ -193,8 +193,8 @@ class DashboardNursery extends Component {
         <section id="tab" className="section-bg-white">
           <table width="100%">
             <div className="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">
-              <label className="btn btn-secondary" href="/childList">
-                <input type="radio" name="options" id="option1" href="/childList" /> 
+              <label className="btn btn-secondary" >
+                <input type="radio" name="options" id="option1"/> 
                 <a href="/childList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;นักเรียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
               </label>
