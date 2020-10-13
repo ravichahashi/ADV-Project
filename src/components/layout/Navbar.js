@@ -30,6 +30,7 @@ var parent = [
   "/nurseryInfo",
   "/assessment",
   "/assResults",
+  "/registerChild",
 ];
 var nursery = [
   "/dashboardNursery",
@@ -41,6 +42,7 @@ var nursery = [
   "/result_nursery",
   "/reviewPage",
   "/calendar",
+  "/childList",
 ];
 
 class Nevbar extends Component {

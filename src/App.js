@@ -35,6 +35,7 @@ import editChild from "./pages/Parent/editChild";
 import addchild from "./pages/Parent/addchild";
 import nurseryInfo_parent from "./pages/Parent/nurseryInfo";
 import registerChild from "./pages/Parent/registerChild";
+import advertise from "./pages/Parent/advertise";
 
 // Nusery
 import home from "./pages/home";
@@ -44,6 +45,7 @@ import dashboardNursery from "./pages/Nursery/dashboardNursery";
 import requestfromParent from "./pages/Nursery/requestfromParent";
 import assessment from "./pages/assessment";
 // import landing from "./pages/landing";
+import childrenList from "./pages/Nursery/childrenList";
 
 
 
@@ -104,8 +106,10 @@ class App extends Component {
                 <Route exact path="/addchild" component={addchild} />
                 <Route exact path="/nurseryInfo" component={nurseryInfo_parent} />
                 <Route exact path="/registerChild" component={registerChild} />
+                <Route exact path="/advertise" component={advertise} />
+
                 {/* Nusery */}
-                
+                <Route exact path="/childList" component={childrenList} />
                 <Route exact path="/assessment" component={assessment} />
                 <Route exact path="/assResults" component={AssResults} />
                 {/* <Route exact path="/assResults/:childName" component={AssResults} /> */}
