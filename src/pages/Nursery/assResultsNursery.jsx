@@ -208,63 +208,10 @@ const AssResultsNursery = () => {
                       </div>
                     </div>
                   </div>
-                  <table width="100%">
-                    <h3>บันทึกประจำวัน : </h3>
-                    <tr>
-                      <td>
-                        <div className="box">
-                          <div className="row">
-                            <h4>&nbsp;&nbsp;อาหาร</h4>
-                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                          </div>
-                          <br></br>
-                          <h5>เช้า: </h5>
-                          <br></br>
-                          <h5>กลางวัน: </h5>
-                          <br></br>
-                          <h5>เย็น: </h5>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="box">
-                          <h4>การขับถ่าย</h4>
-                          <br></br>
-                          <h5>กินกี่ครั้งในวันนี้ </h5>
-                          <br></br>
-                          
-                        </div>
-                      </td>
-                      <td>
-                        <div className="box" >
-                          <div className="row">
-                            <h4>พฤติกรรม</h4>
-                            <div align="right" className="img-edit"><a href="/editChild"><img src="./pencil.png" /></a></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </td>
-              <td width="25%">
-                <div className="box">
-                  <section id="more">
-                    <div class="form">
-                      <div align="right"><button type="submit" title="Update"><a href="">Update</a></button></div>
-                    </div>
-                  </section>
-                  <br></br>
-                  <h5>น้ำหนัก: </h5>
-                  <br></br>
-                  <h5>ส่วนสูง: </h5>
-                  <br></br>
-                  <h5>โดยรวม: </h5>
                 </div>
               </td>
             </tr>
           </table>
-
-
         </div>
       </section>
     </div>
