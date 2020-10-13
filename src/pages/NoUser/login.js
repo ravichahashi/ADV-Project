@@ -94,8 +94,8 @@ class login extends Component {
               <label
                 className={`${
                   this.isParent
-                    ? `btn btn-secondary active`
-                    : `btn btn-secondary`
+                    ? `btn btn-primary active`
+                    : `btn btn-secondary active`
                 }`}
                 onClick={this.selectParent}
               >
@@ -111,8 +111,8 @@ class login extends Component {
               <label
                 className={`${
                   !this.isParent
-                    ? `btn btn-secondary active`
-                    : `btn btn-secondary`
+                    ? `btn btn-primary active`
+                    : `btn btn-secondary active`
                 }`}
                 onClick={this.selectNursery}
               >

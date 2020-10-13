@@ -45,7 +45,7 @@ const Landing = (props) => {
     console.log(Child.length);
     item.push(
       <div
-        className="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp"
+        className="col-md-6 col-lg-6 offset-lg-0.5 wow bounceInUp"
         data-wow-duration="1.4s"
         align="center"
       >
@@ -119,7 +119,9 @@ const Landing = (props) => {
             </header>
 
             <section id="services" className="section-bg">
+            <div className="row">
             {item}
+            </div>
           </section>
             {/* <div className="row row-eq-height justify-content-center">
               <div className="col-lg-3.5 mb-4">
