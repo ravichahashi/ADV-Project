@@ -478,9 +478,11 @@ const Assessment = (props) => {
                 <section id="search">
                   <div class="form">
                     <div class="text-center">
-                      <button type="submit" title="Search">
-                        ค้นหา
-                      </button>
+                      <a href="/advertise">
+                        <button type="submit" title="Search">
+                          ค้นหา
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </section>

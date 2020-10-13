@@ -75,7 +75,7 @@ const OverviewChild = (props) => {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <div className="img-overr">
                     {/* <a href="/editChild"> */}
-                      <img src="./pencil.png" />
+                    <img src="./pencil.png" />
                     {/* </a> */}
                   </div>
                 </div>
@@ -144,13 +144,13 @@ const OverviewChild = (props) => {
                     </section>
                     <section id="search">
                       <div class="form">
-                        {/* <form action="" method="post" role="form" class="contactForm"> */}
                         <div class="text-center">
-                          <button type="submit" title="Search">
-                            ค้นหา
-                          </button>
+                          <a href="/advertise">
+                            <button type="submit" title="Search">
+                              ค้นหา
+                            </button>
+                          </a>
                         </div>
-                        {/* </form> */}
                       </div>
                     </section>
                   </div>

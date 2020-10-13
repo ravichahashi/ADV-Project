@@ -54,9 +54,9 @@ const Landing = (props) => {
             <tr>
               <td>
                 <div className="img-over">
-                  <a href="/addchild">
+                  {/* <a href="/addchild"> */}
                     <img src="./child.jpg" />
-                  </a>
+                  {/* </a> */}
                 </div>
               </td>
               <td>
@@ -67,7 +67,7 @@ const Landing = (props) => {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <div className="img-overr">
                     {/* <a href="/editChild"> */}
-                      <img src="./pencil.png" />
+                    <img src="./pencil.png" />
                     {/* </a> */}
                   </div>
                 </div>
@@ -79,16 +79,15 @@ const Landing = (props) => {
                 <p className="description">น้ำหนัก :{Child[key].weigth}</p>
                 <p className="description">ส่วนสูง :{Child[key].height}</p>
                 <br></br>
-                <section id="more">
+                {/* <section id="more">
                   <div class="form">
                     <div align="center">
-                      {/* <a href="/assResults"> */}
                       <a href={`/assResults?${Child[key].name}`}>
                         <button type="submit">เพิ่มเติม</button>
                       </a>
                     </div>
                   </div>
-                </section>
+                </section> */}
               </td>
             </tr>
           </table>
@@ -101,40 +100,76 @@ const Landing = (props) => {
     <div>
       <main id="main">
         <section id="your-fam">
-          <div className="container" align-text="center">
-            <header className="section-header">
-              <h3>
-                <a href="/childmanager">ครอบครัวของคุณ</a>
-              </h3>
-              <section id="more">
-                <div class="form">
-                  <div align="center">
-                    <button type="submit" title="More">
-                      <a href="/childmanager">เพิ่มเติม</a>
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <p></p>
-            </header>
-
-            <section id="services" className="section-bg">
-            <div className="row">
-            {item}
-            </div>
-          </section>
-            {/* <div className="row row-eq-height justify-content-center">
-              <div className="col-lg-3.5 mb-4">
-                <div className="card wow bounceInUp">
-                  <div className="img-size"><img src="./suriya.png" /></div>
-                  <div className="card-body">
-                    <h5 className="card-title"><a href="/assResults?{Name}">{Name}</a></h5>
-                    <p className="card-text">4 ขวบ</p>
+          <section id="services" className="section-bg">
+            <div className="container" align-text="center">
+              <div className="container" align="center">
+                <div className="col-md-11 col-lg-ุ5">
+                  <div className="box">
+                    <div className="row">
+                      <h4 className="title">
+                        Nursery ใกล้บ้าน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </h4>
+                      <h4 className="title">
+                        จังหวัด<a>&nbsp;</a>
+                      </h4>
+                      <option></option>
+                      <form>
+                        <select name="position">
+                          <option></option>
+                          <option value="city">เชียงใหม่</option>
+                          <option value="Accounting">Accounting</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                      </form>
+                      <h4 className="title">อำเภอ&nbsp;</h4>
+                      <option></option>
+                      <form>
+                        <select name="position">
+                          <option></option>
+                          <option value="district">อ.เมือง</option>
+                          <option value="Accounting">Accounting</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </form>
+                      <section>
+                        <option></option>
+                      </section>
+                      <section id="search">
+                        <div class="form">
+                          <div class="text-center">
+                            <a href="/advertise">
+                              <button type="submit" title="Search">
+                                ค้นหา
+                              </button>
+                            </a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div> */}
-          </div>
+              <header className="section-header">
+                <h3>
+                  <a href="/childmanager">ครอบครัวของคุณ</a>
+                </h3>
+                <section id="more">
+                  <div class="form">
+                    <div align="center">
+                      <button type="submit" title="More">
+                        <a href="/childmanager">เพิ่มเติม</a>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+                <p></p>
+              </header>
+
+              <section id="services" className="section-bg">
+                <div className="row">{item}</div>
+              </section>
+            </div>
+          </section>
         </section>
 
         <section id="why-us" className="wow fadeIn">
