@@ -11,3 +11,6 @@ Sunnery Nursery assessment project
 
 **React Player**
 * `npm i react-player`
+
+**React-Calendar**
+* `npm install react-calendar` or `yarn add react-calendar`
