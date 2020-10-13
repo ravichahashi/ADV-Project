@@ -62,9 +62,7 @@ const RequestFromParent = (props) => {
                         <tr>
                             <td align="center" vertical-align="center">
                                 <div className="img-over">
-                                    <a href="/addchild">
-                                        <img src="./child.jpg" />
-                                    </a>
+                                    <img src="./user.png" />
                                 </div>
                             </td>
                             <td align="left" >
@@ -104,7 +102,7 @@ const RequestFromParent = (props) => {
                 <section id="tab" className="section-bg-white">
                     <table width="100%">
                         <div className="btn-group btn-group-toggle btn-group-lg" data-toggle="buttons">
-                            <label className="btn btn-secondary active">
+                            <label className="btn btn-secondary">
                                 <input type="radio" name="options" id="option1" defaultChecked />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;นักเรียน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </label>
@@ -112,7 +110,7 @@ const RequestFromParent = (props) => {
                                 <input type="radio" name="options" id="option2" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ครูพี่เลี้ยง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </label>
-                            <label className="btn btn-secondary">
+                            <label className="btn btn-secondary active">
                                 <input type="radio" name="options" id="option3" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ผู้ปกครอง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </label>

@@ -2822,8 +2822,8 @@ h6 {
 }
 
 #request .img-over img{
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 120px;
+  max-height: 120px;
   width: auto;
   height: auto;
   border-radius: 10px;
