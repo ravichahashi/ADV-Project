@@ -193,7 +193,7 @@ const RegisterChild = (props) => {
                                 </td>
                                 <td width="70%"></td>
                                 <td width="20%" align="right">
-                                    <h4> บาท</h4>
+                                    <h4>0 บาท</h4>
                                 </td>
                             </table>
                         </div>
@@ -216,7 +216,14 @@ const RegisterChild = (props) => {
                                 <h5>ยอมรับข้อตกลง</h5>
                             </td>
                         </table>
-                        
+                        <br></br>
+                        <div align="center">
+                                          <a href="">
+                                            <button className="btn btn-warning btn-lg" >
+                                              ลงทะเบียน
+                                            </button>
+                                          </a>
+                                        </div>
                         </div>
                     </div>
                 </section>
