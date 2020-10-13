@@ -32,6 +32,7 @@ var parent = [
   "/assResults",
 ];
 var nursery = [
+  "/dashboardNursery",
   "/childrenList",
   "/parentList",
   "/teacher",
