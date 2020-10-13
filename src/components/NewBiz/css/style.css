@@ -2636,14 +2636,6 @@ h6 {
   font-weight: 600;
   font-size: 17px;
 }
-#regischild .box2:hover {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-}
-#regischild .box2:hover .title a {
-  color: #b43e25;
-}
-
 #regischild .box:hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
@@ -2652,9 +2644,17 @@ h6 {
 #regischild table th{
   text-align: center;
   background-color: #F9E104;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: grey;
+  padding-top: 25px;
+  padding-bottom: 8px;
+  color: rgb(44, 42, 42);
+}
+
+#regischild table td{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  color: rgb(44, 42, 42);
+  margin:auto;
 }
 
 #regischild .title {
@@ -2709,6 +2709,13 @@ h6 {
   margin: auto;
 }
 
+#regischild input[type="checkbox"] {
+  padding: 8px 30px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+
 .box-low {
   background-color: #add8e6;
   width: 250px;
@@ -2744,3 +2751,4 @@ h6 {
   text-align: center;
   box-sizing: border-box;
 }
+
