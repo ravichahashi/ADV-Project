@@ -66,9 +66,9 @@ const Landing = (props) => {
                   </h4>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <div className="img-overr">
-                    <a href="/editChild">
+                    {/* <a href="/editChild"> */}
                       <img src="./pencil.png" />
-                    </a>
+                    {/* </a> */}
                   </div>
                 </div>
                 <p className="description">เพศ :{Child[key].sex}</p>
@@ -118,8 +118,9 @@ const Landing = (props) => {
               <p></p>
             </header>
 
+            <section id="services" className="section-bg">
             {item}
-
+          </section>
             {/* <div className="row row-eq-height justify-content-center">
               <div className="col-lg-3.5 mb-4">
                 <div className="card wow bounceInUp">

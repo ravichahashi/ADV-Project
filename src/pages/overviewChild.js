@@ -74,9 +74,9 @@ const OverviewChild = (props) => {
                   </h4>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <div className="img-overr">
-                    <a href="/editChild">
+                    {/* <a href="/editChild"> */}
                       <img src="./pencil.png" />
-                    </a>
+                    {/* </a> */}
                   </div>
                 </div>
                 <p className="description">เพศ :{Child[key].sex}</p>
