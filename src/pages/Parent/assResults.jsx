@@ -9,7 +9,7 @@ const childName = window.location.search.substring(1);
 const click = (e) => {
   console.log(e);
 };
-let start = 3;
+let start = 4;
 
 const AssResults = (props) => {
   const { getChild } = props;
@@ -18,6 +18,7 @@ const AssResults = (props) => {
   }, [getChild]);
   const resChild = props.data.child;
   const loading = props.data.loading;
+  const type = props.user.credentials.type;
 
   const [child, setChild] = useState({
     name: "xxxxx xxxxx",
@@ -52,28 +53,42 @@ const AssResults = (props) => {
     },
   });
 
-  const DSPM_data = [
-    {
-      data: {
-        GM: child.score.DSPM.parent.GM,
-        FM: child.score.DSPM.parent.FM,
-        RL: child.score.DSPM.parent.RL,
-        EL: child.score.DSPM.parent.EL,
-        PS: child.score.DSPM.parent.PS,
-      },
-      meta: { color: "blue" },
-    },
-    {
-      data: {
-        GM: child.score.DSPM.nursery.GM,
-        FM: child.score.DSPM.nursery.FM,
-        RL: child.score.DSPM.nursery.RL,
-        EL: child.score.DSPM.nursery.EL,
-        PS: child.score.DSPM.nursery.PS,
-      },
-      meta: { color: "red" },
-    },
-  ];
+  const DSPM_data =
+    type === "parent"
+      ? [
+          {
+            data: {
+              GM: child.score.DSPM.parent.GM,
+              FM: child.score.DSPM.parent.FM,
+              RL: child.score.DSPM.parent.RL,
+              EL: child.score.DSPM.parent.EL,
+              PS: child.score.DSPM.parent.PS,
+            },
+            meta: { color: "blue" },
+          },
+          {
+            data: {
+              GM: child.score.DSPM.nursery.GM,
+              FM: child.score.DSPM.nursery.FM,
+              RL: child.score.DSPM.nursery.RL,
+              EL: child.score.DSPM.nursery.EL,
+              PS: child.score.DSPM.nursery.PS,
+            },
+            meta: { color: "red" },
+          },
+        ]
+      : [
+          {
+            data: {
+              GM: child.score.DSPM.nursery.GM,
+              FM: child.score.DSPM.nursery.FM,
+              RL: child.score.DSPM.nursery.RL,
+              EL: child.score.DSPM.nursery.EL,
+              PS: child.score.DSPM.nursery.PS,
+            },
+            meta: { color: "red" },
+          },
+        ];
 
   const A49_data = [
     {
@@ -517,6 +532,7 @@ const AssResults = (props) => {
 
 const mapStateToProps = (state) => ({
   data: state.data,
+  user: state.user,
 });
 
 const mapDispatchToProps = {
